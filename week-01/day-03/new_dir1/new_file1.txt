@@ -1,1 +1,1 @@
-This is the first new file.
+This is the first new file.This is a second line.
