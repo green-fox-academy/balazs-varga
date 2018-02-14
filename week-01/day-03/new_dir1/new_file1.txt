@@ -1,1 +1,4 @@
-This is the first new file.This is a second line.
+This is the first new file.
+This is a second line.
+Another line is added.
+More...
