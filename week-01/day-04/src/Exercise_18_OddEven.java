@@ -7,7 +7,7 @@ public class Exercise_18_OddEven {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please provide a number: 5");
+        System.out.println("Please provide a number: ");
         int number = scanner.nextInt();
 
         if((number % 2) == 0) {
