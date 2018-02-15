@@ -12,5 +12,11 @@ public class Exercise_19_OneTwoALot {
 
         System.out.println("Please provide a number: ");
         int number = scanner.nextInt();
+
+        if (number <= 0) {
+            System.out.println("Not enough");
+        }else if () {
+
+        }
     }
 }
