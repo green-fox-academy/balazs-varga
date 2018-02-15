@@ -1,8 +1,6 @@
-public class Exercise_1_HelloMe {
-
+public class Exercise_01_HelloMe {
     public static void main(String[] args) {
         // Modify this program to greet you instead of the World!
         System.out.println("Hello, Balazs!");
     }
-
 }
