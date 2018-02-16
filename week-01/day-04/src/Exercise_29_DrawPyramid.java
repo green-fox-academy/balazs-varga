@@ -26,7 +26,6 @@ public class Exercise_29_DrawPyramid {
             for (int x = 0; x < spaces; x++){
                 System.out.print(" ");
             }
-
             for (int j = 0; j < stars; j++) {
                 System.out.print(symbols);
             }
