@@ -20,7 +20,7 @@ public class Exercise_29_DrawPyramid {
 
         System.out.println("Please provide the number of the triangle's lines:");
         int triangleLines = scanner.nextInt();
-        int spaces = triangleLines-1;
+        int spaces = triangleLines - 1;
 
         for (int i = 0; i < triangleLines; i++) {
             for (int x = 0; x < spaces; x++){
