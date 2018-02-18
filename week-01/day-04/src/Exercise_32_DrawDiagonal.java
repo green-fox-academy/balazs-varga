@@ -29,9 +29,9 @@ public class Exercise_32_DrawDiagonal {
                     System.out.print(symbol);
                 }
                 System.out.println();
-            }else if (i > 0 && i < squareLines -1) {
+            }else if (i > 0 && i < squareLines - 1) {
                 for (int k = 0; k < squareLines; k++) {
-                    if (k == 0 || k == squareLines -1) {
+                    if (k == 0 || k == squareLines - 1) {
                         System.out.print(symbol);
                     }else if(k == innerSymbolPosition) {
                         System.out.print(symbol);
