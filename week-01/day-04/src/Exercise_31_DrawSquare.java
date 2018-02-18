@@ -33,7 +33,7 @@ public class Exercise_31_DrawSquare {
                 System.out.println();
             }else if (i > 0 && i < squareLines) {
                 for (int k = 0; k < squareLines; k++) {
-                    if (k == 0 || k == squareLines -1) {
+                    if (k == 0 || k == squareLines - 1) {
                         System.out.print(symbol);
                     }else {
                         System.out.print(" ");
