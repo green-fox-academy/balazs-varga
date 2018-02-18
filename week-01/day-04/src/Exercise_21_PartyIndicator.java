@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Exercise_21_PartyIndicator {
+
     // Write a program that asks for two numbers
     // The first number represents the number of girls that comes to a party, the
     // second the boys
@@ -19,19 +20,23 @@ public class Exercise_21_PartyIndicator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please provide the number of girls and the boys who comes to the party: ");
+        System.out.println("Please provide the number of girls and the boys who comes to the party, then press Enter!");
+        System.out.print("Number of boys: ");
         int girlsNumber = scanner.nextInt();
+        System.out.print("Number of girls: ");
         int boysNumber = scanner.nextInt();
         int participants = girlsNumber + boysNumber;
 
         if (girlsNumber == 0) {
-            System.out.println("Sausage party");
+            System.out.println("\nSausage party");
         }else if ((girlsNumber == boysNumber) && (participants > 20)) {
-            System.out.println("The party is excellent!");
+            System.out.println("\nThe party is excellent!");
         }else if ((girlsNumber != boysNumber) && (participants > 20)) {
-            System.out.println("Quite cool party!");
+            System.out.println("\nQuite cool party!");
         }else if (participants < 20) {
-            System.out.println("Average party");
+            System.out.println("\nAverage party");
+        }else {
+            System.out.println("\nNot a good party");
         }
     }
 }
