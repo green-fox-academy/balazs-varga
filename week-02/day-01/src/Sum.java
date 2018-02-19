@@ -1,4 +1,4 @@
-public class Summing {
+public class Sum {
 
     //  Create the usual class wrapper
     //  and main method on your own.
