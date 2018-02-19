@@ -1,4 +1,4 @@
-public class PrintElements {
+public class PrintAll {
 
     // - Create an array variable named `af`
     //   with the following content: `[4, 5, 6, 7]`
