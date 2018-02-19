@@ -1,4 +1,4 @@
-public class AppendAFunction {
+public class AppendAFunc {
 
     //  Create the usual class wrapper
     //  and main method on your own.
