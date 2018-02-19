@@ -1,4 +1,4 @@
-public class GreetFunction {
+public class Greet {
 
     //  From now on, create the usual class wrapper
     //  and main method on your own.
