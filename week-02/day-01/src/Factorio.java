@@ -1,4 +1,4 @@
-public class Factorial {
+public class Factorio {
 
     //  Create the usual class wrapper
     //  and main method on your own.
