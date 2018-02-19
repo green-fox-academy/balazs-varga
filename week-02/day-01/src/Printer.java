@@ -1,4 +1,4 @@
-public class PrintArguments {
+public class Printer {
 
     //  Create the usual class wrapper
     //  and main method on your own.
