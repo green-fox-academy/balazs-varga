@@ -1,6 +1,6 @@
 public class SimpleReplace {
 
-  public static void main(String... args){
+  public static void main(String... args) {
     String example = "In a dishwasher far far away";
 
     example.replace("dishwasher", "galaxy");
@@ -13,3 +13,4 @@ public class SimpleReplace {
 
     System.out.println(example);
   }
+}
