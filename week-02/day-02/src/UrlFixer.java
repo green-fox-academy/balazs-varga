@@ -14,5 +14,9 @@ public class UrlFixer {
       url = url.replace("bots", "odds").replace("https", "https:");
       System.out.println(url);
     }
+
+    url = "https//www.reddit.com/r/nevertellmethebots";
+    url = url.substring(0, 5) + ":" + url.substring(5 , url.length() - 4) + "odds";
+    System.out.println(url);
   }
 }
