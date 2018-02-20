@@ -6,12 +6,12 @@ public class UrlFixer {
     // Also, the URL is missing a crutial component, find out what it is and insert it too!
     // Try to solve it more than once using different String functions!
 
-    url = url.replace("bots", "odds");
+    url = url.replace("bots", "odds").replace("https", "https:");
     System.out.println(url);
 
     url = "https//www.reddit.com/r/nevertellmethebots";
-    if (url.endsWith("bots")) {
-      url = url.replace("bots", "odds");
+    if (url.endsWith("bots" ) && url.startsWith("https")) {
+      url = url.replace("bots", "odds").replace("https", "https:");
       System.out.println(url);
     }
   }
