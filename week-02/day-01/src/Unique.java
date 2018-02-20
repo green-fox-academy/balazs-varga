@@ -1,7 +1,5 @@
 import java.util.Arrays;
 
-;
-
 public class Unique {
 
     //  Create a function that takes a list of numbers as a parameter
@@ -16,6 +14,7 @@ public class Unique {
     }
 
     public static void unique(int... numbers) {
+        int counter = 0;
         int[] temp = new int[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
@@ -27,13 +26,20 @@ public class Unique {
             }
             if (duplicate == 0) {
                 temp[i] = numbers[i];
+                counter++;
             }
         }
 
         Arrays.sort(temp);
 
-        for (int i = 0; i < temp.length; i++) {
-            System.out.print(temp[i] + " ");
+        int[] uniqueFinal = new int[counter];
+
+        for (int i = 0; i < counter; i++) {
+            uniqueFinal[i] = temp[i + 3];
+        }
+
+        for (int i = 0; i < uniqueFinal.length; i++) {
+            System.out.print(uniqueFinal[i] + " ");
         }
     }
 }
