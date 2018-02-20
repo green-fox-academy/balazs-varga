@@ -1,5 +1,3 @@
-
-
 public class Anagram {
 
     // Create a function named is anagram following your current language's style guide.
@@ -16,10 +14,6 @@ public class Anagram {
             return false;
         }else
 
-
-
             return true;
         }
-
-
     }
