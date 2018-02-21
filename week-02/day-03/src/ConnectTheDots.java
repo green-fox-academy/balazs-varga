@@ -22,6 +22,7 @@ public class ConnectTheDots {
   }
   
   public static void dotConnector(Graphics graphics, int[][] arrayOfDots) {
+    graphics.setColor(Color.green);
     for (int i = 0; i < arrayOfDots.length; i++) {
       if (i == arrayOfDots.length - 1) {
         graphics.drawLine(arrayOfDots[i][0], arrayOfDots[i][1], arrayOfDots[0][0], arrayOfDots[0][1]);
