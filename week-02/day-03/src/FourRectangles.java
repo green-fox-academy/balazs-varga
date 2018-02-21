@@ -20,7 +20,7 @@ public class FourRectangles {
 
     for (int i = 0; i < 4; i++) {
       graphics.setColor(new Color (randomColor.nextInt(255), randomColor.nextInt(255), randomColor.nextInt(255)));
-      graphics.drawRect(50 + xOffset, 50 + yOffset, 100 + rectangleSizeOffset, 50 + rectangleSizeOffset);
+      graphics.fillRect(50 + xOffset, 50 + yOffset, 100 + rectangleSizeOffset, 50 + rectangleSizeOffset);
       xOffset += 10;
       yOffset += 20;
       rectangleSizeOffset += 30;
