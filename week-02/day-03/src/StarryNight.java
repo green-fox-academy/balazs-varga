@@ -15,18 +15,15 @@ public class StarryNight {
     //  - The stars should have random color (some shade of grey)
 
     Random randomNumber = new Random();
-
     int squareSize = 3;
-
     for (int i = 0; i < 100; i++) {
       int randomXPosition = randomNumber.nextInt(WIDTH);
       int randomYPosition = randomNumber.nextInt(HEIGHT);
-      graphics.setColor(Color.white);
+      int randomColor = randomNumber.nextInt(106) + 150;
+      graphics.setColor(new Color(randomColor,randomColor, randomColor));
       graphics.fillRect(randomXPosition, randomYPosition, squareSize, squareSize);
     }
   }
-
-
 
   // Don't touch the code below
   static int WIDTH = 320;
