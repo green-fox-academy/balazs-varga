@@ -30,9 +30,9 @@ public class Calculator {
     Scanner scanner = new Scanner(System.in);
 
     String operation = scanner.next();
-    int firstOperand = scanner.nextInt();
-    int secondOperand = scanner.nextInt();
-    int result = 0;
+    double firstOperand = scanner.nextDouble();
+    double secondOperand = scanner.nextDouble();
+    double result = 0;
 
     switch (operation) {
       case "+": result = firstOperand + secondOperand;
