@@ -24,11 +24,11 @@ public class Anagram {
 
       uniqueLettersOfFirstWord = findUniqueLettersOfString(firstWord);
       Arrays.sort(uniqueLettersOfFirstWord);
-      charArrayPrinter(uniqueLettersOfFirstWord);
+      //charArrayPrinter(uniqueLettersOfFirstWord);
 
       uniqueLettersOfSecondWord = findUniqueLettersOfString(secondWord);
       Arrays.sort(uniqueLettersOfSecondWord);
-      charArrayPrinter(uniqueLettersOfSecondWord);
+      //charArrayPrinter(uniqueLettersOfSecondWord);
 
       String temp1 = String.valueOf(uniqueLettersOfFirstWord);
       String temp2 = String.valueOf(uniqueLettersOfSecondWord);
