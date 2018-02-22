@@ -18,8 +18,7 @@ public class Anagram {
     } else {
       char[] uniqueLettersOfFirstWord;
       char[] uniqueLettersOfSecondWord;
-
-      //kisbetűssé iratás és whitespacek eltüntetése
+      
       firstWord = convertWordToLowercaseWithoutSpaces(firstWord);
       secondWord = convertWordToLowercaseWithoutSpaces(secondWord);
 
@@ -31,7 +30,6 @@ public class Anagram {
       Arrays.sort(uniqueLettersOfSecondWord);
       charArrayPrinter(uniqueLettersOfSecondWord);
 
-      //tömbök stringé visszaalakítása
       String temp1 = String.valueOf(uniqueLettersOfFirstWord);
       String temp2 = String.valueOf(uniqueLettersOfSecondWord);
 
