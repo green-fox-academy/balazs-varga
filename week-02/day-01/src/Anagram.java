@@ -18,7 +18,7 @@ public class Anagram {
     } else {
       char[] uniqueLettersOfFirstWord;
       char[] uniqueLettersOfSecondWord;
-      
+
       firstWord = convertWordToLowercaseWithoutSpaces(firstWord);
       secondWord = convertWordToLowercaseWithoutSpaces(secondWord);
 
