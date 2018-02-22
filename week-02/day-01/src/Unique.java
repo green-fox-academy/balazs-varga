@@ -10,36 +10,30 @@ public class Unique {
     //  should print: `[1, 11, 34, 52, 61]`
 
     public static void main(String[] args) {
-        unique(new int[] {1, 11, 34, 11, 52, 61, 1, 34});
+      unique(new int[] {1, 11, 34, 11, 52, 61, 1, 34,});
     }
 
     public static void unique(int... numbers) {
+      int[] unique = new int[numbers.length];
+      int uniqueArrayIndex = 0;
+
+      for (int i = 0; i < numbers.length; i++) {
+        int temp = numbers[i];
         int counter = 0;
-        int[] temp = new int[numbers.length];
 
-        for (int i = 0; i < numbers.length; i++) {
-            int duplicate = 0;
-            for (int j = i + 1; j < numbers.length; j++) {
-                if(numbers[i] == numbers[j]){
-                    duplicate++;
-                }
-            }
-            if (duplicate == 0) {
-                temp[i] = numbers[i];
-                counter++;
-            }
+        for (int j = 0; j < numbers.length; j++) {
+          if (unique[j] != temp) {
+            counter++;
+          }
         }
-
-        Arrays.sort(temp);
-
-        int[] uniqueFinal = new int[counter];
-
-        for (int i = 0; i < counter; i++) {
-            uniqueFinal[i] = temp[i + 3];
+        if (counter == numbers.length) {
+          unique[uniqueArrayIndex] = temp;
+          uniqueArrayIndex++;
         }
+      }
 
-        for (int i = 0; i < uniqueFinal.length; i++) {
-            System.out.print(uniqueFinal[i] + " ");
-        }
+      for (int i = 0; i < unique.length; i++) {
+        System.out.println(unique[i]);
+      }
     }
 }
