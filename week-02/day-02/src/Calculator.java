@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Calculator {
+  public static void main(String... args) {
+
+    // Create a simple calculator application which reads the parameters from the prompt
+    // and prints the result to the prompt.
+    // It should support the following operations,
+    // create a method named "calculate()":
+    // +, -, *, /, % and it should support two operands.
+    // The format of the expressions must be: {operation} {operand} {operand}.
+    // Examples: "+ 3 3" (the result will be 6) or "* 4 4" (the result will be 16)
+
+    // You can use the Scanner class
+    // It should work like this:
+
+    // Start the program
+    // It prints: "Please type in the expression:"
+    // Waits for the user input
+    // Print the result to the prompt
+    // Exit
+
+    System.out.println("~~~CALCULATOR~~~\n");
+    System.out.println("Please type in the expression: (e.g. + 4 5)");
+
+    calculate();
+  }
+
+  public static void calculate() {
+    Scanner scanner = new Scanner(System.in);
+
+    String operation = scanner.next();
+    int firstOperand = scanner.nextInt();
+    int secondOperand = scanner.nextInt();
+    int result = 0;
+
+    switch (operation) {
+      case "+": result = firstOperand + secondOperand;
+                System.out.println("The result is: " + result);
+                break;
+
+      case "-": result = firstOperand - secondOperand;
+                System.out.println("The result is: " + result);
+                break;
+
+      case "*": result = firstOperand * secondOperand;
+                System.out.println("The result is: " + result);
+                break;
+
+      case "/": result = firstOperand / secondOperand;
+                System.out.println("The result is: " + result);
+                break;
+
+      case "%": result = firstOperand % secondOperand;
+                System.out.println("The result is: " + result);
+                break;
+
+      default: System.out.println("Wrong operator, please use one of the following: +, -, *, /, %");
+    }
+  }
+}
