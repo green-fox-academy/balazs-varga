@@ -30,10 +30,10 @@ public class Anagram {
       Arrays.sort(uniqueLettersOfSecondWord);
       //charArrayPrinter(uniqueLettersOfSecondWord);
 
-      String temp1 = String.valueOf(uniqueLettersOfFirstWord);
-      String temp2 = String.valueOf(uniqueLettersOfSecondWord);
+      String firstFinalWord = String.valueOf(uniqueLettersOfFirstWord);
+      String secondFinalWord = String.valueOf(uniqueLettersOfSecondWord);
 
-      if (temp1.equals(temp2)) {
+      if (firstFinalWord.equals(secondFinalWord)) {
         return true;
       } else {
         return false;
