@@ -19,7 +19,7 @@ public class EnvelopeStar {
     int xOffset = 0;
     int yOffset = 0;
 
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 16; i++) {
       graphics.drawLine(xStartPosition + xOffset, yStartPosition, xEndPosition, yEndPosition + yOffset);
       xOffset += 10;
       yOffset -= 10;
@@ -54,7 +54,7 @@ public class EnvelopeStar {
     xOffset = 0;
     yOffset = 0;
 
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 16; i++) {
       graphics.drawLine(xStartPosition + xOffset, yStartPosition, xEndPosition, yEndPosition + yOffset);
       xOffset -= 10;
       yOffset += 10;
