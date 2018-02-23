@@ -9,7 +9,11 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class LinePlay {
   public static void mainDraw(Graphics graphics) {
+    drawTheFirstFigure(graphics);
+    drawTheSecondFigure(graphics);
+  }
 
+  public static void drawTheFirstFigure(Graphics graphics) {
     int xStartPosition = 5;
     int yStartPosition = HEIGHT / 10;
     int xEndPosition = 20;
@@ -17,7 +21,6 @@ public class LinePlay {
     int xOffset = 0;
     int yOffset = 0;
     int numberOfTheLines = 19;
-
     graphics.setColor(Color.green);
 
     for (int i = 0; i < numberOfTheLines; i++) {
@@ -25,14 +28,16 @@ public class LinePlay {
       yOffset += 15;
       xOffset += 15;
     }
+  }
 
-    xStartPosition = WIDTH / 10;
-    yStartPosition = 5;
-    xEndPosition = WIDTH - 10;
-    yEndPosition = 20;
-    xOffset = 0;
-    yOffset = 0;
-
+  public static void drawTheSecondFigure(Graphics graphics) {
+    int xStartPosition = WIDTH / 10;
+    int yStartPosition = 5;
+    int xEndPosition = WIDTH - 10;
+    int yEndPosition = 20;
+    int xOffset = 0;
+    int yOffset = 0;
+    int numberOfTheLines = 19;
     graphics.setColor(Color.magenta);
 
     for (int i = 0; i < numberOfTheLines; i++) {
