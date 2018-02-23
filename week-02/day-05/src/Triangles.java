@@ -42,7 +42,7 @@ public class Triangles {
     for (int i = 0; i < 16; i++) {
       graphics.drawLine(xStartPosition + xStartOffset, yStartPosition + yStartOffset, xEndPosition + xEndOffset, yEndPosition + yEndOffset);
       xStartOffset += 10;
-      xEndOffset -=10;
+      xEndOffset -= 10;
       yStartOffset -= 15;
       yEndOffset = yStartOffset;
     }
