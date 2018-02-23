@@ -11,16 +11,32 @@ public class LinePlay {
   public static void mainDraw(Graphics graphics) {
 
     int xStartPosition = 5;
-    int yStartPosition = HEIGHT / 5;
+    int yStartPosition = HEIGHT / 10;
     int xEndPosition = 20;
     int yEndPosition = HEIGHT - 30;
     int xOffset = 0;
     int yOffset = 0;
+    int numberOfTheLines = 19;
 
     graphics.setColor(Color.green);
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < numberOfTheLines; i++) {
       graphics.drawLine(xStartPosition, yStartPosition + yOffset, xEndPosition + xOffset, yEndPosition);
+      yOffset += 15;
+      xOffset += 15;
+    }
+
+    xStartPosition = WIDTH / 10;
+    yStartPosition = 5;
+    xEndPosition = WIDTH - 10;
+    yEndPosition = 20;
+    xOffset = 0;
+    yOffset = 0;
+
+    graphics.setColor(Color.magenta);
+
+    for (int i = 0; i < numberOfTheLines; i++) {
+      graphics.drawLine(xStartPosition + yOffset, yStartPosition , xEndPosition, yEndPosition + xOffset);
       yOffset += 15;
       xOffset += 15;
     }
