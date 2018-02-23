@@ -6,7 +6,10 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class EnvelopeStar {
   public static void mainDraw(Graphics graphics) {
+    drawFirstHalfOfFigure(graphics);
+  }
 
+  public static void drawFirstHalfOfFigure(Graphics graphics) {
     graphics.setColor(Color.green);
     int xStartPosition = 10;
     int yStartPosition = HEIGHT / 2;
@@ -20,8 +23,18 @@ public class EnvelopeStar {
       xOffset += 10;
       yOffset -= 10;
     }
-  }
 
+    yEndPosition = yStartPosition + 10;
+    xOffset = 0;
+    yOffset = 0;
+
+    for (int i = 0; i < 15; i++) {
+      graphics.drawLine(xStartPosition + xOffset, yStartPosition, xEndPosition, yEndPosition + yOffset);
+      xOffset += 10;
+      yOffset += 10;
+    }
+  }
+  
   // Don't touch the code below
   static int WIDTH = 320;
   static int HEIGHT = 343;
