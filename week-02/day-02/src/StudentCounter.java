@@ -50,18 +50,17 @@ public class StudentCounter{
 
     System.out.println("People who has got more candies than 4:");
 
-    for (int i = 1; i < map.size(); i++) {
+    for (int i = 0; i < map.size(); i++) {
       Map<String, Object> temp = map.get(i);
       if ((int)temp.get("candies") > 4) {
         System.out.println("\t" + "- "  + temp.get("name"));
-        map.get(i).getOrDefault("candies", i).hashCode();
       }
 
       if ((int)temp.get("candies") < 5) {
-        age += (int)temp.get("age");
+        age += Double.valueOf(temp.get("age").toString());
       }
     }
-    System.out.println("Sum the age of people who have lass than 5 candies: ");
+    System.out.println("Sum the age of people who have less than 5 candies: ");
     System.out.println("\t" + "- "  + age);
   }
 }
