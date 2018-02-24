@@ -13,7 +13,11 @@ public class SolarSystem{
   }
 
   public static ArrayList<String> putSaturn(ArrayList<String> planets) {
-    planets.add("Saturn");
+    for (int i = 0; i < planets.size(); i++) {
+      if (planets.get(i).equals("Jupiter")) {
+        planets.add(i + 1, "Saturn");
+      }
+    }
     return planets;
   }
 }
