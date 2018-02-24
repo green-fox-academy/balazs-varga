@@ -22,13 +22,11 @@ public class Anagram {
       firstWord = convertWordToLowercaseWithoutSpaces(firstWord);
       secondWord = convertWordToLowercaseWithoutSpaces(secondWord);
 
-      uniqueLettersOfFirstWord = findUniqueLettersOfString(firstWord);
+      uniqueLettersOfFirstWord = uniqueLettersOfString(firstWord);
       Arrays.sort(uniqueLettersOfFirstWord);
-      //charArrayPrinter(uniqueLettersOfFirstWord);
 
-      uniqueLettersOfSecondWord = findUniqueLettersOfString(secondWord);
+      uniqueLettersOfSecondWord = uniqueLettersOfString(secondWord);
       Arrays.sort(uniqueLettersOfSecondWord);
-      //charArrayPrinter(uniqueLettersOfSecondWord);
 
       String firstFinalWord = String.valueOf(uniqueLettersOfFirstWord);
       String secondFinalWord = String.valueOf(uniqueLettersOfSecondWord);
@@ -41,21 +39,21 @@ public class Anagram {
     }
   }
 
-  public static char[] findUniqueLettersOfString(String word){
+  public static char[] uniqueLettersOfString(String word){
 
     char[] uniqueLettersOfWord = new char[word.length()];
     int uniqueArrayIndex = 0;
 
     for (int i = 0; i < word.length(); i++) {
-      char temp = word.charAt(i);
+      char tempCharacter = word.charAt(i);
       int counter = 0;
       for (int j = 0; j < word.length(); j++) {
-        if (uniqueLettersOfWord[j] != temp) {
+        if (uniqueLettersOfWord[j] != tempCharacter) {
           counter++;
         }
       }
       if (counter == word.length()) {
-        uniqueLettersOfWord[uniqueArrayIndex] = temp;
+        uniqueLettersOfWord[uniqueArrayIndex] = tempCharacter;
         uniqueArrayIndex++;
       }
     }
@@ -63,14 +61,8 @@ public class Anagram {
   }
 
   public static String convertWordToLowercaseWithoutSpaces(String word) {
-    String modifiedWord = word.toLowerCase().replaceAll(" ", "");
-    return modifiedWord;
-  }
+    String convertedWord = word.toLowerCase().replaceAll(" ", "");
+    return convertedWord;
 
-  public static void charArrayPrinter(char[] arrayToPrint) {
-    for (int i = 0; i < arrayToPrint.length; i++) {
-      System.out.print(arrayToPrint[i]);
-    }
-    System.out.println();
   }
 }
