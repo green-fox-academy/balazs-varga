@@ -14,12 +14,13 @@ public class RainbowBoxFunction {
     // Create a loop that fills the canvas with rainbow colored squares.
 
     int squareSize = 10;
+    int squareIncreaseNumber = 10;
     Random randomColor = new Random();
 
     while(squareSize < WIDTH) {
       Color color = new Color(randomColor.nextInt(255), randomColor.nextInt(255), randomColor.nextInt(255));
       drawingSquare(graphics, squareSize, color);
-      squareSize += 10;
+      squareSize += squareIncreaseNumber;
     }
   }
 
