@@ -31,11 +31,7 @@ public class Anagram {
       String firstFinalWord = String.valueOf(uniqueLettersOfFirstWord);
       String secondFinalWord = String.valueOf(uniqueLettersOfSecondWord);
 
-      if (firstFinalWord.equals(secondFinalWord)) {
-        return true;
-      } else {
-        return false;
-      }
+      return firstFinalWord.equals(secondFinalWord);
     }
   }
 
@@ -63,6 +59,5 @@ public class Anagram {
   public static String convertWordToLowercaseWithoutSpaces(String word) {
     String convertedWord = word.toLowerCase().replaceAll(" ", "");
     return convertedWord;
-
   }
 }
