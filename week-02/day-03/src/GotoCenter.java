@@ -15,10 +15,11 @@ public class GotoCenter {
     drawingToCenter(graphics, 30, 30);
   }
 
-  public static void drawingToCenter (Graphics graphics, int x, int y) {
+  public static void drawingToCenter (Graphics graphics, int xStartPosition, int yStartPosition) {
+    int offset = 0;
     for (int i = 0; i < 3; i++) {
-      x += 50;
-      graphics.drawLine(x,y,WIDTH/2,HEIGHT/2);
+      graphics.drawLine(xStartPosition + offset, yStartPosition,WIDTH / 2,HEIGHT / 2);
+      offset += 50;
     }
   }
 
