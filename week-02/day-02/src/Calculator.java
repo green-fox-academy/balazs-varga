@@ -32,7 +32,7 @@ public class Calculator {
     String operation = scanner.next();
     double firstOperand = scanner.nextDouble();
     double secondOperand = scanner.nextDouble();
-    double result = 0;
+    double result;
 
     switch (operation) {
       case "+": result = firstOperand + secondOperand;
