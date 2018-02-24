@@ -15,10 +15,6 @@ public class IsInList{
   public static boolean checkNums(ArrayList<Integer> listOfNumbers) {
     ArrayList<Integer> numbersToCheck = new ArrayList<>(Arrays.asList(4, 8, 12, 16));
 
-    if (listOfNumbers.containsAll(numbersToCheck)) {
-      return true;
-    } else {
-      return false;
-    }
+    return listOfNumbers.containsAll(numbersToCheck);
   }
 }
