@@ -1,9 +1,6 @@
 import javax.swing.*;
-
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 import java.util.Random;
 
 public class FourRectangles {
@@ -16,11 +13,16 @@ public class FourRectangles {
     Random randomColor = new Random();
     int xOffset = 0;
     int yOffset = 0;
+    int rectangleXPosition = 50;
+    int rectangleYPosition = 60;
+    int rectangleWidth = 100;
+    int rectangleHeight = rectangleWidth / 2;
     int rectangleSizeOffset = 30;
 
     for (int i = 0; i < 4; i++) {
       graphics.setColor(new Color (randomColor.nextInt(255), randomColor.nextInt(255), randomColor.nextInt(255)));
-      graphics.fillRect(50 + xOffset, 50 + yOffset, 100 + rectangleSizeOffset, 50 + rectangleSizeOffset);
+      graphics.fillRect(rectangleXPosition + xOffset, rectangleYPosition + yOffset,
+              rectangleWidth + rectangleSizeOffset, rectangleHeight + rectangleSizeOffset);
       xOffset += 10;
       yOffset += 20;
       rectangleSizeOffset += 30;
@@ -43,8 +45,6 @@ public class FourRectangles {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }
