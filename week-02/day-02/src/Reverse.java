@@ -10,11 +10,11 @@ public class Reverse {
   }
 
   public static String reverse(String stringToReverse) {
-    String reversed = new String();
+    String reversedString = "";
 
-    for (int i = stringToReverse.length()-1; i >= 0; i--) {
-      reversed += stringToReverse.charAt(i);
+    for (int i = stringToReverse.length() - 1; i >= 0; i--) {
+      reversedString += stringToReverse.charAt(i);
     }
-    return reversed;
+    return reversedString;
   }
 }
