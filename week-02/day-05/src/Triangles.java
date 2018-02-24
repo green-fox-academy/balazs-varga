@@ -6,21 +6,24 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangles {
   public static void mainDraw(Graphics graphics) {
-    drawBaseTriangle(graphics);
-    drawInnerHorizontalLinesInTriangle(graphics);
-    drawInnerDiagonalLinesInTriangle(graphics);
+    int triangleSize = 10;
+    int bottomMargin = 50;
+
+    drawBaseTriangle(graphics, bottomMargin);
+    drawInnerHorizontalLines(graphics, triangleSize, bottomMargin);
+    drawInnerDiagonalLines(graphics, triangleSize, bottomMargin);
   }
 
-  public static void drawBaseTriangle(Graphics graphics) {
+  public static void drawBaseTriangle(Graphics graphics, int bottomMargin) {
     int xStartPosition = 0;
-    int yStartPosition = HEIGHT - 50;
+    int yStartPosition = HEIGHT - bottomMargin;
     int xEndPosition = WIDTH;
     int yEndPosition = yStartPosition;
 
     graphics.drawLine(xStartPosition, yStartPosition, xEndPosition, yEndPosition);
 
     xEndPosition = WIDTH / 2;
-    yEndPosition = 50;
+    yEndPosition = bottomMargin;
 
     graphics.drawLine(xStartPosition, yStartPosition, xEndPosition, yEndPosition);
 
@@ -29,48 +32,49 @@ public class Triangles {
     graphics.drawLine(xStartPosition, yStartPosition, xEndPosition, yEndPosition);
   }
 
-  public static void drawInnerHorizontalLinesInTriangle(Graphics graphics) {
-    int xStartPosition = 10;
-    int yStartPosition = HEIGHT - 65;
-    int xEndPosition = WIDTH - 10;
-    int yEndPosition = yStartPosition;
-    int xStartOffset = 0;
-    int yStartOffset = 0;
-    int xEndOffset = 0;
-    int yEndOffset = 0;
+  public static void drawInnerHorizontalLines(Graphics graphics, int triangleSize, int bottomMargin) {
+    int lineSpace = 15;
+    int numberOfLines = 16;
+    bottomMargin += lineSpace;
 
-    for (int i = 0; i < 16; i++) {
-      graphics.drawLine(xStartPosition + xStartOffset, yStartPosition + yStartOffset, xEndPosition + xEndOffset, yEndPosition + yEndOffset);
-      xStartOffset += 10;
-      xEndOffset -= 10;
-      yStartOffset -= 15;
-      yEndOffset = yStartOffset;
+    int xStartPosition = 10;
+    int yPosition = HEIGHT - bottomMargin;
+    int xEndPosition = WIDTH - triangleSize;
+
+    int xOffset = 0;
+    int yOffset = 0;
+
+    for (int i = 0; i < numberOfLines; i++) {
+      graphics.drawLine(xStartPosition + xOffset, yPosition + yOffset, xEndPosition - xOffset, yPosition + yOffset);
+      xOffset += triangleSize;
+      yOffset -= lineSpace;
     }
   }
 
-  public static void drawInnerDiagonalLinesInTriangle(Graphics graphics) {
-    int xStartPosition = 20;
-    int yStartPosition = HEIGHT - 50;
-    int xEndPosition = WIDTH / 2 + 10;
-    int yEndPosition = 67;
+  public static void drawInnerDiagonalLines(Graphics graphics, int triangleSize, int bottomMargin) {
+    int numberOfLines = 16;
+    int xStartPosition = triangleSize * 2;
+    int yStartPosition = HEIGHT - bottomMargin;
+    int xEndPosition = WIDTH / 2 + triangleSize;
+    int yEndPosition = 68;
     int xStartOffset = 0;
     int xEndOffset = 0;
     int yEndOffset = 0;
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < numberOfLines; i++) {
       graphics.drawLine(xStartPosition + xStartOffset, yStartPosition, xEndPosition + xEndOffset, yEndPosition + yEndOffset);
       xStartOffset += 20;
       xEndOffset += 10;
       yEndOffset += 15;
     }
 
-    xStartPosition = WIDTH - 20;
-    xEndPosition = WIDTH / 2 - 10;
+    xStartPosition = WIDTH - triangleSize * 2;
+    xEndPosition = WIDTH / 2 - triangleSize;
     xStartOffset = 0;
     xEndOffset = 0;
     yEndOffset = 0;
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < numberOfLines; i++) {
       graphics.drawLine(xStartPosition + xStartOffset, yStartPosition, xEndPosition + xEndOffset, yEndPosition + yEndOffset);
       xStartOffset -= 20;
       xEndOffset -= 10;
