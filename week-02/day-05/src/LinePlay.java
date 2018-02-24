@@ -18,12 +18,13 @@ public class LinePlay {
     int xOffset = 0;
     int yOffset = 0;
     int numberOfTheLines = 19;
+    int lineSpace = 15;
     graphics.setColor(Color.green);
 
     for (int i = 0; i < numberOfTheLines; i++) {
       graphics.drawLine(xStartPosition, yStartPosition + yOffset, xEndPosition + xOffset, yEndPosition);
-      yOffset += 15;
-      xOffset += 15;
+      yOffset += lineSpace;
+      xOffset += lineSpace;
     }
   }
 
@@ -35,12 +36,13 @@ public class LinePlay {
     int xOffset = 0;
     int yOffset = 0;
     int numberOfTheLines = 19;
+    int lineSpace = 15;
     graphics.setColor(Color.magenta);
 
     for (int i = 0; i < numberOfTheLines; i++) {
       graphics.drawLine(xStartPosition + yOffset, yStartPosition , xEndPosition, yEndPosition + xOffset);
-      yOffset += 15;
-      xOffset += 15;
+      yOffset += lineSpace;
+      xOffset += lineSpace;
     }
   }
 
