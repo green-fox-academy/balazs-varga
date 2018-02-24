@@ -14,20 +14,18 @@ public class PositionSquare {
     // draw 3 squares with that function.
     // avoid code duplication.
 
-    int x = 10;
-    int y = 10;
+    drawingSquare(graphics, 10, 10);
+  }
+
+  public static void drawingSquare(Graphics graphics, int xStartPoint, int yStartPoint) {
+    int squareSize = 50;
     int xOffset = 30;
     int yOffset = 40;
-
     for (int i = 0; i < 3; i++) {
-      drawingSquare(graphics, x + xOffset, y + yOffset );
+      graphics.drawRect(xStartPoint + xOffset, yStartPoint + yOffset, squareSize, squareSize);
       xOffset += 30;
       yOffset += 10;
     }
-  }
-
-  public static void drawingSquare(Graphics graphics, int x, int y) {
-    graphics.drawRect(x, y, 50, 50);
   }
 
   //    Don't touch the code below
@@ -47,7 +45,6 @@ public class PositionSquare {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
 }
