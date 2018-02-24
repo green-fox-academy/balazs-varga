@@ -57,7 +57,6 @@ public class Anagram {
   }
 
   public static String convertWordToLowercaseWithoutSpaces(String word) {
-    String convertedWord = word.toLowerCase().replaceAll(" ", "");
-    return convertedWord;
+    return word.toLowerCase().replaceAll(" ", "");
   }
 }
