@@ -15,10 +15,11 @@ public class HorizontalLines {
     drawingHorizontalLines(graphics, 50, 50);
   }
 
-  public static void drawingHorizontalLines(Graphics graphics, int x, int y) {
+  public static void drawingHorizontalLines(Graphics graphics, int xPosition, int yPosition) {
+    int offset = 50;
     for (int i = 0; i < 3; i++) {
-      y += 50;
-      graphics.drawLine(x, y, x + 50, y);
+      graphics.drawLine(xPosition, yPosition, xPosition + offset, yPosition);
+      yPosition += offset;
     }
   }
 
