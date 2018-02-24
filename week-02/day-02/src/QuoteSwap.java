@@ -16,7 +16,7 @@ public class QuoteSwap{
   }
 
   public static String quoteSwap(ArrayList quoteToFix) {
-    String quote = new String();
+    String quote = "";
 
     for (int i = 0; i < quoteToFix.size(); i++) {
       if (i == quoteToFix.indexOf("do")) {
