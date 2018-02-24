@@ -11,14 +11,15 @@ public class PurpleSteps3d {
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
     int squareSize = 10;
-    int originalPosition = 10;
+    int squarePosition = 10;
+    int increaseNumber = 10;
 
     graphics.setColor(new Color(148,0,211));
 
     for (int i = 0; i < 6; i++) {
-      graphics.fillRect(originalPosition, originalPosition, squareSize, squareSize);
-      originalPosition += squareSize;
-      squareSize += 10;
+      graphics.fillRect(squarePosition, squarePosition, squareSize, squareSize);
+      squarePosition += squareSize;
+      squareSize += increaseNumber;
     }
   }
 
