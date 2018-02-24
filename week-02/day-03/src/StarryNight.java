@@ -16,10 +16,11 @@ public class StarryNight {
 
     Random randomNumber = new Random();
     int squareSize = 3;
+    int greyColorFromValue = 150;
     for (int i = 0; i < 100; i++) {
       int randomXPosition = randomNumber.nextInt(WIDTH);
       int randomYPosition = randomNumber.nextInt(HEIGHT);
-      int randomColor = randomNumber.nextInt(106) + 150;
+      int randomColor = randomNumber.nextInt(106) + greyColorFromValue;
       graphics.setColor(new Color(randomColor,randomColor, randomColor));
       graphics.fillRect(randomXPosition, randomYPosition, squareSize, squareSize);
     }
