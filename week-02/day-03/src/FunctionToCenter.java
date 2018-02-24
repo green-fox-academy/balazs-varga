@@ -15,27 +15,28 @@ public class FunctionToCenter {
     drawLinesToCenter(graphics, 10, 50);
   }
 
-  public static void drawLinesToCenter(Graphics graphics, int x, int y) {
-    graphics.drawLine(x , y, WIDTH / 2, HEIGHT / 2);
+  public static void drawLinesToCenter(Graphics graphics, int startXPosition, int startYPosition) {
+    graphics.drawLine(startXPosition, startYPosition, WIDTH / 2, HEIGHT / 2);
 
     int yPosition = 0;
     int xPosition = 0;
-    for (int i = 0; i <= WIDTH / 20; i++) {
+    int lineStartPointSpace = 20;
+    for (int i = 0; i <= WIDTH / lineStartPointSpace; i++) {
       graphics.drawLine(xPosition, yPosition, WIDTH / 2, HEIGHT / 2);
       xPosition = WIDTH;
       graphics.drawLine(xPosition, yPosition, WIDTH / 2, HEIGHT / 2);
       xPosition = 0;
-      yPosition += 20;
+      yPosition += lineStartPointSpace;
     }
 
     yPosition = 0;
     xPosition = 0;
-    for (int i = 0; i < HEIGHT / 20; i++) {
+    for (int i = 0; i < HEIGHT / lineStartPointSpace; i++) {
       graphics.drawLine(xPosition, yPosition, WIDTH / 2, HEIGHT / 2);
       yPosition = HEIGHT;
       graphics.drawLine(xPosition, yPosition, WIDTH / 2, HEIGHT / 2);
       yPosition = 0;
-      xPosition += 20;
+      xPosition += lineStartPointSpace;
     }
   }
 
