@@ -14,11 +14,11 @@ public class ConnectTheDots {
     // Connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
     // {120, 100}, {85, 130}, {50, 100}}
 
-    int[][] boxArray = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
-    int[][] otherArray = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
+    int[][] boxDotCoordinates = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
+    int[][] foxDotCoordinates = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
 
-    dotConnector(graphics, boxArray);
-    dotConnector(graphics, otherArray);
+    dotConnector(graphics, boxDotCoordinates);
+    dotConnector(graphics, foxDotCoordinates);
   }
   
   public static void dotConnector(Graphics graphics, int[][] arrayOfDots) {
