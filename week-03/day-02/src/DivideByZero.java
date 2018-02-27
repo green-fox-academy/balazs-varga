@@ -9,7 +9,7 @@ public class DivideByZero {
 
   public static void main(String[] args) {
     try {
-      divideByTen(5);
+      divideByTen(0);
     } catch (ArithmeticException e) {
       System.out.println("fail");
     }
