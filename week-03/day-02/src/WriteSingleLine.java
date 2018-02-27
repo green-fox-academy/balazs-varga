@@ -13,10 +13,10 @@ public class WriteSingleLine {
     // then it should print an error message like: "Unable to write file: my-file.txt"
 
     String pathString = "my-file_writeSingleLine.txt";
-    writeSinleLine(pathString);
+    writeSingleLine(pathString);
   }
 
-  public static void writeSinleLine(String pathString) {
+  public static void writeSingleLine(String pathString) {
     ArrayList<String> myName = new ArrayList<>(Arrays.asList("Balazs Varga"));
     Path path = Paths.get(pathString);
 
