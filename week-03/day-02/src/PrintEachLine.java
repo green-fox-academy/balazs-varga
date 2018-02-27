@@ -1,7 +1,6 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.io.File;
 import java.io.IOException;
 
 public class PrintEachLine {
@@ -14,7 +13,6 @@ public class PrintEachLine {
 
     String pathString = "my-file.txt";
     Path path = Paths.get(pathString);
-    File file = new File(pathString);
 
     try {
         for(String line : Files.readAllLines(path)) {
