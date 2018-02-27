@@ -62,5 +62,10 @@ public class StudentCounter{
     }
     System.out.println("Sum the age of people who have less than 5 candies: ");
     System.out.println("\t" + "- "  + age);
+
+
+    for (int i = 0; i < map.size(); i++) {
+      System.out.println(map.get(i));
+    }
   }
 }
