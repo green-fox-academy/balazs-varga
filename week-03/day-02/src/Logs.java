@@ -18,7 +18,7 @@ public class Logs {
 
     String pathString = "log.txt";
 
-    uniqueIP(pathString);
+    System.out.println(uniqueIP(pathString));
     System.out.println(postGetRatio(pathString));
   }
 
@@ -26,12 +26,9 @@ public class Logs {
     Path path = Paths.get(fileName);
     ArrayList<String> ipAddresses = new ArrayList<>();
     ArrayList<String> lines = new ArrayList<>();
-           // Files.readAllLines(path);
 
     try {
-      for (String line : Files.readAllLines(path)) {
-        lines.add(line);
-      }
+      copyFileToArrayList(path, lines);
     } catch (IOException e) {
       System.out.println("Unable to read file: " + fileName);
     }
@@ -40,7 +37,7 @@ public class Logs {
       ipAddresses.add(i, lines.get(i).subSequence(25, 41).toString());
     }
 
-    Set<String> uniqueIP = new HashSet<String>(lines);    //unique values
+    Set<String> uniqueIP = new HashSet<String>(ipAddresses);    //find unique values
 
     return uniqueIP;
   }
@@ -52,10 +49,8 @@ public class Logs {
     ArrayList<String> lines = new ArrayList<>();
 
     try {
-      for (String line : Files.readAllLines(path)) {
-        lines.add(line);
-        }
-      }catch (IOException e) {
+      copyFileToArrayList(path, lines);
+    }catch (IOException e) {
         e.printStackTrace();
     }
 
@@ -67,6 +62,10 @@ public class Logs {
       }
     }
     return getCounter / postCounter;
+  }
+
+  private static void copyFileToArrayList(Path path, ArrayList<String> lines) throws IOException {
+    lines.addAll(Files.readAllLines(path));
   }
 }
 
