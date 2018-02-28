@@ -33,6 +33,6 @@ public class Dominoes {
           dominoes.remove(j + 1);
         }
       }
-    } return dominoes; 
+    } return dominoes;
   }
 }
