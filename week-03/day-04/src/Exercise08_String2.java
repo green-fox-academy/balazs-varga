@@ -4,7 +4,8 @@ public class Exercise08_String2 {
 
   public static void main(String[] args) {
 
-    System.out.println(xRemover("aXxnxnxXxutr", 0, ""));
+    String modifiedString = xRemover("aXxnxnxXxutr", 0, "");
+    System.out.println(modifiedString);
   }
 
   public static String xRemover(String inputString, int index, String modifiedString) {
