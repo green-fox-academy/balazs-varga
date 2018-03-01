@@ -5,8 +5,7 @@ public class Exercise07_String1 {
 
   public static void main(String[] args) {
 
-    int index = 0;
-    System.out.println(stringReplacer("aXxnxnxXxutr", index));
+    System.out.println(stringReplacer("aXxnxnxXxutr", 0));
   }
 
   public static String stringReplacer (String inputString, int index) {
