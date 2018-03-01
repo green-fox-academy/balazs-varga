@@ -5,17 +5,18 @@ public class Exercise09_String3 {
 
   public static void main(String[] args) {
 
-    String modifiedString = adjacentCharModifier("aXxnxnxXxutr", 1, "");
+    String modifiedString = adjacentCharModifier("aXxnxnxXxutr", 0, "");
     System.out.println(modifiedString);
   }
 
   public static String adjacentCharModifier(String inputString, int index, String modifiedString) {
+
     if (index == inputString.length()) {
       return modifiedString;
-    } else if (index % 2 == 0) {
-      modifiedString += "*";
-    } else {
+    } else if (index == inputString.length() - 1) {
       modifiedString += inputString.charAt(index);
+    } else {
+      modifiedString += inputString.charAt(index) + "*";
     }
     index++;
     return adjacentCharModifier(inputString, index, modifiedString);
