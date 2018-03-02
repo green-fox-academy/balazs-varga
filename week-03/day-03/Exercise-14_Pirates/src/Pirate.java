@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class Pirate {
 
+  private Random randomDrunkLevel = new Random();
+
   private String name;
   private int drunkLevel;
   private boolean isDead;
@@ -11,7 +13,7 @@ public class Pirate {
 
   public Pirate() {
     this.name = generateName();
-    this.drunkLevel = 0;
+    this.drunkLevel = randomDrunkLevel.nextInt(4);
     this.isDead = false;
     this.isSleep = false;
     this.isPirate = true;
@@ -21,7 +23,7 @@ public class Pirate {
   public Pirate(boolean isCaptain) {
     this.isCaptain = isCaptain;
     this.name = generateName();
-    this.drunkLevel = 0;
+    this.drunkLevel = randomDrunkLevel.nextInt(4);
     this.isDead = false;
     this.isSleep = false;
     this.isPirate = true;
@@ -122,7 +124,24 @@ public class Pirate {
             End[rand.nextInt(End.length)];
   }
 
+  public int getDrunkLevel() {
+    return drunkLevel;
+  }
+
   public String getName() {
     return name;
+
+  }
+
+  public boolean isDead() {
+    return isDead;
+  }
+
+  public boolean isCaptain() {
+    return isCaptain;
+  }
+
+  public boolean isSleep() {
+    return isSleep;
   }
 }

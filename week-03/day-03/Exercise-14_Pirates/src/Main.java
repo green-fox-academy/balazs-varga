@@ -5,7 +5,10 @@ public class Main {
     //Pirate Johnny = new Pirate();
 
     Ship pirateShip = new Ship();
+    Ship otherShip = new Ship();
 
     pirateShip.fillShip();
+
+    pirateShip.shipInformation();
   }
 }

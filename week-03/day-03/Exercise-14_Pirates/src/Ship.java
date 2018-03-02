@@ -17,6 +17,26 @@ public class Ship {
       }
     }
     System.out.println("The ship is filled with pirates and a captain.");
+    System.out.println();
+  }
+
+  public void shipInformation() {
+    int alivePirates = 0;
+    for (int i = 0; i < pirates.size(); i++) {
+      if (pirates.get(i).isCaptain()) {
+        System.out.println("The captain's consumed rum level: " + pirates.get(i).getDrunkLevel());
+        if (pirates.get(i).isDead()) {
+          System.out.println("The captain's state is dead.");
+        } else if (pirates.get(i).isSleep()) {
+          System.out.println("The captain's state is passed out.");
+        } else {
+          System.out.println("The captain's state is awake and not drunk.");
+        }
+      } else if (!pirates.get(i).isDead()) {
+        alivePirates++;
+      }
+    }
+    System.out.println("The number of alive pirates: " + alivePirates);
   }
 
   public List<Pirate> getPirates() {
