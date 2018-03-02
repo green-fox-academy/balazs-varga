@@ -6,7 +6,7 @@ public class Ship {
   private List<Pirate> pirates = new ArrayList<Pirate>();
   private int shipCapacity = 10;
 
-  public void fillShip() {              //kapitányt hozzá kell adni
+  public void fillShip() {             
     while (this.shipCapacity > 0) {
       this.pirates.add(new Pirate());
       this.shipCapacity--;
