@@ -24,7 +24,7 @@ public class Pirate {
     this.drunkLevel = 0;
     this.isDead = false;
     this.isSleep = false;
-    this.isPirate = false;
+    this.isPirate = true;
   }
 
   public void drinkSomeRum() {

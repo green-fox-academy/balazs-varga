@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Ship {
 
   private List<Pirate> pirates = new ArrayList<Pirate>();
-  private int shipCapacity = 10;
+  Random randomNumber = new Random();
+  private int shipCapacity = randomNumber.nextInt(10);
 
-  public void fillShip() {             
+  public void fillShip() {
     while (this.shipCapacity > 0) {
       this.pirates.add(new Pirate());
       this.shipCapacity--;
