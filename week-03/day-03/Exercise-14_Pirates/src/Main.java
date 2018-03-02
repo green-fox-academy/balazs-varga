@@ -1,13 +1,11 @@
 public class Main {
   public static void main(String[] args) {
 
-    Pirate JackSparrow = new Pirate("Jack Sparrow");
-    Pirate Johnny = new Pirate("Johnny");
+    //Pirate JackSparrow = new Pirate();
+    //Pirate Johnny = new Pirate();
 
+    Ship pirateShip = new Ship();
 
-    Pirate.brawl(JackSparrow, Johnny);
-
-    JackSparrow.howItGoingMate();
-    Johnny.howItGoingMate();
+    pirateShip.fillShip();
   }
 }

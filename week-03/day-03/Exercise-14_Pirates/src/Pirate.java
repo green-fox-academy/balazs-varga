@@ -6,12 +6,25 @@ public class Pirate {
   private int drunkLevel;
   private boolean isDead;
   private boolean isSleep;
+  private boolean isPirate;
+  private boolean isCaptain;
 
-  public Pirate(String name) {
-    this.name = name;
+  public Pirate() {
+    this.name = generateName();
     this.drunkLevel = 0;
     this.isDead = false;
     this.isSleep = false;
+    this.isPirate = true;
+    this.isCaptain = false;
+  }
+
+  public Pirate(boolean isCaptain) {
+    this.isCaptain = isCaptain;
+    this.name = generateName();
+    this.drunkLevel = 0;
+    this.isDead = false;
+    this.isSleep = false;
+    this.isPirate = false;
   }
 
   public void drinkSomeRum() {
@@ -44,6 +57,20 @@ public class Pirate {
     System.out.println(this.getName() + " is dead.");
   }
 
+  @Override
+  public String toString() {
+    return "Pirate{" +
+            "name='" + name + '\'' +
+            ", isPirate=" + isPirate +
+            ", isCaptain=" + isCaptain +
+            '}';
+  }
+
+  public void setCaptain () {
+    this.isPirate = false;
+    this.isCaptain = true;
+  }
+
   public static void brawl(Pirate pirate1, Pirate pirate2) {
     Random random = new Random();
 
@@ -58,20 +85,41 @@ public class Pirate {
         case 1:
           pirate1.die();
           System.out.println("The winner is " + pirate2.getName() + ", " + pirate1.getName() + " is dead.");
+          System.out.println("~~~~~~~~~~~~~~~~~~~");
           break;
 
         case 2:
           pirate2.die();
           System.out.println("The winner is " + pirate1.getName() + ", " + pirate2.getName() + " is dead.");
+          System.out.println("~~~~~~~~~~~~~~~~~~~");
           break;
 
         case 3:
           pirate1.die();
           pirate2.die();
           System.out.println("Both pirates are dead!");
+          System.out.println("~~~~~~~~~~~~~~~~~~~");
           break;
       }
     }
+  }
+
+  public static String generateName() {
+     String[] Beginning = { "Kr", "Ca", "Ra", "Mrok", "Cru",
+            "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
+            "Zork", "Mad", "Cry", "Zur", "Creo", "Azak", "Azur", "Rei", "Cro",
+            "Mar", "Luk" };
+     String[] Middle = { "air", "ir", "mi", "sor", "mee", "clo",
+            "red", "cra", "ark", "arc", "miri", "lori", "cres", "mur", "zer",
+            "marac", "zoir", "slamar", "salmar", "urak" };
+     String[] End = { "d", "ed", "ark", "arc", "es", "er", "der",
+            "tron", "med", "ure", "zur", "cred", "mur" };
+
+     Random rand = new Random();
+
+    return Beginning[rand.nextInt(Beginning.length)] +
+            Middle[rand.nextInt(Middle.length)]+
+            End[rand.nextInt(End.length)];
   }
 
   public String getName() {
