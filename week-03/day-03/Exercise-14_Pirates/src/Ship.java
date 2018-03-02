@@ -43,6 +43,10 @@ public class Ship {
 
   }
 
+  public void calculateBattleScore() {
+
+  }
+
   public List<Pirate> getPirates() {
     return pirates;
   }

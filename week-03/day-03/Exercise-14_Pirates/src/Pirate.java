@@ -73,32 +73,32 @@ public class Pirate {
     isCaptain = true;
   }
 
-  public static void brawl(Pirate pirate1, Pirate pirate2) {
+  public void brawl(Pirate pirate) {
     Random random = new Random();
 
     int randomNumber = random.nextInt(3) + 1;
     System.out.println("~~~~~~~~~~ Let's fight ~~~~~~~~~~~");
-    System.out.println(pirate1.getName() + " VS " + pirate2.getName());
+    System.out.println(this.getName() + " VS " + pirate.getName());
 
-    if (pirate1.isDead || pirate2.isDead) {
+    if (this.isDead || pirate.isDead) {
       System.out.println("He's dead.");
     } else {
       switch (randomNumber) {
         case 1:
-          pirate1.die();
-          System.out.println("The winner is " + pirate2.getName() + ", " + pirate1.getName() + " is dead.");
+          this.die();
+          System.out.println("The winner is " + pirate.getName() + ", " + this.getName() + " is dead.");
           System.out.println("~~~~~~~~~~~~~~~~~~~");
           break;
 
         case 2:
-          pirate2.die();
-          System.out.println("The winner is " + pirate1.getName() + ", " + pirate2.getName() + " is dead.");
+          pirate.die();
+          System.out.println("The winner is " + this.getName() + ", " + pirate.getName() + " is dead.");
           System.out.println("~~~~~~~~~~~~~~~~~~~");
           break;
 
         case 3:
-          pirate1.die();
-          pirate2.die();
+          this.die();
+          pirate.die();
           System.out.println("Both pirates are dead!");
           System.out.println("~~~~~~~~~~~~~~~~~~~");
           break;
