@@ -130,7 +130,6 @@ public class Pirate {
 
   public String getName() {
     return name;
-
   }
 
   public boolean isDead() {
