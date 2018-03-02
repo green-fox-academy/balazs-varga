@@ -9,11 +9,11 @@ public class Ship {
   private int shipCapacity = randomNumber.nextInt(10);
 
   public void fillShip() {
-    while (this.shipCapacity > 0) {
-      this.pirates.add(new Pirate());
-      this.shipCapacity--;
-      if (this.shipCapacity == 0) {
-        this.pirates.add(new Pirate(true));
+    while (shipCapacity > 0) {
+      pirates.add(new Pirate());
+      shipCapacity--;
+      if (shipCapacity == 0) {
+        pirates.add(new Pirate(true));
       }
     }
     System.out.println("The ship is filled with pirates and a captain.");
@@ -37,6 +37,10 @@ public class Ship {
       }
     }
     System.out.println("The number of alive pirates: " + alivePirates);
+  }
+
+  public void battle(Ship otherShip) {
+
   }
 
   public List<Pirate> getPirates() {

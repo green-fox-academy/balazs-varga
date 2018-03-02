@@ -12,51 +12,51 @@ public class Pirate {
   private boolean isCaptain;
 
   public Pirate() {
-    this.name = generateName();
-    this.drunkLevel = randomDrunkLevel.nextInt(4);
-    this.isDead = false;
-    this.isSleep = false;
-    this.isPirate = true;
-    this.isCaptain = false;
+    name = generateName();
+    drunkLevel = randomDrunkLevel.nextInt(4);
+    isDead = false;
+    isSleep = false;
+    isPirate = true;
+    isCaptain = false;
   }
 
   public Pirate(boolean isCaptain) {
     this.isCaptain = isCaptain;
-    this.name = generateName();
-    this.drunkLevel = randomDrunkLevel.nextInt(4);
-    this.isDead = false;
-    this.isSleep = false;
-    this.isPirate = true;
+    name = generateName();
+    drunkLevel = randomDrunkLevel.nextInt(4);
+    isDead = false;
+    isSleep = false;
+    isPirate = true;
   }
 
   public void drinkSomeRum() {
     if (isDead) {
-      System.out.println(this.getName() + " is dead.");
+      System.out.println(getName() + " is dead.");
     } else {
-      this.drunkLevel++;
+      drunkLevel++;
     }
   }
 
   public void howItGoingMate() {
     if (isDead) {
-      System.out.println(this.getName() + " is dead.");
-    } else if(this.drunkLevel >= 0 && this.drunkLevel <= 4 ) {
+      System.out.println(getName() + " is dead.");
+    } else if(drunkLevel >= 0 && drunkLevel <= 4 ) {
       System.out.println("Pour me anudder!");
     } else {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
-      System.out.println(this.getName() + " passes out...");
-      this.sleep();
+      System.out.println(getName() + " passes out...");
+      sleep();
     }
   }
 
   public void sleep() {
-    this.isSleep = true;
-    System.out.println(this.getName() + " drank too much so he's going to sleep...");
+    isSleep = true;
+    System.out.println(getName() + " drank too much so he's going to sleep...");
   }
 
   public void die() {
-    this.isDead = true;
-    System.out.println(this.getName() + " is dead.");
+    isDead = true;
+    System.out.println(getName() + " is dead.");
   }
 
   @Override
@@ -69,8 +69,8 @@ public class Pirate {
   }
 
   public void setCaptain () {
-    this.isPirate = false;
-    this.isCaptain = true;
+    isPirate = false;
+    isCaptain = true;
   }
 
   public static void brawl(Pirate pirate1, Pirate pirate2) {
