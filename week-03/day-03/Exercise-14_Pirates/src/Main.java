@@ -4,11 +4,10 @@ public class Main {
     Pirate JackSparrow = new Pirate("Jack Sparrow");
     Pirate Johnny = new Pirate("Johnny");
 
-    JackSparrow.drinkSomeRum();
-    JackSparrow.drinkSomeRum();
-    JackSparrow.drinkSomeRum();
-    JackSparrow.howItGoingMate();
 
-    JackSparrow.brawl(Johnny);
+    Pirate.brawl(JackSparrow, Johnny);
+
+    JackSparrow.howItGoingMate();
+    Johnny.howItGoingMate();
   }
 }
