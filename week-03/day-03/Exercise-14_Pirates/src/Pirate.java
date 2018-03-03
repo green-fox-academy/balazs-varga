@@ -3,7 +3,6 @@ import java.util.Random;
 public class Pirate {
 
   private Random randomDrunkLevel = new Random();
-
   private String name;
   private int drunkLevel;
   private boolean isDead;
@@ -142,5 +141,9 @@ public class Pirate {
 
   public boolean isSleep() {
     return isSleep;
+  }
+
+  public void setDead() {
+    isDead = true;
   }
 }

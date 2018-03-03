@@ -10,7 +10,7 @@ public class Ship {
   private String shipName;
 
   public Ship(String shipName) {
-    shipCapacity = randomNumber.nextInt(15) + 1;
+    shipCapacity = randomNumber.nextInt(30) + 5;
     this.shipName = shipName;
   }
 
@@ -53,10 +53,15 @@ public class Ship {
 
     if (shipScore > otherShipScore) {
       System.out.println("The " + this.shipName + " won the battle!");
+      System.out.println();
+      this.pirateParty();
+      otherShip.shipCrewLossGenerator();
     } else {
       System.out.println("The " + otherShip.shipName + " won the battle!");
+      System.out.println();
+      otherShip.pirateParty();
+      this.shipCrewLossGenerator();
     }
-
     return shipScore > otherShipScore;
   }
 
@@ -74,6 +79,20 @@ public class Ship {
     }
     battleScore = alivePirates - captainRumLevel - 1;
     return battleScore;
+  }
+
+  public void pirateParty() {
+    int randomRumNumber = randomNumber.nextInt(pirates.size()) ;
+    for (int i = 0; i < randomRumNumber; i++) {
+      pirates.get(i).drinkSomeRum();
+    }
+  }
+
+  public void shipCrewLossGenerator() {
+    int randomLossNumber = randomNumber.nextInt(pirates.size()) + 5;
+    for (int i = 0; i < randomLossNumber; i++) {
+      pirates.get(i).setDead();
+    }
   }
 
   public List<Pirate> getPirates() {
