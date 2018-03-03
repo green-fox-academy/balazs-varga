@@ -4,11 +4,15 @@ public class BattleApp {
     //Pirate JackSparrow = new Pirate();
     //Pirate Johnny = new Pirate();
 
-    Ship pirateShip = new Ship();
-    Ship otherShip = new Ship();
+    Ship pirateShip = new Ship("Pirate Ship");
+    Ship otherShip = new Ship("Other Ship");
 
     pirateShip.fillShip();
+    otherShip.fillShip();
 
     pirateShip.shipInformation();
+    otherShip.shipInformation();
+
+    pirateShip.battle(otherShip);
   }
 }
