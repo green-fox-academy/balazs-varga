@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Armada {
 
-  private List<Ship> ships = new ArrayList<Ship>();
+  private List<Ship> armadaShips = new ArrayList<Ship>();
   private Random randomNumber = new Random();
   private int armadaCapacity;
   private String armadaName;
@@ -14,4 +14,11 @@ public class Armada {
     armadaCapacity = randomNumber.nextInt(10) + 3;
   }
 
+  public void addShipToArmada(Ship ship) {
+    armadaShips.add(ship);
+  }
+
+  public List<Ship> getArmadaShips() {
+    return armadaShips;
+  }
 }

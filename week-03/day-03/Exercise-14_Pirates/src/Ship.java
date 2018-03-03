@@ -12,6 +12,7 @@ public class Ship {
   public Ship(String shipName) {
     shipCapacity = randomNumber.nextInt(30) + 5;
     this.shipName = shipName;
+    fillShip();
   }
 
   public void fillShip() {
@@ -23,7 +24,6 @@ public class Ship {
       }
     }
     System.out.println("The " +this.shipName + " is filled with pirates and a captain.");
-    System.out.println();
   }
 
   public void shipInformation() {
