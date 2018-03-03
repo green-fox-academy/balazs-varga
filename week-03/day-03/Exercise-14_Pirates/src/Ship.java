@@ -10,7 +10,7 @@ public class Ship {
   private String shipName;
 
   public Ship(String shipName) {
-    shipCapacity = randomNumber.nextInt(30) + 5;
+    shipCapacity = randomNumber.nextInt(15) + 6;
     this.shipName = shipName;
     fillShip();
   }
@@ -23,31 +23,31 @@ public class Ship {
         pirates.add(new Pirate(true));
       }
     }
-    System.out.println("The " +this.shipName + " is filled with pirates and a captain.");
   }
 
   public void shipInformation() {
     System.out.println("Information about the " + this.shipName + ":");
+    System.out.println();
     int alivePirates = 0;
     for (int i = 0; i < pirates.size(); i++) {
       if (pirates.get(i).isCaptain()) {
-        System.out.println("The captain's consumed rum level: " + pirates.get(i).getDrunkLevel());
+        System.out.println("\t- The captain's consumed rum level: " + pirates.get(i).getDrunkLevel());
         if (pirates.get(i).isDead()) {
-          System.out.println("The captain's state is dead.");
+          System.out.println("\t- The captain's state is dead.");
         } else if (pirates.get(i).isSleep()) {
-          System.out.println("The captain's state is passed out.");
+          System.out.println("\t- The captain's state is passed out.");
         } else {
-          System.out.println("The captain's state is awake and not drunk.");
+          System.out.println("\t- The captain's state is awake and not drunk.");
         }
       } else if (!pirates.get(i).isDead()) {
         alivePirates++;
       }
     }
-    System.out.println("The number of alive pirates: " + alivePirates);
+    System.out.println("\t- The number of alive pirates: " + alivePirates);
     System.out.println();
   }
 
-  public Boolean battle(Ship otherShip) {
+  public boolean battle(Ship otherShip) {
     int shipScore = this.calculateBattleScore();
     int otherShipScore = otherShip.calculateBattleScore();
 
@@ -89,7 +89,7 @@ public class Ship {
   }
 
   public void shipCrewLossGenerator() {
-    int randomLossNumber = randomNumber.nextInt(pirates.size()) + 5;
+    int randomLossNumber = randomNumber.nextInt(pirates.size()) + 1;
     for (int i = 0; i < randomLossNumber; i++) {
       pirates.get(i).setDead();
     }

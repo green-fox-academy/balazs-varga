@@ -3,6 +3,7 @@ public class BattleApp {
 
     Ship pirateShip = new Ship("Pirate Ship");
     Ship otherShip = new Ship("Other Ship");
+
     Ship englishShip1 = new Ship("First English Ship");
     Ship englishShip2 = new Ship("Second English Ship");
     Ship englishShip3 = new Ship("Third English Ship");
@@ -24,9 +25,7 @@ public class BattleApp {
     pirateShip.shipInformation();
     otherShip.shipInformation();
 
-    pirateShip.battle(otherShip);
+    englishArmada.war(germanArmada);
 
-    pirateShip.shipInformation();
-    otherShip.shipInformation();
   }
 }
