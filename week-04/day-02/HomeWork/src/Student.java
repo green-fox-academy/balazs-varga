@@ -26,4 +26,8 @@ public class Student {
   public void getGoal() {
     System.out.println("Be a junior software developer.");
   }
+
+  public int skipDays(int numberOfDays) {
+    return this.skippedDays + numberOfDays;
+  }
 }
