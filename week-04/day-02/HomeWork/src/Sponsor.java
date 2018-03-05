@@ -14,4 +14,8 @@ public class Sponsor {
   public void getGoal() {
     System.out.println("My goal is: Live for the moment!");
   }
+
+  public int hire() {
+    return hiredStudents++;
+  }
 }
