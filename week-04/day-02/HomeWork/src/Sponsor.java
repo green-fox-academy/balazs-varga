@@ -7,7 +7,8 @@ public class Sponsor {
   private int hiredStudents;
 
   public void introduce() {
-    System.out.println("Hi, I'm " + this.name + " , a " + this.age + " year old " + this.gender + ".");
+    System.out.println("Hi, I'm " + this.name + " , a " + this.age + " year old " + this.gender +
+            " who represents " + this.company + " and hired " + this.hiredStudents + " students so far.");
   }
 
   public void getGoal() {
