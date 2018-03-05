@@ -10,6 +10,6 @@ public class Mentor {
   }
 
   public void getGoal() {
-    System.out.println("My goal is: Live for the moment!");
+    System.out.println("Educate brilliant junior software developers.");
   }
 }
