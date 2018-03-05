@@ -6,16 +6,20 @@ public class Student {
   private String previousOrganization;
   private int skippedDays;
 
-  public Person(String name, int age, String gender) {
+  public Student(String name, int age, String gender, String previousOrganization) {
     this.name = name;
     this.age = age;
     this.gender = gender;
+    this.previousOrganization = previousOrganization;
+    this.skippedDays = 0;
   }
 
-  public Person() {
+  public Student() {
     this.name = "Jane Doe";
     this.age = 30;
     this.gender = "female";
+    this.previousOrganization = "The School of Life";
+    this.skippedDays = 0;
   }
 
   public void introduce() {
