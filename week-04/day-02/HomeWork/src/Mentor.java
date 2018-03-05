@@ -6,7 +6,7 @@ public class Mentor {
   private String level;
 
   public void introduce() {
-    System.out.println("Hi, I'm " + this.name + " , a " + this.age + " year old " + this.gender + ".");
+    System.out.println("Hi, I'm " + this.name + " , a " + this.age + " year old " + this.gender + this.level + " mentor.");
   }
 
   public void getGoal() {
