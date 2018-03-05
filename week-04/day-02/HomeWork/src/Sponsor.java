@@ -12,7 +12,7 @@ public class Sponsor {
   }
 
   public void getGoal() {
-    System.out.println("My goal is: Live for the moment!");
+    System.out.println("Hire brilliant junior software developers.");
   }
 
   public int hire() {
