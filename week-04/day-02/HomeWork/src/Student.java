@@ -23,6 +23,6 @@ public class Student {
   }
 
   public void getGoal() {
-    System.out.println("My goal is: Live for the moment!");
+    System.out.println("Be a junior software developer.");
   }
 }
