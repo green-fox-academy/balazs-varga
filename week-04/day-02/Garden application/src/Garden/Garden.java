@@ -1,13 +1,16 @@
 package Garden;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Garden {
 
   private double waterAmount;
+  List<Plants> plants;
 
   public Garden() {
-    waterAmount = 0;
+    this.waterAmount = 0;
+    plants = new ArrayList<>();
   }
 
   public void watering(List<Plants> plants, double waterAmount) {
@@ -56,6 +59,10 @@ public class Garden {
         ((Tree) plant).isWaterNeeded();
       }
     }
+  }
+
+  public void addPlants(Plants plant) {
+    plants.add(plant);
   }
 }
 
