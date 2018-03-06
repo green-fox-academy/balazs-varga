@@ -8,12 +8,29 @@ public class Plants extends Garden{
   private String color;
 
   public Plants(String color) {
-    this.currentWaterAmount = 0;
+    this.color = color;
+    currentWaterAmount = 0;
+  }
+
+  public void isWaterNeeded() {
+    if (currentWaterAmount < 0) {
+      System.out.println("The plant needs water");
+    }
+  }
+
+  public int getCurrentWaterAmount() {
+    return currentWaterAmount;
+  }
+
+  public void setCurrentWaterAmount(int currentWaterAmount) {
+    this.currentWaterAmount = currentWaterAmount;
+  }
+
+  public String getColor() {
+    return color;
+  }
+
+  public void setColor(String color) {
     this.color = color;
   }
-
-  public void isWaterNeeded (List<Object> plants) {
-    
-  }
-
 }

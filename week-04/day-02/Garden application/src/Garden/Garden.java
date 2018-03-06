@@ -7,7 +7,7 @@ public class Garden {
 
   public static void main(String[] args) {
 
-    List<Object> plants = new ArrayList<>();
+    List<Plants> plants = new ArrayList<>();
 
     Flower firstFlower = new Flower("yellow");
     plants.add(firstFlower);
@@ -18,7 +18,14 @@ public class Garden {
     plants.add(firstTree);
     Tree secondTree = new Tree("orange");
     plants.add(secondTree);
-    
+
+    for (Plants plant : plants) {
+      if (plant instanceof Flower) {
+        ((Flower) plant).isWaterNeeded();
+      } else if (plant instanceof Tree) {
+        ((Tree) plant).isWaterNeeded();
+      }
+    }
   }
 
 }
