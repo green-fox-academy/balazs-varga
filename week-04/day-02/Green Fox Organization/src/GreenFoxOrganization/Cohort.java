@@ -3,11 +3,17 @@ package GreenFoxOrganization;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cohort extends Person {
+public class Cohort {
 
   private String name;
-  private List<Student> students = new ArrayList<>();
-  private List<Mentor> mentors = new ArrayList<>();
+  private List<Student> students;
+  private List<Mentor> mentors;
+
+  public Cohort(String name) {
+    this.name = name;
+    this.students = new ArrayList<>();
+    this.mentors = new ArrayList<>();
+  }
 
   public void addStudent(Student student) {
     students.add(student);
