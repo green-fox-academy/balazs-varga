@@ -1,3 +1,5 @@
+package GreenFoxOrganization;
+
 public class Person {
 
   private String name;
@@ -17,7 +19,7 @@ public class Person {
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a " + age + " year old gender.");
+    System.out.println("Hi, I'm " + this.name + " , a " + this.age + " year old " + this.gender + ".");
   }
 
   public void getGoal() {
@@ -28,24 +30,23 @@ public class Person {
     return name;
   }
 
-  public int getAge() {
-    return age;
-  }
-
-  public String getGender() {
-    return gender;
-  }
-
   public void setName(String name) {
     this.name = name;
+  }
+
+  public int getAge() {
+    return age;
   }
 
   public void setAge(int age) {
     this.age = age;
   }
 
+  public String getGender() {
+    return gender;
+  }
+
   public void setGender(String gender) {
     this.gender = gender;
   }
 }
-
