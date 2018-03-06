@@ -2,12 +2,10 @@ package Garden;
 
 public class Tree extends Plants{
 
-  public boolean isTree;
-
   public Tree(String color) {
     super(color);
     super.setCurrentWaterAmount(0);
-    isTree = true;
+    super.setWaterLevel(0);
   }
 
   public void isWaterNeeded() {
@@ -16,9 +14,5 @@ public class Tree extends Plants{
     } else {
       System.out.println("The " + getColor() + " Tree doesn't need water.");
     }
-  }
-
-  public boolean isTree() {
-    return isTree;
   }
 }

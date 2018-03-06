@@ -1,24 +1,54 @@
 package Garden;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Garden {
 
-  public static void main(String[] args) {
+  private double waterAmount;
 
-    List<Plants> plants = new ArrayList<>();
+  public Garden() {
+    waterAmount = 0;
+  }
 
-    Flower firstFlower = new Flower("yellow");
-    plants.add(firstFlower);
-    Flower secondFlower = new Flower("blue");
-    plants.add(secondFlower);
+  public void watering(List<Plants> plants, double waterAmount) {
+    double waterNeedCount = 0;
 
-    Tree firstTree = new Tree("purple");
-    plants.add(firstTree);
-    Tree secondTree = new Tree("orange");
-    plants.add(secondTree);
+    wateringMessage(waterAmount);
 
+    for (Plants plant : plants) {
+      if (plant instanceof Flower) {
+        if (plant.getWaterLevel() < 5) {
+          waterNeedCount++;
+        }
+      } else if (plant instanceof Tree) {
+        if (plant.getWaterLevel() < 10) {
+          waterNeedCount++;
+        }
+      }
+    }
+
+    double waterForPlants = waterAmount / waterNeedCount;
+
+    for (Plants plant : plants) {
+      if (plant instanceof Flower) {
+        if (plant.getWaterLevel() < 5) {
+          ((Flower) plant).setCurrentWaterAmount(waterForPlants * 0.75);
+        }
+      } else if (plant instanceof Tree) {
+        if (plant.getWaterLevel() < 10) {
+          ((Tree) plant).setCurrentWaterAmount(waterForPlants * 0.4);
+        }
+      }
+    }
+  }
+
+  private void wateringMessage(double waterAmount) {
+    System.out.println();
+    this.waterAmount = waterAmount;
+    System.out.println("Watering with " + waterAmount);
+  }
+
+  public void isWaterNeeded(List<Plants> plants) {
     for (Plants plant : plants) {
       if (plant instanceof Flower) {
         ((Flower) plant).isWaterNeeded();
@@ -27,6 +57,5 @@ public class Garden {
       }
     }
   }
-
 }
 
