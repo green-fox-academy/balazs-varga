@@ -15,8 +15,8 @@ public class Student extends Person {
     this.setName("Jane Doe");
     this.setAge(30);
     this.setGender("female");
-    this.previousOrganization = "The School of Life";
-    this.skippedDays = 0;
+    previousOrganization = "The School of Life";
+    skippedDays = 0;
   }
 
   public void introduce() {
