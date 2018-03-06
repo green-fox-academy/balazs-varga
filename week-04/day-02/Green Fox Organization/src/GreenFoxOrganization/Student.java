@@ -12,9 +12,7 @@ public class Student extends Person {
   }
 
   public Student() {
-    this.setName("Jane Doe");
-    this.setAge(30);
-    this.setGender("female");
+    super();
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }

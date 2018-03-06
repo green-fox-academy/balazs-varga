@@ -10,9 +10,7 @@ public class Mentor extends Person{
   }
 
   public Mentor() {
-    this.setName("Jane Doe");
-    this.setAge(30);
-    this.setGender("female");
+    super();
     level = "intermediate";
   }
 
