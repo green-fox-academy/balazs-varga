@@ -6,8 +6,13 @@ public class Bird extends Animal {
     super(name);
   }
 
+  public void fly() {
+    setSpeed(20);
+    System.out.println(getName() + " is flying with " + getSpeed() + " km/h...");
+  }
+
   @Override
   public String breed() {
-    return " laying eggs.";
+    return "laying eggs.";
   }
 }
