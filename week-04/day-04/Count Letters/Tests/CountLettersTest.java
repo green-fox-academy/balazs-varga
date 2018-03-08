@@ -13,6 +13,12 @@ public class CountLettersTest {
   }
 
   @Test
-  public void letterOccurrenceCountTest() {
+  public void letterAOccurrenceCountTest() {
+    assertEquals((Integer) 3, string.letterOccurrenceCount(string.getString()).get('a'));
+  }
+
+  @Test
+  public void letterFOccurrenceCountTest() {
+    assertEquals((Integer) 2, string.letterOccurrenceCount(string.getString()).get('f'));
   }
 }
