@@ -16,4 +16,9 @@ public class FibonacciTest {
   public void fibonacciTest() {
     assertEquals(1, fibonacci.fibonacci(2));
   }
+
+  @Test
+  public void fibonacciTrueTest() {
+    assertTrue(fibonacci.fibonacci(4) == 3);
+  }
 }
