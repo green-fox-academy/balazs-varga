@@ -27,4 +27,10 @@ public class SumTest {
     List<Integer> arrayNumbers = new ArrayList<>();
     assertEquals(0, numbers.sumOfNumbers(arrayNumbers));
   }
+
+  @Test
+  public void sumOfNumbersTestOneElement() {
+    List<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(1));
+    assertEquals(1, numbers.sumOfNumbers(arrayNumbers));
+  }
 }
