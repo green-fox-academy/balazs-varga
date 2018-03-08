@@ -15,9 +15,9 @@ public class CountLetters {
 
   public HashMap<Character, Integer> letterOccurrenceCount(String inputString) {
     HashMap<Character, Integer> mapOfLetters = new HashMap<Character, Integer>();
-    String stringWithoudSpaces = inputString.replaceAll(" ", "");
-    for (int i = 0; i < stringWithoudSpaces.length(); i++) {
-      char tempChar = stringWithoudSpaces.charAt(i);
+    String stringWithoutSpaces = inputString.replaceAll(" ", "");
+    for (int i = 0; i < stringWithoutSpaces.length(); i++) {
+      char tempChar = stringWithoutSpaces.charAt(i);
       Integer occurance = mapOfLetters.get(tempChar);
       if (occurance != null) {
         mapOfLetters.put(tempChar, occurance + 1);
