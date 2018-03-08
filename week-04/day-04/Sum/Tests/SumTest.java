@@ -18,10 +18,13 @@ public class SumTest {
 
   @Test
   public void sumOfNumbersTest() {
-    List<Integer> arrayNumbers = new ArrayList<>();
-    arrayNumbers.add(1);
-    arrayNumbers.add(2);
-    arrayNumbers.add(3);
+    List<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(1, 2, 3));
     assertEquals(6, numbers.sumOfNumbers(arrayNumbers));
+  }
+
+  @Test
+  public void sumOfNumbersTestEmpty() {
+    List<Integer> arrayNumbers = new ArrayList<>();
+    assertEquals(0, numbers.sumOfNumbers(arrayNumbers));
   }
 }
