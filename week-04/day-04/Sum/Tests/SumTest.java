@@ -33,4 +33,10 @@ public class SumTest {
     List<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(1));
     assertEquals(1, numbers.sumOfNumbers(arrayNumbers));
   }
+
+  @Test (expected = NullPointerException.class)
+  public void sumOfNumbersTestNull() {
+    List<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(null));
+    assertEquals(6, numbers.sumOfNumbers(arrayNumbers));
+  }
 }
