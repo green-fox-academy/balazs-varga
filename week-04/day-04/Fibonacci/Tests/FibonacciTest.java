@@ -21,4 +21,9 @@ public class FibonacciTest {
   public void fibonacciTrueTest() {
     assertTrue(fibonacci.fibonacci(4) == 3);
   }
+
+  @Test
+  public void fibonacciNegativeTest() {
+    assertFalse(fibonacci.fibonacci(8) == 3);
+  }
 }
