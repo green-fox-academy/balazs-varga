@@ -5,18 +5,9 @@ import static org.junit.Assert.*;
 
 public class AnagramTest {
 
-  Anagram anagram;
-
-  @Before
-  public void init() {
-    new Anagram("dog", "god");
-
-    String firstWord = anagram.getFirstString();
-    String secondWord = anagram.getSecondString();
-  }
-
   @Test
-  public void isAnagram() {
-    
+  public void isAnagramTest() {
+    Anagram anagram = new Anagram("dog", "god");;
+    assertTrue(anagram.isAnagram(anagram.getFirstString(), anagram.getSecondString()));
   }
 }
