@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Sum {
@@ -18,12 +17,6 @@ public class Sum {
   //   with a null
   //Run them
   //Fix your code if needed
-
-  public List<Integer> numbers;
-
-  public Sum(List<Integer> numbers) {
-    this.numbers = new ArrayList<>();
-  }
 
   public int sumOfNumbers(List<Integer> numbers) {
     int sum = 0;
