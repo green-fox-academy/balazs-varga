@@ -9,12 +9,12 @@ public class CountLettersTest {
 
   @Before
   public void init() {
-    string = new CountLetters("aasffgrgha");
+    string = new CountLetters("asaffgrgha");
   }
 
   @Test
   public void letterAOccurrenceCountTest() {
-    assertEquals((Integer) 3, string.letterOccurrenceCount(string.getString()).get('a'));
+    assertEquals( (Integer) 3, string.letterOccurrenceCount(string.getString()).get('a'));
   }
 
   @Test
