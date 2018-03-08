@@ -24,6 +24,6 @@ public class CountLettersTest {
 
   @Test
   public void letterSOccurrenceCountNegativeTest() {
-    assertFalse(string.letterOccurrenceCount(string.getString()).get('s') == (Integer) 4);
+    assertFalse(string.letterOccurrenceCount(string.getString()).get('s').equals(4));
   }
 }
