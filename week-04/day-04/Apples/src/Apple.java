@@ -16,7 +16,7 @@ public class Apple {
   public String name;
 
   public Apple(String name) {
-    this.name = "Apple";
+    this.name = "apple";
   }
 
   public String getApple() {
