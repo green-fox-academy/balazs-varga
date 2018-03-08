@@ -18,9 +18,9 @@ public class CountLetters {
     String stringWithoutSpaces = inputString.replaceAll(" ", "");
     for (int i = 0; i < stringWithoutSpaces.length(); i++) {
       char tempChar = stringWithoutSpaces.charAt(i);
-      Integer occurance = mapOfLetters.get(tempChar);
-      if (occurance != null) {
-        mapOfLetters.put(tempChar, occurance + 1);
+      Integer occurrence = mapOfLetters.get(tempChar);
+      if (occurrence != null) {
+        mapOfLetters.put(tempChar, occurrence + 1);
       } else {
         mapOfLetters.put(tempChar, 1);
       }
