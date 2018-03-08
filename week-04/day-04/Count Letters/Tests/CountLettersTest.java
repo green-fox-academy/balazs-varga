@@ -21,4 +21,9 @@ public class CountLettersTest {
   public void letterFOccurrenceCountTest() {
     assertEquals((Integer) 2, string.letterOccurrenceCount(string.getString()).get('f'));
   }
+
+  @Test
+  public void letterSOccurrenceCountNegativeTest() {
+    assertFalse(string.letterOccurrenceCount(string.getString()).get('s') == (Integer) 4);
+  }
 }
