@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,7 +10,7 @@ public class CountLettersTest {
 
   @Before
   public void init() {
-    string = new CountLetters("asaffgrgha");
+    string = new CountLetters("anagram");
   }
 
   @Test
@@ -17,13 +18,5 @@ public class CountLettersTest {
     assertEquals( (Integer) 3, string.letterOccurrenceCount(string.getString()).get('a'));
   }
 
-  @Test
-  public void letterFOccurrenceCountTest() {
-    assertEquals((Integer) 2, string.letterOccurrenceCount(string.getString()).get('f'));
-  }
 
-  @Test
-  public void letterSOccurrenceCountNegativeTest() {
-    assertFalse(string.letterOccurrenceCount(string.getString()).get('s').equals(4));
-  }
-}
+}                                       $

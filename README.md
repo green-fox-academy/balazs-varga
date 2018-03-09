@@ -6,6 +6,7 @@
 [Patchwork repository](https://github.com/balazs-varga/patchwork) <br> 
 [Hello-World](https://github.com/balazs-varga/hello-world) <br>
 [balazs-varga.github.io](https://github.com/balazs-varga/balazs-varga.github.io) <br>
+[ToDo Application](https://github.com/balazs-varga/todo-app) <br>
 
 ## Link ot our syllabus repo:
 
