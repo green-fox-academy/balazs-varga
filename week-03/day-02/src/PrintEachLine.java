@@ -12,7 +12,7 @@ public class PrintEachLine {
     // then it should print an error message like: "Unable to read file: my-file.txt"
 
     String pathString = "my-file.txt";
-    Path path = Paths.get(pathString);
+    Fi
 
     try {
         for(String line : Files.readAllLines(path)) {
