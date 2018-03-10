@@ -16,8 +16,6 @@ public class SubInt {
   public static void main(String[] args) {
     subInt(1, new int[] {1, 11, 34, 52, 61});
     subInt(3, new int[] {1, 11, 34, 52, 61});
-
-    System.out.println(3 % 10);
   }
 
   public static void subInt(int subInt, int[] numbers) {
