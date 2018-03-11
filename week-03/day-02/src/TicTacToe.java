@@ -22,41 +22,45 @@ public class TicTacToe {
     //System.out.println(ticTacResult("draw.txt"));
     // should print draw
 
-    ticTacResult("win-o.txt");
+    ticTacToeResult("win-o.txt");
+    ticTacToeResult("win-x.txt");
+    ticTacToeResult("draw.txt");
   }
 
-  public static void ticTacResult(String fileName) {
+  public static void ticTacToeResult(String fileName) {
     Path filePath = Paths.get(fileName);
-    int countO = 0;
-    int countX = 0;
 
     try {
       List<String> lines = Files.readAllLines(filePath);
-
-      System.out.println(lines);
-
-      for (int i = 0; i < 3; i++) {
-
-        for (int j = 0; j < 3; j++) {
-          System.out.print(lines.get(i).charAt(j));
-
-
-        }
-
-      }
-
-
-
-
-
-
-
-
-
+      System.out.println("The " + fileName + " contains the following lines: " + lines);
+      ticTacToeWinChecker(lines);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
 
+  private static void ticTacToeWinChecker(List<String> lines) {
+    String xLine = "XXX";
+    char xChar = 'X';
+    String oLine = "OOO";
+    char oChar = 'O';
 
+    if (lines.get(0).equals(xLine) || lines.get(1).equals(xLine) || lines.get(2).equals(xLine) ||
+            (lines.get(0).charAt(0) == xChar && lines.get(1).charAt(0) == xChar && lines.get(2).charAt(0) == xChar) ||
+            (lines.get(0).charAt(1) == xChar && lines.get(1).charAt(1) == xChar && lines.get(2).charAt(1) == xChar) ||
+            (lines.get(0).charAt(2) == xChar && lines.get(1).charAt(2) == xChar && lines.get(2).charAt(2) == xChar) ||
+            (lines.get(0).charAt(0) == xChar && lines.get(1).charAt(1) == xChar && lines.get(2).charAt(2) == xChar) ||
+            (lines.get(0).charAt(2) == xChar && lines.get(1).charAt(1) == xChar && lines.get(2).charAt(0) == xChar)) {
+      System.out.println("X win");
+    }else if (lines.get(0).equals(oLine) || lines.get(1).equals(oLine) || lines.get(2).equals(oLine) ||
+            (lines.get(0).charAt(0) == oChar && lines.get(1).charAt(0) == oChar && lines.get(2).charAt(0) == oChar) ||
+            (lines.get(0).charAt(1) == oChar && lines.get(1).charAt(1) == oChar && lines.get(2).charAt(1) == oChar) ||
+            (lines.get(0).charAt(2) == oChar && lines.get(1).charAt(2) == oChar && lines.get(2).charAt(2) == oChar) ||
+            (lines.get(0).charAt(0) == oChar && lines.get(1).charAt(1) == oChar && lines.get(2).charAt(2) == oChar) ||
+            (lines.get(0).charAt(2) == oChar && lines.get(1).charAt(1) == oChar && lines.get(2).charAt(0) == oChar)) {
+      System.out.println("O win");
+    }else {
+      System.out.println("draw");
+    }
   }
 }
