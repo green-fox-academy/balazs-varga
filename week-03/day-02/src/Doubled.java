@@ -9,10 +9,10 @@ public class Doubled {
   public static void main(String[] args) {
     // Create a method that decrypts the duplicated-chars.txt
 
-    duplicatedCharDecripter("duplicated-chars.txt");
+    duplicatedCharDecrypter("duplicated-chars.txt");
   }
 
-  public static void duplicatedCharDecripter(String fileName) {
+  public static void duplicatedCharDecrypter(String fileName) {
     Path filePath = Paths.get(fileName);
 
     try {
