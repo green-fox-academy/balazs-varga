@@ -1,0 +1,5 @@
+Hi!
+
+If you see this,
+You could successfully
+Read all content of the file.
