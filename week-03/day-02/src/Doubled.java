@@ -14,13 +14,13 @@ public class Doubled {
 
   public static void duplicatedCharDecrypter(String fileName) {
     Path filePath = Paths.get(fileName);
+    int charIndex;
 
     try {
       List<String> lines = Files.readAllLines(filePath);
       for (String line : lines) {
-        int lineLength = line.length();
-        int charIndex = 0;
-        for (int j = 0; j < lineLength / 2; j++) {
+        charIndex = 0;
+        for (int j = 0; j < line.length() / 2; j++) {
           System.out.print(line.charAt(charIndex));
           charIndex += 2;
         }
