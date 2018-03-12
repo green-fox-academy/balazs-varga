@@ -15,7 +15,13 @@ public class Carrier {
     carrier = new ArrayList<>();
   }
 
-  public void add(Aircraft aircraft) {
-    carrier.add(aircraft);
+  public void add(String aircraftType) {
+    if (aircraftType.toUpperCase().equals("F16")) {
+      carrier.add(new F16());
+    } else if (aircraftType.toUpperCase().equals("F35")) {
+      carrier.add(new F35());
+    } else {
+      System.out.println("Please add F16 or F35");
+    }
   }
 }
