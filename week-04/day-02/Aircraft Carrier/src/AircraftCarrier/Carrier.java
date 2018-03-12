@@ -47,6 +47,13 @@ public class Carrier {
           ammoStorage -= carrier.get(i).getAmmoAmount();
         }
       }
+    } else {
+      for (int i = 0; i < carrier.size(); i++) {
+        if (ammoStorage > 0) {
+          carrier.get(i).refill(ammoStorage);
+          ammoStorage -= carrier.get(i).getAmmoAmount();
+        }
+      }
     }
   }
 
