@@ -51,6 +51,10 @@ public class Aircraft {
     return ammoAmount;
   }
 
+  public int getBaseDamage() {
+    return baseDamage;
+  }
+
   public void setMaxAmmo(int maxAmmo) {
     this.maxAmmo = maxAmmo;
   }

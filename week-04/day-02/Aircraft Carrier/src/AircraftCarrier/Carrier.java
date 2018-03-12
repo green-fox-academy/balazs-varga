@@ -58,4 +58,21 @@ public class Carrier {
     otherCarrier.health -= damage;
     System.out.println("Enemy carrier health is: " + otherCarrier.health);
   }
+
+  public void getStatus() {
+    if (health == 0) {
+      System.out.println("It's dead Jim :(");
+    } else {
+      int totalDamage = 0;
+      for (int i = 0; i < carrier.size(); i++) {
+        totalDamage += (carrier.get(i).getBaseDamage() * carrier.get(i).getAmmoAmount());
+      }
+      System.out.println("HP: " + health + ", Aircraft count: " + carrier.size() + ", Ammo Storage: " + ammoStorage +
+              ", Total damage:" + totalDamage);
+      System.out.println("Aircrafts:");
+      for (int i = 0; i < carrier.size(); i++) {
+        System.out.println(carrier.get(i).getStatus());
+      }
+    }
+  }
 }
