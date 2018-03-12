@@ -5,14 +5,6 @@ public class Anagram {
   // Write a function, that takes two strings and returns a boolean value based on if the two strings are Anagramms or not.
   // Create a test for that.
 
-  private String firstString;
-  private String secondString;
-
-  public Anagram(String firstString, String secondString) {
-    this.firstString = firstString;
-    this.secondString = secondString;
-  }
-
   public boolean isAnagram(String firstWord, String secondWord) {
     if (firstWord.length() != secondWord.length()) {
       return false;
@@ -59,13 +51,5 @@ public class Anagram {
 
   public static String convertWordToLowercaseWithoutSpaces(String word) {
     return word.toLowerCase().replaceAll(" ", "");
-  }
-
-  public String getFirstString() {
-    return firstString;
-  }
-
-  public String getSecondString() {
-    return secondString;
   }
 }
