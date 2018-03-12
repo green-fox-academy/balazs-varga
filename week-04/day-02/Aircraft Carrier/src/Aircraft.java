@@ -10,8 +10,10 @@ public class Aircraft {
     this.ammoAmount = 0;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public int fight() {
+    int ammoBeforeFight = ammoAmount;
+    ammoAmount = 0;
+    return ammoBeforeFight * baseDamage;
   }
 
   public void setMaxAmmo(int maxAmmo) {
