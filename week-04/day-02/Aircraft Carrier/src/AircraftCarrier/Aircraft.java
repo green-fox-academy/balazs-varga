@@ -7,8 +7,10 @@ public class Aircraft {
   private int maxAmmo;
   private int baseDamage;
 
-  public Aircraft(String type) {
+  public Aircraft(String type, int maxAmmo, int baseDamage) {
     this.type = type;
+    this.maxAmmo = maxAmmo;
+    this.baseDamage = baseDamage;
     ammoAmount = 0;
   }
 
