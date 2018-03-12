@@ -30,6 +30,10 @@ public class Aircraft {
     return 0;
   }
 
+  public String  getType() {
+    return type;
+  }
+
   public void setMaxAmmo(int maxAmmo) {
     this.maxAmmo = maxAmmo;
   }
