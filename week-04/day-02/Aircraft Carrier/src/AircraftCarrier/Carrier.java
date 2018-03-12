@@ -49,4 +49,13 @@ public class Carrier {
       }
     }
   }
+
+  public void fight(Carrier otherCarrier) {
+    int damage = 0;
+    for (int i = 0; i < carrier.size(); i++) {
+      damage += carrier.get(i).fight();
+    }
+    otherCarrier.health -= damage;
+    System.out.println("Enemy carrier health is: " + otherCarrier.health);
+  }
 }
