@@ -7,4 +7,12 @@ public class Aircraft {
     this.name = name;
     this.ammoAmount = 0;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getAmmoAmount() {
+    return ammoAmount;
+  }
 }
