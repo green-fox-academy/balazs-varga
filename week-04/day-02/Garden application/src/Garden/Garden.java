@@ -19,14 +19,10 @@ public class Garden {
     wateringMessage(waterAmount);
 
     for (Plant plant : plants) {
-      if (plant instanceof Flower) {
-        if (plant.getWaterLevel() < Flower.getWaterLimit()) {
-          waterNeedCount++;
-        }
-      } else if (plant instanceof Tree) {
-        if (plant.getWaterLevel() < Tree.getWaterLimit()) {
-          waterNeedCount++;
-        }
+      if (plant.getWaterLevel() < Flower.getWaterLimit()) {
+        waterNeedCount++;
+      } else if (plant.getWaterLevel() < Tree.getWaterLimit()) {
+        waterNeedCount++;
       }
     }
 

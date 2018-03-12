@@ -2,12 +2,10 @@ package Garden;
 
 public class Flower extends Plant {
 
-  private static final int WATER_LIMIT = 10;
+  private static final int WATER_LIMIT = 5;
 
   public Flower(String color) {
     super(color);
-    super.setCurrentWaterAmount(0);
-    super.setWaterLevel(0);
   }
 
   public void isWaterNeeded() {

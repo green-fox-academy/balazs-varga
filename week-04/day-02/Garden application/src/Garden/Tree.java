@@ -6,8 +6,6 @@ public class Tree extends Plant {
 
   public Tree(String color) {
     super(color);
-    super.setCurrentWaterAmount(0);
-    super.setWaterLevel(0);
   }
 
   public void isWaterNeeded() {
