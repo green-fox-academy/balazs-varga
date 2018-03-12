@@ -14,4 +14,8 @@ public class Carrier {
     this.health = health;
     carrier = new ArrayList<>();
   }
+
+  public void add(Aircraft aircraft) {
+    carrier.add(aircraft);
+  }
 }
