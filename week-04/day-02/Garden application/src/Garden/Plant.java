@@ -6,7 +6,6 @@ public class Plant extends Garden{
   private String color;
   private double waterLevel;
 
-
   public Plant(String color) {
     this.color = color;
     currentWaterAmount = 0;

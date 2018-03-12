@@ -20,11 +20,11 @@ public class Garden {
 
     for (Plant plant : plants) {
       if (plant instanceof Flower) {
-        if (plant.getWaterLevel() < 5) {
+        if (plant.getWaterLevel() < Flower.getWaterLimit()) {
           waterNeedCount++;
         }
       } else if (plant instanceof Tree) {
-        if (plant.getWaterLevel() < 10) {
+        if (plant.getWaterLevel() < Tree.getWaterLimit()) {
           waterNeedCount++;
         }
       }
@@ -34,11 +34,11 @@ public class Garden {
 
     for (Plant plant : plants) {
       if (plant instanceof Flower) {
-        if (plant.getWaterLevel() < 5) {
+        if (plant.getWaterLevel() < Flower.getWaterLimit()) {
           ((Flower) plant).setCurrentWaterAmount(waterForPlants * 0.75);
         }
       } else if (plant instanceof Tree) {
-        if (plant.getWaterLevel() < 10) {
+        if (plant.getWaterLevel() < Tree.getWaterLimit()) {
           ((Tree) plant).setCurrentWaterAmount(waterForPlants * 0.4);
         }
       }
