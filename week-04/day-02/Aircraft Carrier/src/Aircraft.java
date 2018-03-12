@@ -7,13 +7,27 @@ public class Aircraft {
 
   public Aircraft(String type) {
     this.type = type;
-    this.ammoAmount = 0;
+    ammoAmount = 0;
   }
 
   public int fight() {
-    int ammoBeforeFight = ammoAmount;
+    int damage = baseDamage * ammoAmount;
     ammoAmount = 0;
-    return ammoBeforeFight * baseDamage;
+    return damage;
+  }
+
+  public int refill(int refillAmmoAmount) {
+    if (refillAmmoAmount > 0) {
+      for (int i = 0; i < refillAmmoAmount; i++) {
+        if (ammoAmount < maxAmmo) {
+          ammoAmount++;
+          refillAmmoAmount--;
+        }
+      }
+      return refillAmmoAmount;
+    }
+    System.out.println("Not Enough Ammo to refill the " + type);
+    return 0;
   }
 
   public void setMaxAmmo(int maxAmmo) {
