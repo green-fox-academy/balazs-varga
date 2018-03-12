@@ -1,3 +1,5 @@
+package AircraftCarrier;
+
 public class Aircraft {
 
   private String type;
@@ -30,8 +32,13 @@ public class Aircraft {
     return 0;
   }
 
-  public String  getType() {
+  public String getType() {
     return type;
+  }
+
+  public String getStatus () {
+    return "Type " + type + ", Ammo: " + ammoAmount + ", Base Damage: " + baseDamage + ", All Damage: "
+            + ammoAmount * baseDamage;
   }
 
   public void setMaxAmmo(int maxAmmo) {
