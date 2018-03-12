@@ -6,19 +6,19 @@ import java.util.List;
 public class Garden {
 
   private double waterAmount;
-  List<Plants> plants;
+  List<Plant> plants;
 
   public Garden() {
     this.waterAmount = 0;
     plants = new ArrayList<>();
   }
 
-  public void watering(List<Plants> plants, double waterAmount) {
+  public void watering(List<Plant> plants, double waterAmount) {
     double waterNeedCount = 0;
 
     wateringMessage(waterAmount);
 
-    for (Plants plant : plants) {
+    for (Plant plant : plants) {
       if (plant instanceof Flower) {
         if (plant.getWaterLevel() < 5) {
           waterNeedCount++;
@@ -32,7 +32,7 @@ public class Garden {
 
     double waterForPlants = waterAmount / waterNeedCount;
 
-    for (Plants plant : plants) {
+    for (Plant plant : plants) {
       if (plant instanceof Flower) {
         if (plant.getWaterLevel() < 5) {
           ((Flower) plant).setCurrentWaterAmount(waterForPlants * 0.75);
@@ -51,8 +51,8 @@ public class Garden {
     System.out.println("Watering with " + waterAmount);
   }
 
-  public void isWaterNeeded(List<Plants> plants) {
-    for (Plants plant : plants) {
+  public void isWaterNeeded(List<Plant> plants) {
+    for (Plant plant : plants) {
       if (plant instanceof Flower) {
         ((Flower) plant).isWaterNeeded();
       } else if (plant instanceof Tree) {
@@ -61,7 +61,7 @@ public class Garden {
     }
   }
 
-  public void addPlants(Plants plant) {
+  public void addPlants(Plant plant) {
     plants.add(plant);
   }
 }

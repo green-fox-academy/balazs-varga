@@ -1,13 +1,13 @@
 package Garden;
 
-public class Plants extends Garden{
+public class Plant extends Garden{
 
   private double currentWaterAmount;
   private String color;
   private double waterLevel;
 
 
-  public Plants(String color) {
+  public Plant(String color) {
     this.color = color;
     currentWaterAmount = 0;
     waterLevel = 0;

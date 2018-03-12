@@ -1,6 +1,6 @@
 package Garden;
 
-public class Flower extends Plants{
+public class Flower extends Plant {
 
   public Flower(String color) {
     super(color);

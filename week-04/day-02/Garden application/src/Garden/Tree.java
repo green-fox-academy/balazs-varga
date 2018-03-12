@@ -1,6 +1,6 @@
 package Garden;
 
-public class Tree extends Plants{
+public class Tree extends Plant {
 
   public Tree(String color) {
     super(color);
