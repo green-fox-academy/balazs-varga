@@ -47,6 +47,8 @@ public class Domino implements Comparable<Domino> {
       return 0;
     } else if (this.getValues()[0] < compareDomino.getValues()[0]) {
       return -1;
-    } else return 1;
+    } else {
+      return 1;
+    }
   }
 }
