@@ -62,7 +62,7 @@ public class Carrier {
     for (int i = 0; i < carrier.size(); i++) {
       damage += carrier.get(i).fight();
     }
-    otherCarrier.health -= damage;
+    otherCarrier.setHealth(otherCarrier.getHealth() - damage);
     System.out.println("Enemy carrier health is: " + otherCarrier.health);
   }
 
@@ -81,5 +81,13 @@ public class Carrier {
         System.out.println(carrier.get(i).getStatus());
       }
     }
+  }
+
+  public void setHealth(int health) {
+    this.health = health;
+  }
+
+  public int getHealth() {
+    return health;
   }
 }
