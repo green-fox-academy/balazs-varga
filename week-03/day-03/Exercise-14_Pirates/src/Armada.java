@@ -1,18 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Armada {
 
-  private List<Ship> armadaShips = new ArrayList<Ship>();
-  private Random randomNumber = new Random();
-  private int armadaCapacity;
+  private List<Ship> armadaShips = new ArrayList<>();
   private String armadaName;
-  //private int i;
 
   public Armada(String armadaName) {
     this.armadaName = armadaName;
-    //armadaCapacity = randomNumber.nextInt(10) + 3;
   }
 
   public void addShipToArmada(Ship ship) {
@@ -45,14 +40,5 @@ public class Armada {
         return false;
       }
     }
-  }
-
-  public String getArmadaName() {
-    return armadaName;
-  }
-
-  public List<Ship> getArmadaShips() {
-    return armadaShips;
-
   }
 }

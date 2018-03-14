@@ -25,7 +25,12 @@ public class BattleApp {
     pirateShip.shipInformation();
     otherShip.shipInformation();
 
-    englishArmada.war(germanArmada);
+    pirateShip.fillShip();
+    pirateShip.getPirates().get(1).howItGoingMate();
+    System.out.println();
+    pirateShip.getPirates().get(1).brawl(otherShip.getPirates().get(2));
+    System.out.println();
 
+    englishArmada.war(germanArmada);
   }
 }

@@ -86,20 +86,20 @@ public class Pirate {
         case 1:
           this.die();
           System.out.println("The winner is " + pirate.getName() + ", " + this.getName() + " is dead.");
-          System.out.println("~~~~~~~~~~~~~~~~~~~");
+          System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
           break;
 
         case 2:
           pirate.die();
           System.out.println("The winner is " + this.getName() + ", " + pirate.getName() + " is dead.");
-          System.out.println("~~~~~~~~~~~~~~~~~~~");
+          System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
           break;
 
         case 3:
           this.die();
           pirate.die();
           System.out.println("Both pirates are dead!");
-          System.out.println("~~~~~~~~~~~~~~~~~~~");
+          System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
           break;
       }
     }
