@@ -11,13 +11,13 @@ public class PurpleSteps {
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
     
     int squareSize = 10;
-    int originalPosition = 10;
+    int squarePosition = 10;
 
     graphics.setColor(new Color(148,0,211));
 
     for (int i = 0; i < 20; i++) {
-      graphics.fillRect(originalPosition, originalPosition, squareSize, squareSize);
-      originalPosition += squareSize;
+      graphics.fillRect(squarePosition, squarePosition, squareSize, squareSize);
+      squarePosition += squareSize;
     }
   }
 
