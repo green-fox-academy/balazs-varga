@@ -43,12 +43,12 @@ public class Domino implements Comparable<Domino> {
 
   @Override
   public int compareTo(Domino compareDomino) {
-    if (this.getValues()[0] == compareDomino.getValues()[0]) {
-      return 0;
+    if (this.getValues()[0] > compareDomino.getValues()[0]) {
+      return 1;
     } else if (this.getValues()[0] < compareDomino.getValues()[0]) {
       return -1;
     } else {
-      return 1;
+      return 0;
     }
   }
 }
