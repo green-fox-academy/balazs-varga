@@ -44,17 +44,17 @@ class ExtensionTest {
 
   @Test
   void testMedian_four() {
-    assertEquals(5, extension.median(Arrays.asList(7,5,3,5)));
+    assertEquals(5.0, extension.median(Arrays.asList(7.0,5.0,3.0,5.0)), 0);
   }
 
   @Test
   void testMedian_five() {
-    assertEquals(3, extension.median(Arrays.asList(1,2,3,4,5)));
+    assertEquals(3.0, extension.median(Arrays.asList(1.0,2.0,3.0,4.0,5.0)), 0);
   }
 
   @Test
   void testMedian_twoPointFive() {
-    assertEquals(2.5, extension.median(Arrays.asList(1,4,2,4,2,3,5,3,1,1)));
+    assertEquals(2.5, extension.median(Arrays.asList(1.0,4.0,2.0,4.0 ,2.0,3.0,5.0,3.0 ,1.0,1.0)), 0);
   }
 
 

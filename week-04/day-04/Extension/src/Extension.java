@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -20,8 +22,12 @@ public class Extension {
     return maxNumber;
   }
 
-  int median(List<Integer> pool) {
-    return pool.get((pool.size()-1)/2);
+  double median(List<Double> pool) {
+    Collections.sort(pool);
+    if (pool.size() % 2 == 0) {
+      return ((pool.get(pool.size() / 2)) + (pool.get(pool.size() / 2 - 1))) / 2;
+    }
+    return pool.get(pool.size() / 2);
   }
 
   boolean isVowel(char c) {
