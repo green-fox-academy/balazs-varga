@@ -33,6 +33,11 @@ class ExtensionTest {
   }
 
   @Test
+  void testMaxOfThree_second() {
+    assertEquals(10, extension.maxOfThree(5, 10, 3));
+  }
+
+  @Test
   void testMaxOfThree_third() {
     assertEquals(5, extension.maxOfThree(3, 4, 5));
   }
