@@ -53,6 +53,12 @@ class ExtensionTest {
   }
 
   @Test
+  void testMedian_twoPointFive() {
+    assertEquals(2.5, extension.median(Arrays.asList(1,4,2,4,2,3,5,3,1,1)));
+  }
+
+
+  @Test
   void testIsVowel_a() {
     assertTrue(extension.isVowel('a'));
   }
