@@ -27,4 +27,12 @@ public class AnimalTest {
     animal.eat();
     assertEquals(49, animal.getHunger());
   }
+
+  @Test
+  public void thirstLevelAfterDrinkingTest() {
+    animal.drink();
+    animal.drink();
+    animal.drink();
+    assertEquals(47, animal.getThirst());
+  }
 }
