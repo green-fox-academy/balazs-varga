@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -9,5 +10,10 @@ public class AnimalTest {
   @Before
   public void setUp() {
     animal = new Animal();
+  }
+
+  @Test
+  public void defaultHungerLevelTest() {
+    assertEquals(50, animal.getHunger());
   }
 }
