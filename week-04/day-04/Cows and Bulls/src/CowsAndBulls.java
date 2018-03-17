@@ -7,6 +7,9 @@ public class CowsAndBulls {
   private int bulls;
   private int numberToGuess;
   private String playerName;
+  private boolean isPlaying;
+  private boolean isFinished;
+  private int guessNumber;
   private Random random;
   private Scanner scanner;
 
@@ -16,6 +19,9 @@ public class CowsAndBulls {
     random = new Random();
     scanner = new Scanner(System.in);
     numberToGuess = random.nextInt(10000);
+    isPlaying = false;
+    isFinished = false;
+    guessNumber = 0;
   }
 
   public void gameInit() {
@@ -23,6 +29,7 @@ public class CowsAndBulls {
     System.out.println("Please enter your name: ");
     playerName = scanner.nextLine();
     System.out.println("Hello " + playerName + "! Let's play the game...");
+    isPlaying = true;
   }
 
   public int getCows() {
