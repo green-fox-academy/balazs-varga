@@ -21,4 +21,9 @@ public class SharpieTest {
   public void SharpieColorTest() {
     assertEquals("green", sharpie.getColor());
   }
+
+  @Test
+  public void SharpieWidthTest() {
+    assertEquals(3, sharpie.getWidth(), 0);
+  }
 }
