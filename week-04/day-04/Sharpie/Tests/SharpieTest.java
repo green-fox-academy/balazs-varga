@@ -16,4 +16,9 @@ public class SharpieTest {
   public void SharpieDefaultInkAmountTest() {
     assertEquals(100.0, sharpie.getInkAmount(), 0);
   }
+
+  @Test
+  public void SharpieColorTest() {
+    assertEquals("green", sharpie.getColor());
+  }
 }
