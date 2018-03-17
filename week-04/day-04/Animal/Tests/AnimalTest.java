@@ -55,4 +55,11 @@ public class AnimalTest {
     animal.play();
     assertEquals(51, animal.getThirst());
   }
+
+  @Test
+  public void hungerLevelAfterPlayingNegativeTest() {
+    animal.play();
+    animal.play();
+    assertFalse(animal.getHunger() == 51);
+  }
 }
