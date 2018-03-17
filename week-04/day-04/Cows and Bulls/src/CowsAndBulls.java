@@ -10,6 +10,7 @@ public class CowsAndBulls {
   private boolean isPlaying;
   private boolean isFinished;
   private int guessNumber;
+  private final int ROUNDS = 10;
   private Random random;
   private Scanner scanner;
 
@@ -28,7 +29,8 @@ public class CowsAndBulls {
     System.out.println("~~~~ Welcome to the Cows And Bulls game ~~~~");
     System.out.println("Please enter your name: ");
     playerName = scanner.nextLine();
-    System.out.println("Hello " + playerName + "! Let's play the game...");
+    System.out.println("Hello " + playerName + "!");
+    System.out.println("Please guess the 4 digit number, you have " + ROUNDS + " attempts to do it. Have fun :)");
     isPlaying = true;
   }
 
