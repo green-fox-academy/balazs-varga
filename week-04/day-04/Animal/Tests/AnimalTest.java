@@ -16,4 +16,9 @@ public class AnimalTest {
   public void defaultHungerLevelTest() {
     assertEquals(50, animal.getHunger());
   }
+
+  @Test
+  public void defaultThirstLevelTest() {
+    assertEquals(50, animal.getThirst());
+  }
 }
