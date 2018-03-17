@@ -43,4 +43,10 @@ public class AnimalTest {
     animal.drink();
     assertFalse(animal.getThirst() == 49);
   }
+
+  @Test
+  public void hungerLevelAfterPlayingTest() {
+    animal.play();
+    assertEquals(51, animal.getHunger());
+  }
 }
