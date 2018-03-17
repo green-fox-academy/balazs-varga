@@ -66,6 +66,7 @@ public class CowsAndBulls {
   public boolean isGameOver(int rounds) {
     if (rounds == 0) {
       isPlaying = false;
+      isFinished = true;
       System.out.println("\n~~~~ GAME OVER ~~~~");
       return true;
     } else {
