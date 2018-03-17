@@ -31,4 +31,9 @@ public class SharpieTest {
   public void SharpieNegativeColorTest() {
     assertFalse(sharpie.getColor().equals("blue"));
   }
+
+  @Test
+  public void SharpieNegativeWidthTest() {
+    assertFalse(sharpie.getWidth() == 9);
+  }
 }
