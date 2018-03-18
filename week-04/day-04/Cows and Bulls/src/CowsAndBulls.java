@@ -110,6 +110,18 @@ public class CowsAndBulls {
     return numberToGuess;
   }
 
+  public boolean getIsPlaying() {
+    return isPlaying;
+  }
+
+  public boolean getIsFinished() {
+    return isFinished;
+  }
+
+  public int getRounds() {
+    return rounds;
+  }
+
   public static void main(String[] args) {
     CowsAndBulls CAB = new CowsAndBulls();
     CAB.gameInit();
