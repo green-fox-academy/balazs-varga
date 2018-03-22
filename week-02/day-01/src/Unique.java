@@ -16,6 +16,7 @@ public class Unique {
     public static void unique(int... numbers) {
       int[] unique = new int[numbers.length];
       int uniqueArrayIndex = 0;
+      int uniqueNumberCounter = 0;
 
       for (int i = 0; i < numbers.length; i++) {
         int temp = numbers[i];
@@ -33,6 +34,12 @@ public class Unique {
       }
 
       for (int i = 0; i < unique.length; i++) {
+        if (unique[i] != 0) {
+          uniqueNumberCounter++;
+        }
+      }
+
+      for (int i = 0; i < uniqueNumberCounter; i++) {
         System.out.println(unique[i]);
       }
     }

@@ -28,7 +28,7 @@ public class Anagram {
     }
   }
 
-  public static char[] uniqueLettersOfString(String word){
+  public char[] uniqueLettersOfString(String word){
 
     char[] uniqueLettersOfWord = new char[word.length()];
     int uniqueArrayIndex = 0;
