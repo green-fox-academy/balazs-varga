@@ -11,10 +11,26 @@ public class Exercise_09 {
 
     char[] word = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
 
-    System.out.println(convertToString(word));
+    System.out.println(convertToStringLoop(word));
+
+    System.out.println(convertToStringStream(word));
   }
 
-  public static String convertToString(char[] word) {
+  //Solution with loops
+
+  public static String convertToStringLoop(char[] word) {
+    StringBuilder stringBuilder = new StringBuilder();
+
+    for (int i = 0; i < word.length; i++) {
+      stringBuilder.append(word[i]);
+    }
+
+    return stringBuilder.toString();
+  }
+
+  //Solution with stream
+
+  public static String convertToStringStream(char[] word) {
     String string = Stream.of(word)
             .map(String::valueOf)
             .collect(Collectors.joining());
