@@ -19,7 +19,7 @@ public class Exercise_06 {
         System.out.println(cities.get(i));
       }
     }
-    
+
     //Solution with stream
 
     cities.stream()
