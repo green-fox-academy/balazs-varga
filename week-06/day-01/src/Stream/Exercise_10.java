@@ -1,7 +1,5 @@
 package Stream;
 
-import java.util.stream.Stream;
-
 public class Exercise_10 {
 
   public static void main(String[] args) {
@@ -17,6 +15,28 @@ public class Exercise_10 {
     foxes.add(new Fox("AsBest", "Corsac","Red"));
     foxes.add(new Fox("Lagopus", "Opal", "Grey"));
     foxes.add(new Fox("Eagle", "Pallida","Green"));
+
+    //Solution with loops
+
+    System.out.println("Foxes with green color:");
+    for (int i = 0; i < foxes.getFoxes().size(); i++) {
+      if (foxes.getFoxes().get(i).getColor().equals("Green")) {
+        System.out.println(foxes.getFoxes().get(i).toString());
+      }
+    }
+
+    System.out.println();
+
+    System.out.println("Foxes with green color and pallida type:");
+    for (int i = 0; i < foxes.getFoxes().size(); i++) {
+      if (foxes.getFoxes().get(i).getColor().equals("Green") && foxes.getFoxes().get(i).getType().equals("Pallida")) {
+        System.out.println(foxes.getFoxes().get(i).toString());
+      }
+    }
+
+    System.out.println();
+
+    //Solution with stream
 
     System.out.println("Foxes with green color:");
     foxes.getFoxes().stream()
