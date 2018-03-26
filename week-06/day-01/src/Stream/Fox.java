@@ -35,4 +35,9 @@ public class Fox {
   public void setColor(String color) {
     this.color = color;
   }
+
+  @Override
+  public String toString() {
+    return "Name = " + name  + ", Type = " + type + ", Color = " + color;
+  }
 }

@@ -14,4 +14,8 @@ public class Foxes {
   public void add(Fox fox) {
     foxes.add(fox);
   }
+
+  public List<Fox> getFoxes() {
+    return foxes;
+  }
 }
