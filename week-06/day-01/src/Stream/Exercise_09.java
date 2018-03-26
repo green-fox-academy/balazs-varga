@@ -1,6 +1,5 @@
 package Stream;
 
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -16,11 +15,10 @@ public class Exercise_09 {
   }
 
   public static String convertToString(char[] word) {
-    List<String> listOfStrings = Stream.of(word)
+    String string = Stream.of(word)
             .map(String::valueOf)
-            .collect(Collectors.toList());
-
-    return listOfStrings.stream()
             .collect(Collectors.joining());
+
+    return string;
   }
 }
