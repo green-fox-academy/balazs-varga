@@ -10,4 +10,8 @@ public class Foxes {
   public Foxes() {
     foxes = new ArrayList<>();
   }
+
+  public void add(Fox fox) {
+    foxes.add(fox);
+  }
 }
