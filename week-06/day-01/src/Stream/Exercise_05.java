@@ -9,8 +9,8 @@ public class Exercise_05 {
     findUppercaseCharacters("HellO WorlD, What's UP?");
   }
 
-  public static void findUppercaseCharacters(String word) {
-    word.chars()
+  public static void findUppercaseCharacters(String string) {
+    string.chars()
             .filter(Character::isUpperCase)
             .mapToObj(c -> (char) c)
             .forEach(System.out::println);
