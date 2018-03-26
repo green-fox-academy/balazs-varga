@@ -13,14 +13,21 @@ public class Exercise_10 {
     Foxes foxes = new Foxes();
 
     foxes.add(new Fox("Please", "Corsac","Green"));
-    foxes.add(new Fox("BadCat", "Corsac", "Brown"));
+    foxes.add(new Fox("BadCat", "Pampas", "Brown"));
     foxes.add(new Fox("AsBest", "Corsac","Red"));
     foxes.add(new Fox("Lagopus", "Opal", "Grey"));
-    foxes.add(new Fox("Eagle", "Pampas","Green"));
+    foxes.add(new Fox("Eagle", "Pallida","Green"));
 
     System.out.println("Foxes with green color:");
     foxes.getFoxes().stream()
             .filter(f -> f.getColor().equals("Green"))
+            .forEach(System.out::println);
+
+    System.out.println();
+
+    System.out.println("Foxes with green color and pallida type:");
+    foxes.getFoxes().parallelStream()
+            .filter(f -> f.getColor().equals("Green") && f.getType().equals("Pallida"))
             .forEach(System.out::println);
   }
 }
