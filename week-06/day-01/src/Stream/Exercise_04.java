@@ -2,6 +2,8 @@ package Stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Exercise_04 {
 
@@ -15,5 +17,12 @@ public class Exercise_04 {
             .map(n -> n * n)
             .filter(n -> n > 20)
             .forEach(System.out::println);
+
+    List<Integer> result = numbers.stream()
+            .map(n -> n * n)
+            .filter(n -> n > 20)
+            .collect(Collectors.toList());
+
+    System.out.println(result);
   }
 }
