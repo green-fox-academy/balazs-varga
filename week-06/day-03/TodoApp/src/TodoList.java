@@ -5,13 +5,13 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class TodoList {
 
+  private final String PATH_STRING = "../todoFile.txt";
+  private final String DELIMETER = "%#";
   private List<String> tasks;
   private String name;
-  private final String PATH_STRING = "../todoFile.txt";
   private int indexToComplete;
   private List<Todo> todos;
 
@@ -34,8 +34,8 @@ public class TodoList {
     List<String> tasksString = new ArrayList<>();
 
     for (int i = 0; i < tasks.size(); i++) {
-      tasksString.add(tasks.get(i).getId() + "%#" + tasks.get(i).getName() + "%#" + tasks.get(i).getCreatedAt() +
-              "%#" + tasks.get(i).isCompleted());
+      tasksString.add(tasks.get(i).getId() + DELIMETER + tasks.get(i).getName() + DELIMETER + tasks.get(i).getCreatedAt() +
+              DELIMETER + tasks.get(i).isCompleted());
     }
 
     try {
@@ -60,7 +60,7 @@ public class TodoList {
     }
   }
 
-  public void addNewTask(String args, int id) throws IOException {
+  public void addNewTask(String args, int id) {
     List<Todo> todos = readAllDataFromFile();
     Todo newTodo = new Todo(args);
     newTodo.setId(id);
@@ -84,9 +84,6 @@ public class TodoList {
     } else {
       for (int i = 0; i < todos.size(); i++) {
         if (i == indexToComplete) {
-         // String markedTask = "*" + todos.get(i).getName() + "*";
-         // todos.add(i, new Todo(markedTask));
-         // todos.remove(i + 1);
           todos.get(i).setCompleted(true);
         }
       }
@@ -117,7 +114,7 @@ public class TodoList {
 
   private void convertStringToTodoObject(List<String> todosString, List<Todo> todos) {
     for (int i = 0; i < todosString.size(); i++) {
-      String[] stringParts = todosString.get(i).split("%#");
+      String[] stringParts = todosString.get(i).split(DELIMETER);
       Todo newTodo = new Todo(stringParts[1]);
       newTodo.setId(Integer.parseInt(stringParts[0]));
       newTodo.setCreatedAt(LocalDateTime.parse(stringParts[2]));
