@@ -34,7 +34,8 @@ public class TodoList {
     List<String> tasksString = new ArrayList<>();
 
     for (int i = 0; i < tasks.size(); i++) {
-      tasksString.add(tasks.get(i).getId() + "%#" + tasks.get(i).getName() + "%#" + tasks.get(i).getCreatedAt());
+      tasksString.add(tasks.get(i).getId() + "%#" + tasks.get(i).getName() + "%#" + tasks.get(i).getCreatedAt() +
+              "%#" + tasks.get(i).isCompleted());
     }
 
     try {
@@ -45,17 +46,13 @@ public class TodoList {
   }
 
   public void listTasks() {
-    List<Todo> tasks = readAllDataFromFile();
-    if (tasks.size() > 0) {
-      for (int i = 0; i < tasks.size(); i++) {
-        if (tasks.get(i).getName().startsWith("*") && tasks.get(i).getName().endsWith("*")) {
-          String unmarkedString = tasks.get(i).getName().replace("*", "");
-          tasks.add(i, new Todo(unmarkedString));
-          tasks.remove(i + 1);
-          writeTasksToFile(tasks);
-          System.out.println((tasks.get(i).getId()) + " - [X] " + tasks.get(i).toString());
+    List<Todo> todos = readAllDataFromFile();
+    if (todos.size() > 0) {
+      for (int i = 0; i < todos.size(); i++) {
+        if (todos.get(i).isCompleted()) {
+          System.out.println((todos.get(i).getId()) + " - [X] " + todos.get(i).toString());
         } else {
-          System.out.println((tasks.get(i).getId()) + " - [ ] " + tasks.get(i).toString());
+          System.out.println((todos.get(i).getId()) + " - [ ] " + todos.get(i).toString());
         }
       }
     } else {
@@ -64,35 +61,36 @@ public class TodoList {
   }
 
   public void addNewTask(String args, int id) throws IOException {
-    List<Todo> tasks = readAllDataFromFile();
+    List<Todo> todos = readAllDataFromFile();
     Todo newTodo = new Todo(args);
     newTodo.setId(id);
     newTodo.setCreatedAt(LocalDateTime.now());
-    tasks.add(newTodo);
-    writeTasksToFile(tasks);
+    todos.add(newTodo);
+    writeTasksToFile(todos);
   }
 
   public void removeTask(String args) {
-    List<Todo> tasks = readAllDataFromFile();
-    tasks.remove(Integer.parseInt(args) - 1);
-    writeTasksToFile(tasks);
+    List<Todo> todos = readAllDataFromFile();
+    todos.remove(Integer.parseInt(args) - 1);
+    writeTasksToFile(todos);
   }
 
   public void completeTask(String args) {
-    List<Todo> tasks = readAllDataFromFile();
+    List<Todo> todos = readAllDataFromFile();
     indexToComplete = Integer.parseInt(args) - 1;
-    if (indexToComplete > tasks.size()) {
+    if (indexToComplete > todos.size()) {
       System.out.println("Unable to check: index is out of bound");
       return;
     } else {
-      for (int i = 0; i < tasks.size(); i++) {
+      for (int i = 0; i < todos.size(); i++) {
         if (i == indexToComplete) {
-          String markedTask = "*" + tasks.get(i).getName() + "*";
-          tasks.add(i, new Todo(markedTask));
-          tasks.remove(i + 1);
+         // String markedTask = "*" + todos.get(i).getName() + "*";
+         // todos.add(i, new Todo(markedTask));
+         // todos.remove(i + 1);
+          todos.get(i).setCompleted(true);
         }
       }
-      writeTasksToFile(tasks);
+      writeTasksToFile(todos);
     }
   }
 
@@ -114,7 +112,6 @@ public class TodoList {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
     return todos;
   }
 
@@ -124,6 +121,7 @@ public class TodoList {
       Todo newTodo = new Todo(stringParts[1]);
       newTodo.setId(Integer.parseInt(stringParts[0]));
       newTodo.setCreatedAt(LocalDateTime.parse(stringParts[2]));
+      newTodo.setCompleted(Boolean.parseBoolean(stringParts[3]));
       todos.add(newTodo);
     }
   }
