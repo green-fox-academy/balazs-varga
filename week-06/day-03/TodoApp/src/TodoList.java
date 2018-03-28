@@ -10,19 +10,19 @@ public class TodoList {
 
   private final String PATH_STRING = "../todoFile.txt";
   private final String DELIMETER = "%#";
-  private List<String> tasks;
+  private List<String> todosString;
   private String name;
   private int indexToComplete;
   private List<Todo> todos;
 
   public TodoList(String name) {
     this.name = name;
-    tasks = new ArrayList<>();
+    todosString = new ArrayList<>();
     todos = new ArrayList<>();
   }
 
-  public List<String> getTasks() {
-    return tasks;
+  public List<String> getTodosString() {
+    return todosString;
   }
 
   public String getPATH_STRING() {
@@ -46,7 +46,7 @@ public class TodoList {
   }
 
   public void listTasks() {
-    List<Todo> todos = readAllDataFromFile();
+    todos = readAllDataFromFile();
     if (todos.size() > 0) {
       for (int i = 0; i < todos.size(); i++) {
         if (todos.get(i).isCompleted()) {
@@ -61,22 +61,25 @@ public class TodoList {
   }
 
   public void addNewTask(String args, int id) {
-    List<Todo> todos = readAllDataFromFile();
+    todos = readAllDataFromFile();
+
     Todo newTodo = new Todo(args);
     newTodo.setId(id);
     newTodo.setCreatedAt(LocalDateTime.now());
     todos.add(newTodo);
+
     writeTasksToFile(todos);
   }
 
   public void removeTask(String args) {
-    List<Todo> todos = readAllDataFromFile();
+    todos = readAllDataFromFile();
     todos.remove(Integer.parseInt(args) - 1);
+
     writeTasksToFile(todos);
   }
 
   public void completeTask(String args) {
-    List<Todo> todos = readAllDataFromFile();
+    todos = readAllDataFromFile();
     indexToComplete = Integer.parseInt(args) - 1;
     if (indexToComplete > todos.size()) {
       System.out.println("Unable to check: index is out of bound");
@@ -93,7 +96,6 @@ public class TodoList {
 
   private List<Todo> readAllDataFromFile() {
     List<String> todosString = new ArrayList<>();
-    List<Todo> todos = new ArrayList<>();
 
     Path path = Paths.get(PATH_STRING);
     try {
