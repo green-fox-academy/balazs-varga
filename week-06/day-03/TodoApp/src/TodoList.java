@@ -33,10 +33,7 @@ public class TodoList {
     Path path = Paths.get(PATH_STRING);
     List<String> tasksString = new ArrayList<>();
 
-    for (int i = 0; i < tasks.size(); i++) {
-      tasksString.add(tasks.get(i).getId() + DELIMETER + tasks.get(i).getName() + DELIMETER + tasks.get(i).getCreatedAt() +
-              DELIMETER + tasks.get(i).isCompleted());
-    }
+    convertTodoObjectToString(tasks, tasksString);
 
     try {
       Files.write(path, tasksString);
@@ -112,6 +109,13 @@ public class TodoList {
       e.printStackTrace();
     }
     return todos;
+  }
+
+  private void convertTodoObjectToString(List<Todo> tasks, List<String> tasksString) {
+    for (int i = 0; i < tasks.size(); i++) {
+      tasksString.add(tasks.get(i).getId() + DELIMETER + tasks.get(i).getName() + DELIMETER + tasks.get(i).getCreatedAt() +
+              DELIMETER + tasks.get(i).isCompleted());
+    }
   }
 
   private void convertStringToTodoObject(List<String> todosString, List<Todo> todos) {
