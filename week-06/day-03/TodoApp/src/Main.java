@@ -8,16 +8,13 @@ public class Main {
 
     ArgumentHandler argHandler = new ArgumentHandler(args);
 
-    int taskCount = 1;
-
     if (argHandler.noArgs()) {
       argHandler.noArgsPrinter();
     } else if (argHandler.listTasks()) {
       todoList.listTasks();
     } else if (argHandler.addNewTask()) {
       try {
-        todoList.addNewTask(args[1], taskCount);
-        taskCount++;
+        todoList.addNewTask(args[1]);
       } catch (ArrayIndexOutOfBoundsException e) {
         System.out.println("Unable to add: no task provided");
       }

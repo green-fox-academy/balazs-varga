@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,29 +9,33 @@ import java.util.List;
 
 public class TodoList {
 
-  private final String PATH_STRING = "../todoFile.txt";
+  private final String TODO_PATH_STRING = "../todoFile.txt";
+  private final String ID_PATH_STRING = "../id.txt";
   private final String DELIMETER = "%#";
   private List<String> todosString;
   private String name;
   private int indexToComplete;
   private List<Todo> todos;
+  List<String> idList;
+  private int idCount = 0;
 
   public TodoList(String name) {
     this.name = name;
     todosString = new ArrayList<>();
     todos = new ArrayList<>();
+    idList = new ArrayList<>();
   }
 
   public List<String> getTodosString() {
     return todosString;
   }
 
-  public String getPATH_STRING() {
-    return PATH_STRING;
+  public String getTODO_PATH_STRING() {
+    return TODO_PATH_STRING;
   }
 
   public void writeTasksToFile(List<Todo> tasks) {
-    Path path = Paths.get(PATH_STRING);
+    Path path = Paths.get(TODO_PATH_STRING);
     List<String> tasksString = new ArrayList<>();
 
     convertTodoObjectToString(tasks, tasksString);
@@ -57,8 +62,13 @@ public class TodoList {
     }
   }
 
-  public void addNewTask(String args, int id) {
+  public void addNewTask(String args) {
     todos = readAllDataFromFile();
+    idList = readIDFromFile();
+    int id = Integer.parseInt(idList.get(0));
+    id++;
+    idList.add(0, "" + id);
+    writeIDToFile(idList);
 
     Todo newTodo = new Todo(args);
     newTodo.setId(id);
@@ -94,7 +104,7 @@ public class TodoList {
   private List<Todo> readAllDataFromFile() {
     List<String> todosString = new ArrayList<>();
 
-    Path path = Paths.get(PATH_STRING);
+    Path path = Paths.get(TODO_PATH_STRING);
     try {
       todosString.addAll(Files.readAllLines(path));
     } catch (IOException e) {
@@ -126,6 +136,42 @@ public class TodoList {
       newTodo.setCreatedAt(LocalDateTime.parse(stringParts[2]));
       newTodo.setCompleted(Boolean.parseBoolean(stringParts[3]));
       todos.add(newTodo);
+    }
+  }
+
+  private List<String> readIDFromFile() {
+    Path path = Paths.get(ID_PATH_STRING);
+    File file = new File(ID_PATH_STRING);
+    try {
+      if (!file.exists()) {
+        file.createNewFile();
+        idFileInit();
+      } else {
+        idList.addAll(Files.readAllLines(path));
+      }
+    } catch (IOException e) {
+        System.out.println("File doesn't exist.");
+    }
+    return idList;
+  }
+
+    public void writeIDToFile(List<String> idList) {
+    Path path = Paths.get(ID_PATH_STRING);
+
+    try {
+      Files.write(path, idList);
+    } catch (IOException e) {
+      System.out.println("File doesn't exist.");
+    }
+  }
+
+  private void idFileInit() {
+    Path path = Paths.get(ID_PATH_STRING);
+    idList.add("" + idCount);
+    try {
+      Files.write(path, idList);
+    } catch (IOException e) {
+      System.out.println("File doesn't exist.");
     }
   }
 }
