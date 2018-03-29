@@ -14,7 +14,7 @@ public class TodoList {
   private final String DELIMETER = "%#";
   private List<String> todosString;
   private String name;
-  private int indexToComplete;
+  private int idToComplete;
   private List<Todo> todos;
   private List<String> idList;
   private int idCount = 0;
@@ -79,13 +79,21 @@ public class TodoList {
 
   public void completeTask(String args) {
     todos = readAllDataFromFile();
-    indexToComplete = Integer.parseInt(args) - 1;
-    if (indexToComplete > todos.size()) {
-      System.out.println("Unable to check: index is out of bound");
+    idToComplete = Integer.parseInt(args);
+
+    List<Integer> ids = new ArrayList<>();
+
+    for (int i = 0; i < todos.size(); i++) {
+      ids.add(todos.get(i).getId());
+    }
+
+    if (!ids.contains(idToComplete)) {
+      System.out.println("Unable to check: the id doesn't exist");
       return;
     } else {
+
       for (int i = 0; i < todos.size(); i++) {
-        if (i == indexToComplete) {
+        if (todos.get(i).getId() == idToComplete) {
           todos.get(i).setCompleted(true);
           todos.get(i).setCompletedAt(LocalDateTime.now());
         }
@@ -128,6 +136,9 @@ public class TodoList {
       newTodo.setId(Integer.parseInt(stringParts[0]));
       newTodo.setCreatedAt(LocalDateTime.parse(stringParts[2]));
       newTodo.setCompleted(Boolean.parseBoolean(stringParts[3]));
+      if (!stringParts[4].equals("null")) {
+        newTodo.setCompletedAt(LocalDateTime.parse(stringParts[4]));
+      }
       todos.add(newTodo);
     }
   }
