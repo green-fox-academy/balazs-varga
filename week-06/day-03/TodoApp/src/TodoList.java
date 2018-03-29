@@ -16,7 +16,7 @@ public class TodoList {
   private String name;
   private int indexToComplete;
   private List<Todo> todos;
-  List<String> idList;
+  private List<String> idList;
   private int idCount = 0;
 
   public TodoList(String name) {
@@ -24,14 +24,6 @@ public class TodoList {
     todosString = new ArrayList<>();
     todos = new ArrayList<>();
     idList = new ArrayList<>();
-  }
-
-  public List<String> getTodosString() {
-    return todosString;
-  }
-
-  public String getTODO_PATH_STRING() {
-    return TODO_PATH_STRING;
   }
 
   public void writeTasksToFile(List<Todo> tasks) {
@@ -65,13 +57,13 @@ public class TodoList {
   public void addNewTask(String args) {
     todos = readAllDataFromFile();
     idList = readIDFromFile();
-    int id = Integer.parseInt(idList.get(0));
-    id++;
-    idList.add(0, "" + id);
+    idCount = Integer.parseInt(idList.get(0));
+    idCount++;
+    idList.add(0, "" + idCount);
     writeIDToFile(idList);
 
     Todo newTodo = new Todo(args);
-    newTodo.setId(id);
+    newTodo.setId(idCount);
     newTodo.setCreatedAt(LocalDateTime.now());
     todos.add(newTodo);
 
@@ -157,7 +149,6 @@ public class TodoList {
 
     public void writeIDToFile(List<String> idList) {
     Path path = Paths.get(ID_PATH_STRING);
-
     try {
       Files.write(path, idList);
     } catch (IOException e) {
