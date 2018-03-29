@@ -87,6 +87,7 @@ public class TodoList {
       for (int i = 0; i < todos.size(); i++) {
         if (i == indexToComplete) {
           todos.get(i).setCompleted(true);
+          todos.get(i).setCompletedAt(LocalDateTime.now());
         }
       }
       writeTasksToFile(todos);
@@ -116,7 +117,7 @@ public class TodoList {
   private void convertTodoObjectToString(List<Todo> tasks, List<String> tasksString) {
     for (int i = 0; i < tasks.size(); i++) {
       tasksString.add(tasks.get(i).getId() + DELIMETER + tasks.get(i).getName() + DELIMETER + tasks.get(i).getCreatedAt() +
-              DELIMETER + tasks.get(i).isCompleted());
+              DELIMETER + tasks.get(i).isCompleted() + DELIMETER + tasks.get(i).getCompletedAt());
     }
   }
 

@@ -45,6 +45,14 @@ public class Todo {
     return createdAt;
   }
 
+  public LocalDateTime getCompletedAt() {
+    return completedAt;
+  }
+
+  public void setCompletedAt(LocalDateTime completedAt) {
+    this.completedAt = completedAt;
+  }
+
   @Override
   public String toString() {
     return name;
