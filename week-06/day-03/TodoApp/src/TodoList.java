@@ -44,7 +44,8 @@ public class TodoList {
     if (todos.size() > 0) {
       for (int i = 0; i < todos.size(); i++) {
         if (todos.get(i).isCompleted()) {
-          System.out.println((todos.get(i).getId()) + " - [X] " + todos.get(i).toString());
+          System.out.println((todos.get(i).getId()) + " - [X] " + todos.get(i).toString() + " - Task is completed in: "
+                  + todos.get(i).complitionTime() + " day(s)");
         } else {
           System.out.println((todos.get(i).getId()) + " - [ ] " + todos.get(i).toString());
         }

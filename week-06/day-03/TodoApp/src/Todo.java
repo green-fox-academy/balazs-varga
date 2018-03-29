@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Todo {
 
@@ -11,6 +12,10 @@ public class Todo {
   public Todo(String name) {
     this.name = name;
     isCompleted = false;
+  }
+
+  public long complitionTime () {
+    return ChronoUnit.DAYS.between(createdAt, completedAt);
   }
 
   public String getName() {
