@@ -1,8 +1,6 @@
-import java.io.IOException;
-
 public class Main {
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
 
     TodoList todoList = new TodoList("My todo list");
 
@@ -17,6 +15,12 @@ public class Main {
         todoList.addNewTask(args[1]);
       } catch (ArrayIndexOutOfBoundsException e) {
         System.out.println("Unable to add: no task provided");
+      }
+    } else if (argHandler.updateTask()) {
+      try {
+        todoList.updateTask(args[1], args[2]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Unable to update: no task provided");
       }
     } else if (argHandler.removeTask()) {
       try {

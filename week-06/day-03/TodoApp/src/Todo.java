@@ -4,7 +4,6 @@ public class Todo {
 
   private int id;
   private String name;
-  private String description;
   private LocalDateTime createdAt;
   private LocalDateTime completedAt;
   private boolean isCompleted;

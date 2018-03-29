@@ -165,4 +165,18 @@ public class TodoList {
       System.out.println("File doesn't exist.");
     }
   }
+
+  public void updateTask(String firstArg, String secondArg) {
+    todos = readAllDataFromFile();
+    String updatedTask = secondArg;
+    int id = Integer.parseInt(firstArg);
+
+    for (int i = 0; i < todos.size(); i++) {
+      if (todos.get(i).getId() == id) {
+        todos.get(i).setName(updatedTask);
+      }
+    }
+
+    writeTasksToFile(todos);
+  }
 }
