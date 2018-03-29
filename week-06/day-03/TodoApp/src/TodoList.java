@@ -171,12 +171,17 @@ public class TodoList {
     String updatedTask = secondArg;
     int id = Integer.parseInt(firstArg);
 
-    for (int i = 0; i < todos.size(); i++) {
-      if (todos.get(i).getId() == id) {
-        todos.get(i).setName(updatedTask);
+    if (id > todos.size()) {
+      System.out.println("Unable to update: index is out of bound");
+      return;
+    } else {
+      for (int i = 0; i < todos.size(); i++) {
+        if (todos.get(i).getId() == id) {
+          todos.get(i).setName(updatedTask);
+        }
       }
     }
-
+    
     writeTasksToFile(todos);
   }
 }
