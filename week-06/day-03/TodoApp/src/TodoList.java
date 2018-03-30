@@ -36,15 +36,11 @@ public class TodoList {
     }
   }
 
-  public void completeTask(String args) {
+  public void completeTask(String idString) {
     todos = fileManipulation.readAllDataFromFile();
-    idToComplete = Integer.parseInt(args);
+    idToComplete = Integer.parseInt(idString);
 
-    List<Integer> ids = new ArrayList<>();
-
-    for (int i = 0; i < todos.size(); i++) {
-      ids.add(todos.get(i).getId());
-    }
+    List<Integer> ids = getIdsOfTodoList();
 
     if (!ids.contains(idToComplete)) {
       System.out.println("Unable to check: the id doesn't exist");
@@ -61,10 +57,22 @@ public class TodoList {
     }
   }
 
-  public void removeTask(String args) {
+  public void removeTask(String idString) {
     todos = fileManipulation.readAllDataFromFile();
-    todos.remove(Integer.parseInt(args) - 1);
+    int idToRemove = Integer.parseInt(idString);
 
+    List<Integer> ids = getIdsOfTodoList();
+
+    if (!ids.contains(idToRemove)) {
+      System.out.println("Unable to remove: id is out of bound");
+      return;
+    } else {
+      for (int i = 0; i < todos.size(); i++) {
+        if (todos.get(i).getId() == idToRemove) {
+          todos.remove(i);
+        }
+      }
+    }
     fileManipulation.writeTasksToFile(todos);
   }
 
@@ -89,7 +97,7 @@ public class TodoList {
     int id = Integer.parseInt(idString);
 
     if (id > todos.size()) {
-      System.out.println("Unable to update: index is out of bound");
+      System.out.println("Unable to update: id is out of bound");
       return;
     } else {
       for (int i = 0; i < todos.size(); i++) {
@@ -101,4 +109,12 @@ public class TodoList {
     fileManipulation.writeTasksToFile(todos);
   }
 
+  private List<Integer> getIdsOfTodoList() {
+    List<Integer> ids = new ArrayList<>();
+
+    for (int i = 0; i < todos.size(); i++) {
+      ids.add(todos.get(i).getId());
+    }
+    return ids;
+  }
 }
