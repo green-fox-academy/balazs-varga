@@ -11,7 +11,7 @@ public class FileManipulation {
 
   private final String TODO_PATH_STRING = "../todoFile.txt";
   private final String ID_PATH_STRING = "../id.txt";
-  private final String DELIMETER = "%#";
+  private final String DELIMITER = "%#";
   private List<Todo> todos = new ArrayList<>();
   private List<String> idList = new ArrayList<>();
   private int idCount = 0;
@@ -86,7 +86,7 @@ public class FileManipulation {
 
   public void convertStringToTodoObject(List<String> todosString, List<Todo> todos) {
     for (int i = 0; i < todosString.size(); i++) {
-      String[] stringParts = todosString.get(i).split(DELIMETER);
+      String[] stringParts = todosString.get(i).split(DELIMITER);
       Todo newTodo = new Todo(stringParts[1]);
       newTodo.setId(Integer.parseInt(stringParts[0]));
       newTodo.setCreatedAt(LocalDateTime.parse(stringParts[2]));
@@ -100,8 +100,8 @@ public class FileManipulation {
 
   public void convertTodoObjectToString(List<Todo> tasks, List<String> tasksString) {
     for (int i = 0; i < tasks.size(); i++) {
-      tasksString.add(tasks.get(i).getId() + DELIMETER + tasks.get(i).getName() + DELIMETER + tasks.get(i).getCreatedAt() +
-              DELIMETER + tasks.get(i).isCompleted() + DELIMETER + tasks.get(i).getCompletedAt());
+      tasksString.add(tasks.get(i).getId() + DELIMITER + tasks.get(i).getName() + DELIMITER + tasks.get(i).getCreatedAt() +
+              DELIMITER + tasks.get(i).isCompleted() + DELIMITER + tasks.get(i).getCompletedAt());
     }
   }
 

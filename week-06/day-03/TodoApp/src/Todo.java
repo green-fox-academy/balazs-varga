@@ -14,7 +14,7 @@ public class Todo {
     isCompleted = false;
   }
 
-  public long complitionTime () {
+  public long completionTime() {
     return ChronoUnit.DAYS.between(createdAt, completedAt);
   }
 

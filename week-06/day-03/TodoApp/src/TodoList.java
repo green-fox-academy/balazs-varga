@@ -26,7 +26,7 @@ public class TodoList {
       for (Todo todo : todos) {
         if (todo.isCompleted()) {
           System.out.println((todo.getId()) + " - " + TASK_COMPLETED_SYMBOL + " " + todo.toString() + " - Task is completed in: "
-                  + todo.complitionTime() + " day(s)");
+                  + todo.completionTime() + " day(s)");
         } else {
           System.out.println((todo.getId()) + " - " + TASK_INCOMPLETED_SYMBOL + " " + todo.toString());
         }
