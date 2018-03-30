@@ -95,9 +95,9 @@ public class FileManipulation {
   }
 
   public void convertTodoObjectToString(List<Todo> tasks, List<String> tasksString) {
-    for (int i = 0; i < tasks.size(); i++) {
-      tasksString.add(tasks.get(i).getId() + DELIMITER + tasks.get(i).getName() + DELIMITER + tasks.get(i).getCreatedAt() +
-              DELIMITER + tasks.get(i).isCompleted() + DELIMITER + tasks.get(i).getCompletedAt());
-    }
+    tasks.stream()
+            .map(task -> task.getId() + DELIMITER + task.getName() + DELIMITER + task.getCreatedAt() + DELIMITER
+                    + task.isCompleted() + DELIMITER + task.getCompletedAt())
+            .forEach(tasksString::add);
   }
 }

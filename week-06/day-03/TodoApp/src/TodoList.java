@@ -1,6 +1,7 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class TodoList {
 
@@ -44,13 +45,12 @@ public class TodoList {
       System.out.println("Unable to check: the id doesn't exist");
       return;
     } else {
-
-      for (int i = 0; i < todos.size(); i++) {
-        if (todos.get(i).getId() == idToComplete) {
-          todos.get(i).setCompleted(true);
-          todos.get(i).setCompletedAt(LocalDateTime.now());
-        }
-      }
+      todos.stream()
+              .filter(todo -> todo.getId() == idToComplete)
+              .forEach(todo -> {
+                todo.setCompleted(true);
+                todo.setCompletedAt(LocalDateTime.now());
+      });
       fileManipulation.writeTasksToFile(todos);
     }
   }
@@ -94,20 +94,16 @@ public class TodoList {
       System.out.println("Unable to update: id is out of bound");
       return;
     } else {
-      for (int i = 0; i < todos.size(); i++) {
-        if (todos.get(i).getId() == idToUpdate) {
-          todos.get(i).setName(taskName);
-        }
-      }
+      IntStream.range(0, todos.size())
+              .filter(i -> todos.get(i).getId() == idToUpdate)
+              .forEach(i -> todos.get(i).setName(taskName));
     }
     fileManipulation.writeTasksToFile(todos);
   }
 
   private List<Integer> getIdsOfTodoList() {
     List<Integer> ids = new ArrayList<>();
-    for (int i = 0; i < todos.size(); i++) {
-      ids.add(todos.get(i).getId());
-    }
+    todos.forEach(todo -> ids.add(todo.getId()));
     return ids;
   }
 }
