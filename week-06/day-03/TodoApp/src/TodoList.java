@@ -88,13 +88,14 @@ public class TodoList {
 
   public void updateTask(String idString, String taskName) {
     todos = fileManipulation.readAllDataFromFile();
-    int id = Integer.parseInt(idString);
-    if (id > todos.size()) {
+    int idToUpdate = Integer.parseInt(idString);
+    List<Integer> ids = getIdsOfTodoList();
+    if (!ids.contains(idToUpdate)) {
       System.out.println("Unable to update: id is out of bound");
       return;
     } else {
       for (int i = 0; i < todos.size(); i++) {
-        if (todos.get(i).getId() == id) {
+        if (todos.get(i).getId() == idToUpdate) {
           todos.get(i).setName(taskName);
         }
       }
