@@ -6,6 +6,7 @@ public class Main {
 
     ArgumentHandler argHandler = new ArgumentHandler(args);
 
+
     if (argHandler.noArgs()) {
       argHandler.noArgsPrinter();
     } else if (argHandler.listTasks()) {
