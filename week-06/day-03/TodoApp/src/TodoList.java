@@ -39,9 +39,7 @@ public class TodoList {
   public void completeTask(String idString) {
     todos = fileManipulation.readAllDataFromFile();
     idToComplete = Integer.parseInt(idString);
-
     List<Integer> ids = getIdsOfTodoList();
-
     if (!ids.contains(idToComplete)) {
       System.out.println("Unable to check: the id doesn't exist");
       return;
@@ -60,9 +58,7 @@ public class TodoList {
   public void removeTask(String idString) {
     todos = fileManipulation.readAllDataFromFile();
     int idToRemove = Integer.parseInt(idString);
-
     List<Integer> ids = getIdsOfTodoList();
-
     if (!ids.contains(idToRemove)) {
       System.out.println("Unable to remove: id is out of bound");
       return;
@@ -83,19 +79,16 @@ public class TodoList {
     idCount++;
     idList.add(0, "" + idCount);
     fileManipulation.writeIDToFile(idList);
-
     Todo newTodo = new Todo(args);
     newTodo.setId(idCount);
     newTodo.setCreatedAt(LocalDateTime.now());
     todos.add(newTodo);
-
     fileManipulation.writeTasksToFile(todos);
   }
 
   public void updateTask(String idString, String taskName) {
     todos = fileManipulation.readAllDataFromFile();
     int id = Integer.parseInt(idString);
-
     if (id > todos.size()) {
       System.out.println("Unable to update: id is out of bound");
       return;
@@ -111,7 +104,6 @@ public class TodoList {
 
   private List<Integer> getIdsOfTodoList() {
     List<Integer> ids = new ArrayList<>();
-
     for (int i = 0; i < todos.size(); i++) {
       ids.add(todos.get(i).getId());
     }

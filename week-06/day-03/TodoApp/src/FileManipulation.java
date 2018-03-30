@@ -18,14 +18,12 @@ public class FileManipulation {
 
   public List<Todo> readAllDataFromFile() {
     List<String> todosString = new ArrayList<>();
-
     Path path = Paths.get(TODO_PATH_STRING);
     try {
       todosString.addAll(Files.readAllLines(path));
     } catch (IOException e) {
       e.printStackTrace();
     }
-
     try {
       if (Files.readAllLines(path) != null) {
         convertStringToTodoObject(todosString, todos);
@@ -39,9 +37,7 @@ public class FileManipulation {
   public void writeTasksToFile(List<Todo> tasks) {
     Path path = Paths.get(TODO_PATH_STRING);
     List<String> tasksString = new ArrayList<>();
-
     convertTodoObjectToString(tasks, tasksString);
-
     try {
       Files.write(path, tasksString);
     } catch (IOException e) {
@@ -104,5 +100,4 @@ public class FileManipulation {
               DELIMITER + tasks.get(i).isCompleted() + DELIMITER + tasks.get(i).getCompletedAt());
     }
   }
-
 }
