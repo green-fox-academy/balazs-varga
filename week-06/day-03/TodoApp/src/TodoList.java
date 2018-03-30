@@ -12,6 +12,8 @@ public class TodoList {
   private final String TODO_PATH_STRING = "../todoFile.txt";
   private final String ID_PATH_STRING = "../id.txt";
   private final String DELIMETER = "%#";
+  private final String TASK_COMPLETED_SYMBOL = "[X]";
+  private final String TASK_INCOMPLETED_SYMBOL = "[ ]";
   private List<String> todosString;
   private String name;
   private int idToComplete;
@@ -42,12 +44,12 @@ public class TodoList {
   public void listTasks() {
     todos = readAllDataFromFile();
     if (todos.size() > 0) {
-      for (int i = 0; i < todos.size(); i++) {
-        if (todos.get(i).isCompleted()) {
-          System.out.println((todos.get(i).getId()) + " - [X] " + todos.get(i).toString() + " - Task is completed in: "
-                  + todos.get(i).complitionTime() + " day(s)");
+      for (Todo todo : todos) {
+        if (todo.isCompleted()) {
+          System.out.println((todo.getId()) + " - " + TASK_COMPLETED_SYMBOL + " " + todo.toString() + " - Task is completed in: "
+                  + todo.complitionTime() + " day(s)");
         } else {
-          System.out.println((todos.get(i).getId()) + " - [ ] " + todos.get(i).toString());
+          System.out.println((todo.getId()) + " - " + TASK_INCOMPLETED_SYMBOL + " " + todo.toString());
         }
       }
     } else {
@@ -179,10 +181,9 @@ public class TodoList {
     }
   }
 
-  public void updateTask(String firstArg, String secondArg) {
+  public void updateTask(String idString, String taskName) {
     todos = readAllDataFromFile();
-    String updatedTask = secondArg;
-    int id = Integer.parseInt(firstArg);
+    int id = Integer.parseInt(idString);
 
     if (id > todos.size()) {
       System.out.println("Unable to update: index is out of bound");
@@ -190,7 +191,7 @@ public class TodoList {
     } else {
       for (int i = 0; i < todos.size(); i++) {
         if (todos.get(i).getId() == id) {
-          todos.get(i).setName(updatedTask);
+          todos.get(i).setName(taskName);
         }
       }
     }
