@@ -14,6 +14,10 @@ public class HelloLanguagesWebController {
   @RequestMapping("/web/hello")
   public String hellos(Model model, String hello) {
     model.addAttribute("hello", greeting.getHellos());
+    String randomR = String.valueOf(random.nextInt(255));
+    String randomG = String.valueOf(random.nextInt(255));
+    String randomB = String.valueOf(random.nextInt(255));
+    model.addAttribute("color", "color: rgb("+ randomR + "," + randomG + "," + randomB + ")");
     return "greetinglanguages";
   }
 }
