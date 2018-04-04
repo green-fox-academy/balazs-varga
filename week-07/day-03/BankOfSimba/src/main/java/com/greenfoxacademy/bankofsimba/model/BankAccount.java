@@ -1,5 +1,6 @@
 package com.greenfoxacademy.bankofsimba.model;
 
+
 public class BankAccount {
   private String name;
   private double balance;

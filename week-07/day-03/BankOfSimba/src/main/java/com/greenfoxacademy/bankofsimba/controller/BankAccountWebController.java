@@ -20,11 +20,6 @@ public class BankAccountWebController {
 
   @GetMapping(value = "/bank")
   public String showBankAccounts(Model model) {
-    bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
-    bankAccounts.add(new BankAccount("Mufasa", 1000, "lion"));
-    bankAccounts.add(new BankAccount("Pumbaa", 5700, "warthog"));
-    bankAccounts.add(new BankAccount("Rafiki", 6456, "mandrill"));
-    bankAccounts.add(new BankAccount("Timon", 2056, "meerkat"));
     model.addAttribute("bankAccounts", bankAccounts.getBankAccounts());
     return "bankaccounts";
   }
