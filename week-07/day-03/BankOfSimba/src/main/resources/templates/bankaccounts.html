@@ -6,6 +6,8 @@
     <meta charset="utf-8" />
 </head>
 <body>
-
+    <div th:each="bankAccount : ${bankAccounts}">
+         <p th:text="${bankAccount}"></p>
+    </div>
 </body>
 </html>

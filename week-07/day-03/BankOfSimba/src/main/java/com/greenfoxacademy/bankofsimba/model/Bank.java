@@ -17,4 +17,11 @@ public class Bank {
   public List<BankAccount> getBankAccounts() {
     return bankAccounts;
   }
+
+  @Override
+  public String toString() {
+    return "Bank{" +
+            "bankAccounts=" + bankAccounts +
+            '}';
+  }
 }
