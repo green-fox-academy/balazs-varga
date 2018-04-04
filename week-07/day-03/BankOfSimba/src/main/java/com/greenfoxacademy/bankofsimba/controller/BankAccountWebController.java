@@ -14,7 +14,7 @@ public class BankAccountWebController {
 
   @GetMapping(value = "/show")
   public String showBankAccount(Model model) {
-    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion", false));
+    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion", false, true));
     return "bankaccountfields";
   }
 
