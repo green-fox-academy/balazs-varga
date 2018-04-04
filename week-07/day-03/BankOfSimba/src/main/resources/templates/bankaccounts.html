@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise #</title>
+    <title>Bank Accounts</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
     <style>
@@ -20,6 +20,7 @@
 
         table, th, td {
             border: 1px solid black;
+            text-align: center;
         }
     </style>
 </head>
@@ -30,12 +31,21 @@
             <th>Name</th>
             <th>Balance</th>
             <th>Animal Type</th>
+            <th>Is he a king?</th>
+            <th>Bad or Good one?</th>
         </tr>
         <tr th:each="bankAccount : ${bankAccounts}">
             <td th:text="${bankAccountStat.index}"></td>
             <td th:text="${bankAccount.getName()}"></td>
             <td th:text="${bankAccount.getBalance()}"></td>
             <td th:text="${bankAccount.getAnimalType()}"></td>
+            <td th:text="${bankAccount.isKing()}"></td>
+            <td>
+                <select>
+                    <option value="Bad Guy">Bad Guy</option>
+                    <option value="Good Guy">Good Guy</option>
+                </select>
+            </td>
         </tr>
     </table>
 </body>

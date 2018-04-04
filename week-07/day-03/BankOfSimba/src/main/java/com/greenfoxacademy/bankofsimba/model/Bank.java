@@ -12,11 +12,12 @@ public class Bank {
   }
 
   private void fill() {
-    bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
-    bankAccounts.add(new BankAccount("Mufasa", 1000, "lion"));
-    bankAccounts.add(new BankAccount("Pumbaa", 5700, "warthog"));
-    bankAccounts.add(new BankAccount("Rafiki", 6456, "mandrill"));
-    bankAccounts.add(new BankAccount("Timon", 2056, "meerkat"));
+    bankAccounts.add(new BankAccount("Simba", 2000, "lion", false));
+    bankAccounts.add(new BankAccount("Mufasa", 1000, "lion", false));
+    bankAccounts.add(new BankAccount("Pumbaa", 5700, "warthog", false));
+    bankAccounts.add(new BankAccount("Rafiki", 6456, "mandrill", false));
+    bankAccounts.add(new BankAccount("Timon", 2056, "meerkat", false));
+    bankAccounts.add(new BankAccount("Lion King", 99999, "lion", true));
   }
 
   public void add(BankAccount bankAccount) {
