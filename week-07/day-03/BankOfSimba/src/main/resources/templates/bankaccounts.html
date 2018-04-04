@@ -47,11 +47,7 @@
             <td th:text="${bankAccount.getBalance()}"></td>
             <td th:text="${bankAccount.getAnimalType()}"></td>
             <td th:text="${bankAccount.isKing()}"></td>
-            <td th:block th:switch="${bankAccount.isGood()}">
-                <p th:case="true"> Good Guy </p>
-                <p th:case="false"> Bad Guy </p>
-            </th:block>
-            </td>
+            <td th:text="${bankAccount.isGood()} ? 'Good Guy' : 'Bad Guy'"></td>
         </tr>
     </table>
 </body>
