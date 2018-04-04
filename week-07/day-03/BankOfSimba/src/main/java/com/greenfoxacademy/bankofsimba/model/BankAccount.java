@@ -11,6 +11,18 @@ public class BankAccount {
     this.animalType = animalType;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public double getBalance() {
+    return balance;
+  }
+
+  public String getAnimalType() {
+    return animalType;
+  }
+
   @Override
   public String toString() {
     return "BankAccount{" +

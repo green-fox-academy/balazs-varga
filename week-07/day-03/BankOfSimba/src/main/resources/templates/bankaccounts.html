@@ -4,10 +4,24 @@
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <div th:each="bankAccount : ${bankAccounts}">
-         <p th:text="${bankAccount}"></p>
-    </div>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Animal Type</th>
+        </tr>
+        <tr th:each="bankAccount : ${bankAccounts}">
+            <td th:text="${bankAccount.getName()}"></td>
+            <td th:text="${bankAccount.getBalance()}"></td>
+            <td th:text="${bankAccount.getAnimalType()}"></td>
+        </tr>
+    </table>
 </body>
 </html>
