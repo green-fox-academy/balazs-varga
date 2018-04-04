@@ -10,6 +10,10 @@ public class Bank {
     bankAccounts = new ArrayList<>();
   }
 
+  public void add(BankAccount bankAccount) {
+    bankAccounts.add(bankAccount);
+  }
+
   public List<BankAccount> getBankAccounts() {
     return bankAccounts;
   }
