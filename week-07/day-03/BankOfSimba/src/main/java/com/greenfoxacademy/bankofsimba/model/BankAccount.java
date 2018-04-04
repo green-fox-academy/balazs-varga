@@ -15,6 +15,14 @@ public class BankAccount {
     this.isGood = isGood;
   }
 
+  public void updateBalance() {
+    if(isKing) {
+      this.balance += 100;
+    } else {
+      this.balance += 10;
+    }
+  }
+
   public String getName() {
     return name;
   }

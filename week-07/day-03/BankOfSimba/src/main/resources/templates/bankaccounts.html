@@ -32,23 +32,28 @@
     </style>
 </head>
 <body>
-    <table style="width:100%">
-        <tr>
-            <th>Index</th>
-            <th>Name</th>
-            <th>Balance</th>
-            <th>Animal Type</th>
-            <th>Is he a king?</th>
-            <th>Bad or Good guy?</th>
-        </tr>
-        <tr th:each="bankAccount : ${bankAccounts}">
-            <td th:text="${bankAccountStat.index}"></td>
-            <td th:class="${bankAccount.isKing()} ? king : notking" th:text="${bankAccount.getName()}"></td>
-            <td th:text="${bankAccount.getBalance()}"></td>
-            <td th:text="${bankAccount.getAnimalType()}"></td>
-            <td th:text="${bankAccount.isKing()}"></td>
-            <td th:text="${bankAccount.isGood()} ? 'Good Guy' : 'Bad Guy'"></td>
-        </tr>
-    </table>
+    <form>
+        <table style="width:100%">
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>Animal Type</th>
+                <th>Is he a king?</th>
+                <th>Bad or Good guy?</th>
+                <th>Update balance</th>
+            </tr>
+            <tr th:each="bankAccount : ${bankAccounts}">
+                <td th:text="${bankAccountStat.index}"></td>
+                <td th:class="${bankAccount.isKing()} ? king : notking" th:text="${bankAccount.getName()}"></td>
+                <td th:text="${bankAccount.getBalance()}"></td>
+                <td th:text="${bankAccount.getAnimalType()}"></td>
+                <td th:text="${bankAccount.isKing()}"></td>
+                <td th:text="${bankAccount.isGood()} ? 'Good Guy' : 'Bad Guy'"></td>
+                <td class="button" th:action="${bankAccount.updateBalance()}">
+                    <input type="submit" value="Update balance"/></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
