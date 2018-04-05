@@ -36,9 +36,15 @@ public class UsefulWebController {
     return "email_validator";
   }
 
-  @GetMapping(value = "/useful/caesar")
-  public String caesarCoder(Model model, @RequestParam(name = "text") String word, @RequestParam(name = "number") String number) {
-    model.addAttribute("caesarCoder", utilityService.caesar(word, Integer.parseInt(number)));
-    return "caesar_encoder";
+  @GetMapping(value = "/useful/caesarEncoder")
+  public String caesarEncoder(Model model, @RequestParam(name = "text") String word, @RequestParam(name = "number") int number) {
+    model.addAttribute("caesarCoder", utilityService.caesar(word, number));
+    return "caesar_coder";
+  }
+
+  @GetMapping(value = "/useful/caesarDecoder")
+  public String caesarDecoder(Model model, @RequestParam(name = "text") String word, @RequestParam(name = "number") int number) {
+    model.addAttribute("caesarCoder", utilityService.caesar(word, -number));
+    return "caesar_coder";
   }
 }
