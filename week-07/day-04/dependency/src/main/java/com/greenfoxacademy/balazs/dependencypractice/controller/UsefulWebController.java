@@ -22,4 +22,9 @@ public class UsefulWebController {
     model.addAttribute("color", utilityService.randomColor());
     return "coloured_background";
   }
+
+  @GetMapping(value = "/useful/email")
+  public String validateEmail(Model model) {
+    return "email_validator";
+  }
 }
