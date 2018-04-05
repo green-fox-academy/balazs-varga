@@ -26,4 +26,9 @@ public class GreenFoxWebController {
     model.addAttribute("students", studentService.findAll());
     return "gfa_students";
   }
+
+  @GetMapping(value = "/gfa/add")
+  public String addNewStudent() {
+    return "gfa_add_new_student";
+  }
 }
