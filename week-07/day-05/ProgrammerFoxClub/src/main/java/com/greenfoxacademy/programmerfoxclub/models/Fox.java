@@ -12,6 +12,10 @@ public class Fox {
     this.name = name;
   }
 
+  public Fox() {
+    this("Jane Doe");
+  }
+
   private void addTrick(String trick) {
     tricks.add(trick);
   }
