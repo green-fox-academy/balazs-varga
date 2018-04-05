@@ -1,8 +1,11 @@
 package com.greenfoxacademy.balazs.dependencypractice.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.Random;
 
+@Component
 public class UtilityService {
   ArrayList<String> colors;
   Random random;
