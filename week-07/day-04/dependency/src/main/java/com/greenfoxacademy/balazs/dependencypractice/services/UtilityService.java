@@ -1,4 +1,4 @@
-package com.greenfoxacademy.balazs.dependencypractice.model;
+package com.greenfoxacademy.balazs.dependencypractice.services;
 
 import org.springframework.stereotype.Component;
 

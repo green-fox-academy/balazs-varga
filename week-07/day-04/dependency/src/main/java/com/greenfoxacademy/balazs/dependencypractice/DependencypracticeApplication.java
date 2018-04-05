@@ -1,7 +1,7 @@
 package com.greenfoxacademy.balazs.dependencypractice;
 
-import com.greenfoxacademy.balazs.dependencypractice.model.GreenColor;
-import com.greenfoxacademy.balazs.dependencypractice.model.Printer;
+import com.greenfoxacademy.balazs.dependencypractice.models.GreenColor;
+import com.greenfoxacademy.balazs.dependencypractice.models.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

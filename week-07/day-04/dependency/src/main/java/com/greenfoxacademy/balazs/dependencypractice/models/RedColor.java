@@ -1,4 +1,4 @@
-package com.greenfoxacademy.balazs.dependencypractice.model;
+package com.greenfoxacademy.balazs.dependencypractice.models;
 
 public class RedColor implements MyColor{
   @Override

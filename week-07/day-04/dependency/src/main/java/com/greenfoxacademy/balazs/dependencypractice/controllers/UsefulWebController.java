@@ -1,6 +1,6 @@
-package com.greenfoxacademy.balazs.dependencypractice.controller;
+package com.greenfoxacademy.balazs.dependencypractice.controllers;
 
-import com.greenfoxacademy.balazs.dependencypractice.model.UtilityService;
+import com.greenfoxacademy.balazs.dependencypractice.services.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
