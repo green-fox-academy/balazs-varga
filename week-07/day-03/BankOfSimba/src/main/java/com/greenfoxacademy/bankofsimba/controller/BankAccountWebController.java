@@ -15,12 +15,12 @@ public class BankAccountWebController {
   @GetMapping(value = "/show")
   public String showBankAccount(Model model) {
     model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion", false, true));
-    return "bankaccountfields";
+    return "bank_account_fields";
   }
 
   @GetMapping(value = "/bank")
   public String showBankAccounts(Model model) {
     model.addAttribute("bankAccounts", bankAccounts.getBankAccounts());
-    return "bankaccounts";
+    return "bank_accounts";
   }
 }
