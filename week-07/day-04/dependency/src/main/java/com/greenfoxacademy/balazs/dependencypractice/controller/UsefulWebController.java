@@ -10,4 +10,9 @@ public class UsefulWebController {
   public String linkToUtilities() {
     return "links_to_utilities";
   }
+
+  @GetMapping(value = "/useful/colored")
+  public String colouredBackground() {
+    return "coloured_background";
+  }
 }
