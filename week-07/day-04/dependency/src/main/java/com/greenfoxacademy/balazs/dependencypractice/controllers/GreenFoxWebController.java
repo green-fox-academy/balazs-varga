@@ -20,7 +20,7 @@ public class GreenFoxWebController {
 
   @GetMapping(value = "/gfa")
   public String linkToGfaPages(Model model) {
-    model.addAttribute("studentCount","The current number of GreenFox student is " + studentService.count());
+    model.addAttribute("studentCount", studentService.count());
     return "gfa_pages";
   }
 
@@ -35,9 +35,21 @@ public class GreenFoxWebController {
     return "gfa_add_new_student";
   }
 
-  @PostMapping("/gfa/save")
+  @PostMapping(value = "/gfa/save")
   public String save(@ModelAttribute(name = "studentName") String studentName) {
     studentService.save(studentName);
     return "redirect:/gfa";
+  }
+
+  @GetMapping(value = "/gfa/check")
+  public String checkStudent(Model model, @ModelAttribute(name = "studentName") String studentName) {
+    if (!studentName.equals("")) {
+      if (studentService.check(studentName)) {
+        model.addAttribute("isStudentInList", studentName + " is in the list.");
+      } else {
+        model.addAttribute("isStudentInList", studentName + " is not in the list.");
+      }
+    }
+    return "gfa_check_student";
   }
 }
