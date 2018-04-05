@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class GreenFoxWebController {
@@ -30,5 +32,11 @@ public class GreenFoxWebController {
   @GetMapping(value = "/gfa/add")
   public String addNewStudent() {
     return "gfa_add_new_student";
+  }
+
+  @PostMapping("/gfa/save")
+  public String save(@ModelAttribute(name = "studentName") String studentName) {
+    studentService.save(studentName);
+    return "redirect:/gfa/list";
   }
 }
