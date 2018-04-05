@@ -1,5 +1,6 @@
 package com.greenfoxacademy.balazs.dependencypractice;
 
+import com.greenfoxacademy.balazs.dependencypractice.model.GreenColor;
 import com.greenfoxacademy.balazs.dependencypractice.model.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,9 @@ public class DependencypracticeApplication implements CommandLineRunner {
 	@Autowired
 	Printer printer;
 
+	@Autowired
+  GreenColor greenColor;
+
 	public static void main(String[] args) {
 		SpringApplication.run(DependencypracticeApplication.class, args);
 	}
@@ -19,5 +23,6 @@ public class DependencypracticeApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println(printer.log("hello"));
+		greenColor.printColor();
 	}
 }
