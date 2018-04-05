@@ -8,9 +8,11 @@
 <body>
     <h2>Add a new Green Fox Academy Student</h2>
     <form action="#" th:action="@{/gfa/save}" method="post">
-        <label for="studentName">Student name:</label>
-        <input type="text" id="studentName" name="studentName" />
+        <label for="name">Student name:</label>
+        <input type="text" id="name" name="studentName" />
         <input type="submit" value="Add new student" />
     </form>
+    <br>
+    <a href="/gfa">Back</a>
 </body>
 </html>

@@ -19,7 +19,8 @@ public class GreenFoxWebController {
   }
 
   @GetMapping(value = "/gfa")
-  public String linkToGfaPages() {
+  public String linkToGfaPages(Model model) {
+    model.addAttribute("studentCount","The current number of GreenFox student is " + studentService.count());
     return "gfa_pages";
   }
 
@@ -37,6 +38,6 @@ public class GreenFoxWebController {
   @PostMapping("/gfa/save")
   public String save(@ModelAttribute(name = "studentName") String studentName) {
     studentService.save(studentName);
-    return "redirect:/gfa/list";
+    return "redirect:/gfa";
   }
 }
