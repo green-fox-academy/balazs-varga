@@ -1,5 +1,6 @@
 package com.greenfoxacademy.balazs.dependencypractice.controllers;
 
+import com.greenfoxacademy.balazs.dependencypractice.services.StudentService;
 import com.greenfoxacademy.balazs.dependencypractice.services.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UsefulWebController {
 
+  private UtilityService utilityService;
+
   @Autowired
-  UtilityService utilityService;
+  public UsefulWebController(UtilityService utilityService) {
+    this.utilityService = utilityService;
+  }
 
   @GetMapping(value = "/useful")
   public String linkToUtilities() {
