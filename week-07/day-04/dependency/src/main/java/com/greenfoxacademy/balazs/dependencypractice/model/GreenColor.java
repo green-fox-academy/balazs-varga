@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GreenColor implements MyColor{
   @Override
-  public void printColor() {
-    System.out.println("This is a green color...");
+  public String printColor() {
+    return "This is a green color...";
   }
 }

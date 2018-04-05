@@ -22,7 +22,6 @@ public class DependencypracticeApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(printer.log("hello"));
-		greenColor.printColor();
+		System.out.println(greenColor.printColor());
 	}
 }
