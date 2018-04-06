@@ -28,4 +28,8 @@ public class Fox {
   public String getName() {
     return name;
   }
+
+  public List<String> getTricks() {
+    return tricks;
+  }
 }
