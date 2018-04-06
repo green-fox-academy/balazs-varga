@@ -22,8 +22,9 @@ public class MainController {
     if (Util.loggedInFox == null || foxService.findOne(name) == null) {
       return "redirect:/login";
     } else {
-      model.addAttribute("fox", foxService.findOne(name).getName());
+      model.addAttribute("fox", foxService.findOne(name));
       model.addAttribute("numberOfTricks", foxService.findOne(name).getTricks().size());
+      model.addAttribute("trickList", foxService.findOne(name).getTricks());
       model.addAttribute("checklog", foxService.checkLogged(foxService.findOne(name)));
       return "index";
     }
