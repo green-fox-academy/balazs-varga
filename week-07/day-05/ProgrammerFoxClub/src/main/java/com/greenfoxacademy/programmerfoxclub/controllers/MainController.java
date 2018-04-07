@@ -26,7 +26,6 @@ public class MainController {
       model.addAttribute("foxName", foxName);
       model.addAttribute("numberOfTricks", foxService.findOne(foxName).getTricks().size());
       model.addAttribute("trickList", foxService.findOne(foxName).getTricks());
-      model.addAttribute("checklog", foxService.checkLogged(foxService.findOne(foxName)));
       return "index";
     }
   }
