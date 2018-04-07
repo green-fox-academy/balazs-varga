@@ -7,10 +7,10 @@
 </head>
 <body>
     <ul>
-        <li><a th:href="/index">Information</a></li>
+        <li><a th:href="@{'/?name=' + ${foxName}}"> Information</a></li>
         <li><a href="#">Nutrition Store</a></li>
     </ul>
-    <form action="#" th:action="@{/nutritionstore}" method="post">
+    <form action="#" th:action="${nutritionStorePage}" method="post">
         <label for="foodName">Food</label>
         <select id="foodName" name="foodName">
             <option value="pizza">Pizza</option>

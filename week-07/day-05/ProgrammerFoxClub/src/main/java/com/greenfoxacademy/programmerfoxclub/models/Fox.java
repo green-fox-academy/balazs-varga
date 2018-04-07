@@ -9,12 +9,13 @@ import java.util.List;
 public class Fox {
 
   private String name;
-  private List<String> tricks = new ArrayList<>();
+  private List<String> tricks;
   private String food;
   private String drink;
 
   public Fox(String name) {
     this.name = name;
+    this.tricks = new ArrayList<>();
     food = "salad";
     drink = "water";
   }

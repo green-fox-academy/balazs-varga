@@ -27,7 +27,7 @@ public class LoginController {
   }
 
   @PostMapping(value = "/login")
-  public String login(@ModelAttribute(name = "foxName") String foxName, Model model) {
+  public String login(@ModelAttribute(name = "foxName") String foxName) {
     Fox fox = foxService.login(foxName);
     if (fox != null) {
       Util.loggedInFox = fox;
