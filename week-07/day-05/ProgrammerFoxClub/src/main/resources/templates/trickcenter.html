@@ -6,20 +6,20 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<ul>
-    <li><a th:href="@{'/?name=' + ${foxName}}"> Information</a></li>
-    <li><a href="#">Nutrition Store</a></li>
-    <li><a href="#">Trick Center</a></li>
-</ul>
-<form action="#" th:action="@{'/trickCenter?name=' + ${foxName}}" method="post">
-    <label for="tricks">Tricks</label>
-    <select id="tricks" name="trickName">
-        <option value="html">Write HTML</option>
-        <option value="drive">Drive a car</option>
-        <option value="guitar">Play the guitar</option>
-        <option value="english">Learn English</option>
-    </select>
-    <input type="submit" value="Learn"/>
-</form>
+    <ul>
+        <li><a th:href="@{'/?name=' + ${foxName}}"> Information</a></li>
+        <li><a th:href="@{'/nutritionStore?name=' + ${foxName}}">Nutrition Store</a></li>
+        <li><a href="#">Trick Center</a></li>
+    </ul>
+    <form action="#" th:action="@{'/trickCenter?name=' + ${foxName}}" method="post">
+        <label for="tricks">Tricks</label>
+        <select id="tricks" name="trickName">
+            <option value="Write HTML">Write HTML</option>
+            <option value="Drive a car">Drive a car</option>
+            <option value="Play the guitar">Play the guitar</option>
+            <option value="Drink 10L beer">Drink 10L beer</option>
+        </select>
+        <input type="submit" value="Learn"/>
+    </form>
 </body>
 </html>

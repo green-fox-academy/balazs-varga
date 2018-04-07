@@ -24,7 +24,7 @@ public class Fox {
     this("Jane Doe");
   }
 
-  private void addTrick(String trick) {
+  public void addTrick(String trick) {
     tricks.add(trick);
   }
 

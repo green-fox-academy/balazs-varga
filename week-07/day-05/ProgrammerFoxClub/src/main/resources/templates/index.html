@@ -8,7 +8,8 @@
 <body>
     <ul>
         <li><a href="#">Information</a></li>
-        <li><a th:href="${nutritionPage}">Nutrition Store</a></li>
+        <li><a th:href="@{'/nutritionStore?name=' + ${foxName}}">Nutrition Store</a></li>
+        <li><a th:href="@{'/trickCenter?name=' + ${foxName}}">Trick Center</a></li>
     </ul>
     <img src="greenfox.png"/>
     <p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and '
@@ -16,7 +17,7 @@
     <h1>Known tricks</h1>
     <p th:text="${fox.getTricks().size() == 0} ? 'Knows no trick, yet. Go and learn some.'"></p>
     <ul th:each="trick : ${trickList}">
-        <li th:text="trick"></li>
+        <li th:text="${trick}"></li>
     </ul>
 </body>
 </html>

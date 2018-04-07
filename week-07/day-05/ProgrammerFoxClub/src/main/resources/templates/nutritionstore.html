@@ -9,6 +9,7 @@
     <ul>
         <li><a th:href="@{'/?name=' + ${foxName}}"> Information</a></li>
         <li><a href="#">Nutrition Store</a></li>
+        <li><a th:href="@{'/trickCenter?name=' + ${foxName}}">Trick Center</a></li>
     </ul>
     <form action="#" th:action="${nutritionStorePage}" method="post">
         <label for="foodName">Food</label>

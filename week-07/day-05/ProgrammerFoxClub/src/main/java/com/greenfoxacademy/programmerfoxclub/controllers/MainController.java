@@ -18,15 +18,15 @@ public class MainController {
   }
 
   @GetMapping(value = "/")
-  public String mainPage(Model model, @RequestParam(name = "name", required = false) String name) {
-    if (Util.loggedInFox == null || foxService.findOne(name) == null) {
+  public String mainPage(Model model, @RequestParam(name = "name", required = false) String foxName) {
+    if (Util.loggedInFox == null || foxService.findOne(foxName) == null) {
       return "redirect:/login";
     } else {
-      model.addAttribute("fox", foxService.findOne(name));
-      model.addAttribute("numberOfTricks", foxService.findOne(name).getTricks().size());
-      model.addAttribute("trickList", foxService.findOne(name).getTricks());
-      model.addAttribute("checklog", foxService.checkLogged(foxService.findOne(name)));
-      model.addAttribute("nutritionPage", "/nutritionStore?name=" + name);
+      model.addAttribute("fox", foxService.findOne(foxName));
+      model.addAttribute("foxName", foxName);
+      model.addAttribute("numberOfTricks", foxService.findOne(foxName).getTricks().size());
+      model.addAttribute("trickList", foxService.findOne(foxName).getTricks());
+      model.addAttribute("checklog", foxService.checkLogged(foxService.findOne(foxName)));
       return "index";
     }
   }

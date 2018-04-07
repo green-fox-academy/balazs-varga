@@ -39,4 +39,21 @@ public class FoxController {
     foxService.findOne(foxName).setDrink(drinkName);
     return "redirect:/?name=" + foxName;
   }
+
+  @GetMapping(value = "/trickCenter")
+  public String trickCenterPage(@RequestParam(name = "name", required = false) String foxName, Model model) {
+    model.addAttribute("foxName", foxName);
+    if (Util.loggedInFox == null || foxService.findOne(foxName) == null) {
+      return "redirect:/login";
+    } else {
+      return "trickcenter";
+    }
+  }
+
+  @PostMapping (value = "/trickCenter")
+  public String trickSetPage(@RequestParam(name = "name", required = false) String foxName,
+                                 @ModelAttribute(name = "trickName") String trickName) {
+    foxService.findOne(foxName).addTrick(trickName);
+    return "redirect:/?name=" + foxName;
+  }
 }
