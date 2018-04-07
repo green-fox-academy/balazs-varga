@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trick Center</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<ul>
+    <li><a th:href="@{'/?name=' + ${foxName}}"> Information</a></li>
+    <li><a href="#">Nutrition Store</a></li>
+    <li><a href="#">Trick Center</a></li>
+</ul>
+<form action="#" th:action="@{'/trickCenter?name=' + ${foxName}}" method="post">
+    <label for="tricks">Tricks</label>
+    <select id="tricks" name="trickName">
+        <option value="html">Write HTML</option>
+        <option value="drive">Drive a car</option>
+        <option value="guitar">Play the guitar</option>
+        <option value="english">Learn English</option>
+    </select>
+    <input type="submit" value="Learn"/>
+</form>
+</body>
+</html>
