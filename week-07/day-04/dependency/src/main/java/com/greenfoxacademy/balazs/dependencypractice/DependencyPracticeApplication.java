@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DependencypracticeApplication implements CommandLineRunner {
+public class DependencyPracticeApplication implements CommandLineRunner {
 
 	@Autowired
 	Printer printer;
@@ -17,7 +17,7 @@ public class DependencypracticeApplication implements CommandLineRunner {
   GreenColor greenColor;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DependencypracticeApplication.class, args);
+		SpringApplication.run(DependencyPracticeApplication.class, args);
 	}
 
 	@Override
