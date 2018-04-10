@@ -4,11 +4,41 @@
     <title>Todo List</title>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8" />
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h1 th:text="'Todos for today:'"></h1>
-<ul th:each="todo : ${todos}">
-    <li th:text="${todo.getTitle()}"></li>
-</ul>
+    <h1 th:text="'Todos for today:'"></h1>
+    <table style="width:100%">
+        <tr>
+            <th>ID</th>
+            <th>Action</th>
+            <th>Done</th>
+            <th>Urgent</th>
+        </tr>
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.getId()}"></td>
+            <td th:text="${todo.getTitle()}"></td>
+            <td th:text="${todo.isDone()}"></td>
+            <td th:text="${todo.isUrgent()}"></td>
+        </tr>
+    </table>
 </body>
 </html>
