@@ -22,4 +22,9 @@ public class TodoController {
     }
     return "todolist";
   }
+
+  @GetMapping(value = {"/todo/add"})
+  public String add(Model model) {
+    return "add_todo";
+  }
 }
