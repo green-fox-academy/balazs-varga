@@ -20,4 +20,11 @@ public class Todo {
     this.urgent = false;
     this.done = false;
   }
+
+  public Todo() {
+  }
+
+  public String getTitle() {
+    return title;
+  }
 }
