@@ -36,6 +36,7 @@
             <th>Done</th>
             <th>Urgent</th>
             <th></th>
+            <th></th>
         </tr>
         <tr th:each="todo : ${todos}">
             <td th:text="${todo.getId()}"></td>
@@ -44,6 +45,9 @@
             <td th:text="${todo.isUrgent()}"></td>
             <td>
                 <a th:href="@{'/' + ${todo.getId()} + '/delete'}">delete</a>
+            </td>
+            <td>
+                <a th:href="@{'/' + ${todo.getId()} + '/edit'}">edit</a>
             </td>
         </tr>
     </table>
