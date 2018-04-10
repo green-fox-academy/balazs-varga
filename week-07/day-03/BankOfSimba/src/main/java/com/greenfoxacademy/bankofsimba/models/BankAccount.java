@@ -1,4 +1,4 @@
-package com.greenfoxacademy.bankofsimba.model;
+package com.greenfoxacademy.bankofsimba.models;
 
 public class BankAccount {
   private String name;
@@ -41,6 +41,26 @@ public class BankAccount {
 
   public boolean isGood() {
     return isGood;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setBalance(double balance) {
+    this.balance = balance;
+  }
+
+  public void setAnimalType(String animalType) {
+    this.animalType = animalType;
+  }
+
+  public void setKing(boolean king) {
+    isKing = king;
+  }
+
+  public void setGood(boolean good) {
+    isGood = good;
   }
 
   @Override

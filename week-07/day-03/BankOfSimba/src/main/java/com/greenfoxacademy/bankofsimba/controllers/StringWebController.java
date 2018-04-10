@@ -1,4 +1,4 @@
-package com.greenfoxacademy.bankofsimba.controller;
+package com.greenfoxacademy.bankofsimba.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.greenfoxacademy.bankofsimba.model;
+package com.greenfoxacademy.bankofsimba.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,15 @@ public class Bank {
 
   public List<BankAccount> getBankAccounts() {
     return bankAccounts;
+  }
+
+  public BankAccount getBankAccount(String name) {
+    for (BankAccount bankAccount : bankAccounts) {
+      if (bankAccount.getName().equals(name)) {
+        return bankAccount;
+      }
+    }
+    return null;
   }
 
   @Override
