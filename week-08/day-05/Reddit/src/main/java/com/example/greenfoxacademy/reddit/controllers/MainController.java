@@ -22,7 +22,7 @@ public class MainController {
 
   @GetMapping(value = "")
   public String indexPage(Model model) {
-    model.addAttribute("posts", postRepository.findAll());
+    model.addAttribute("posts", postRepository.findAllByOrderByVoteNumberDesc());
     return "index";
   }
 
