@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reddit - Submit a new post</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1 class="text-center" th:text="'Submit a new post'"></h1>
+    <form action="#" th:action="@{submit}" th:object="${post}" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" th:field="*{title}" name="title"/>
+        <label for="url">URL:</label>
+        <input type="text" id="url" th:field="*{url}" name="url"/>
+        <br>
+        <input role="button" class="btn btn-sm btn-success" type="submit" value="Submit"/>
+    </form>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>
