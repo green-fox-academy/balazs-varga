@@ -4,12 +4,44 @@
     <title>Reddit - Trending posts</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="utf-8" />
+    <style>
+        .table-borderless > tbody > tr > td,
+        .table-borderless > tbody > tr > th,
+        .table-borderless > tfoot > tr > td,
+        .table-borderless > tfoot > tr > th,
+        .table-borderless > thead > tr > td,
+        .table-borderless > thead > tr > th {
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <h4>
         <a th:href="@{/submit}">Submit new post</a>
     </h4>
     <h1 class="text-center" th:text="'Trending posts'"></h1>
+        <div class="col-sm-4">
+            <table class="table table-borderless">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr th:each="post : ${posts}">
+                    <td th:text="${post.voteNumber}"></td>
+                    <td>
+                        <a th:text="'&#8679;'" th:href="@{'/post/' + ${post.id} + '/upvote'}"></a>
+                    </td>
+                    <td>
+                        <a th:text="'&#8681;'" th:href="@{'/post/' + ${post.id} + '/downvote'}"></a>
+                    </td>
+                    <td>
+                        <a th:text="${post.title}" th:href="${post.url}" th:target="_blank"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>

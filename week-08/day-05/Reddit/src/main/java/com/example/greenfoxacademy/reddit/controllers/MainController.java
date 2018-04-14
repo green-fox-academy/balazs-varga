@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -22,7 +23,8 @@ public class MainController {
   }
 
   @GetMapping(value = "")
-  public String indexPage() {
+  public String indexPage(Model model) {
+    model.addAttribute("posts", postRepository.findAll());
     return "index";
   }
 
@@ -37,5 +39,17 @@ public class MainController {
                            @ModelAttribute(name = "url") String url) {
     postRepository.save(new Post(title, url));
     return "redirect:/";
+  }
+
+  @GetMapping(value = "/post/{id}/upvote")
+  public String postUpVote(@PathVariable(name = "id") long id) {
+    post = postRepository.findById(id).orElse(null);
+    if (post == null) {
+      return "redirect:/";
+    } else {
+      post.setVoteNumber(post.getVoteNumber() + 1);
+      postRepository.save(post);
+      return "redirect:/";
+    }
   }
 }
