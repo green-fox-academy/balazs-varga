@@ -1,11 +1,14 @@
 package com.example.greenfoxacademy.reddit.models;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Component
 public class Post {
 
   @Id
@@ -16,9 +19,9 @@ public class Post {
   private String url;
   private String title;
 
-  public Post(String url, String title) {
-    this.url = url;
+  public Post(String title, String url) {
     this.title = title;
+    this.url = url;
     voteNumber = 0;
   }
 
