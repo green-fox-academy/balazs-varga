@@ -1,15 +1,9 @@
 package com.greenfoxacademy.restbackend.controllers;
 
-import com.greenfoxacademy.restbackend.modells.AppendA;
-import com.greenfoxacademy.restbackend.modells.Doubling;
-import com.greenfoxacademy.restbackend.modells.ErrorObject;
-import com.greenfoxacademy.restbackend.modells.Greet;
+import com.greenfoxacademy.restbackend.modells.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @RestController
 public class MainRestController {
@@ -38,5 +32,19 @@ public class MainRestController {
   @GetMapping(value = {"/appenda/{appendable}"})
   public ResponseEntity<Object> appendA(@PathVariable(value = "appendable") String appendable) {
     return new ResponseEntity<>( new AppendA(appendable), HttpStatus.OK);
+  }
+
+  @PostMapping(value = {"/dountil/{what}"})
+  public Object doUntil(@PathVariable(value = "what") String what, @RequestBody(required = false) DoUntil until) {
+    if (until != null) {
+      if (what.equals("sum")) {
+        return new Result(until.sum());
+      } else if (what.equals("factor")) {
+        return new Result(until.factor());
+      }
+    } else {
+      return new ErrorObject("Please provide a number!");
+    }
+    return null;
   }
 }
