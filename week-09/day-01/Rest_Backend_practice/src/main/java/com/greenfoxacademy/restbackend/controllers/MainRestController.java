@@ -47,4 +47,20 @@ public class MainRestController {
     }
     return null;
   }
+
+  @PostMapping(value = {"/arrays"})
+  public Object arrayHandler(@RequestBody(required = false) ArrayHandler arrayHandler) {
+    if (arrayHandler.getWhat() == null) {
+      return new ErrorObject("Please provide what to do with the numbers!");
+    } else if (arrayHandler.getNumbers() == null) {
+      return new ErrorObject("Please provide numbers!");
+    } else if (arrayHandler.getWhat().equals("sum")) {
+      return new Result(arrayHandler.sum());
+    } else if (arrayHandler.getWhat().equals("multiply")) {
+      return new Result(arrayHandler.multiply());
+    } else if (arrayHandler.getWhat().equals("double")) {
+      return new ResultList(arrayHandler.doubleValues());
+    }
+      return null;
+  }
 }

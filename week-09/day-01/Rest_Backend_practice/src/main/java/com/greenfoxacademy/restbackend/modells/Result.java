@@ -8,6 +8,9 @@ public class Result {
     this.result = result;
   }
 
+  public Result() {
+  }
+
   public int getResult() {
     return result;
   }
