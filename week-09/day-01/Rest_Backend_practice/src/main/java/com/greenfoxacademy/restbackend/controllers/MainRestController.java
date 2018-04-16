@@ -14,4 +14,10 @@ public class MainRestController {
       return new Doubling();
     }
   }
+
+  @GetMapping(value = {"/greeter"})
+  public Object greeter(@RequestParam(name = "name", required = false) String name,
+                         @RequestParam(name = "title", required = false) String title) {
+
+  }
 }
