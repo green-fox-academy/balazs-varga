@@ -1,8 +1,6 @@
 package com.greenfoxacademy.restbackend.controllers;
 
-
 import com.greenfoxacademy.restbackend.modells.Doubling;
-import com.greenfoxacademy.restbackend.modells.ErrorObject;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,7 +11,7 @@ public class MainRestController {
     if (number != null) {
       return new Doubling(number);
     } else {
-      return new ErrorObject("Please provide an input!");
+      return new Doubling();
     }
   }
 }
