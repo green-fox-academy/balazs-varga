@@ -106,4 +106,14 @@ public class RestbackendApplicationTests {
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.result").value("15"));
   }
+
+  @Test
+  public void isDoUntilFactor24() throws Exception {
+    mockMvc
+            .perform(post("/dountil/{what}", "factor")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{\"until\": 4}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.result").value(24));
+  }
 }
