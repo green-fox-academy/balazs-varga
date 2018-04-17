@@ -31,7 +31,7 @@ public class MainRestController {
 
   @GetMapping(value = {"/appenda/{appendable}"})
   public ResponseEntity<Response> appendA(@PathVariable(value = "appendable") String appendable) {
-    return new ResponseEntity<>(new AppendA(appendable), HttpStatus.OK);
+    return new ResponseEntity(new AppendA(appendable), HttpStatus.OK);
   }
 
   @PostMapping(value = {"/dountil/{what}"})
