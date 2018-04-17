@@ -64,4 +64,12 @@ public class RestbackendApplicationTests {
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.welcome_message").value("Oh, hi there Petike, my dear student!"));
   }
+
+  @Test
+  public void isGreeterNameErrorTest() throws Exception {
+    mockMvc
+            .perform((get("/greeter?title=student")))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.error").value("Please provide a name!"));
+  }
 }
