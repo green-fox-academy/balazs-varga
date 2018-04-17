@@ -80,4 +80,12 @@ public class RestbackendApplicationTests {
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error").value("Please provide a title!"));
   }
+
+  @Test
+  public void isAppendAKutyaTest() throws Exception {
+    mockMvc
+            .perform((get("/appenda/{appendable}", "kuty")))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.appended").value("kutya"));
+  }
 }
