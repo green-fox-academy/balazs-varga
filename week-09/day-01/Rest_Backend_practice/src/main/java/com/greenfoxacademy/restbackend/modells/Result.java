@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restbackend.modells;
 
-public class Result {
+public class Result extends Response {
 
   private int result;
 

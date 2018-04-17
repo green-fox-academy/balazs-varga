@@ -2,7 +2,7 @@ package com.greenfoxacademy.restbackend.modells;
 
 import java.util.List;
 
-public class ResultList {
+public class ResultList extends Response {
 
   private List<Integer> result;
 

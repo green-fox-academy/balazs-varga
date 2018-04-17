@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restbackend.modells;
 
-public class Greet {
+public class Greet extends Response {
 
   private String welcome_message;
 

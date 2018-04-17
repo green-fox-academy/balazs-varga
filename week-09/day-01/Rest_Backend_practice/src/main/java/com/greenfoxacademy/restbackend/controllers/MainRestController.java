@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class MainRestController {
 
   @GetMapping(value = {"/doubling"})
-  public Object doubling(@RequestParam(name = "input", required = false) Integer number) {
+  public Response doubling(@RequestParam(name = "input", required = false) Integer number) {
     if (number != null) {
       return new Doubling(number);
     } else {
@@ -18,7 +18,7 @@ public class MainRestController {
   }
 
   @GetMapping(value = {"/greeter"})
-  public Object greeter(@RequestParam(name = "name", required = false) String name,
+  public Response greeter(@RequestParam(name = "name", required = false) String name,
                         @RequestParam(name = "title", required = false) String title) {
     if (name == null) {
       return new ErrorObject("Please provide a name!");
@@ -30,12 +30,12 @@ public class MainRestController {
   }
 
   @GetMapping(value = {"/appenda/{appendable}"})
-  public ResponseEntity<Object> appendA(@PathVariable(value = "appendable") String appendable) {
+  public ResponseEntity<Response> appendA(@PathVariable(value = "appendable") String appendable) {
     return new ResponseEntity<>( new AppendA(appendable), HttpStatus.OK);
   }
 
   @PostMapping(value = {"/dountil/{what}"})
-  public Object doUntil(@PathVariable(value = "what") String what, @RequestBody(required = false) DoUntil until) {
+  public Response doUntil(@PathVariable(value = "what") String what, @RequestBody(required = false) DoUntil until) {
     if (until != null) {
       if (what.equals("sum")) {
         return new Result(until.sum());
@@ -45,11 +45,11 @@ public class MainRestController {
     } else {
       return new ErrorObject("Please provide a number!");
     }
-    return null;
+    return new ErrorObject("Please provide a number!");
   }
 
   @PostMapping(value = {"/arrays"})
-  public Object arrayHandler(@RequestBody(required = false) ArrayHandler arrayHandler) {
+  public Response arrayHandler(@RequestBody(required = false) ArrayHandler arrayHandler) {
     if (arrayHandler.getWhat() == null) {
       return new ErrorObject("Please provide what to do with the numbers!");
     } else if (arrayHandler.getNumbers() == null) {
@@ -61,6 +61,6 @@ public class MainRestController {
     } else if (arrayHandler.getWhat().equals("double")) {
       return new ResultList(arrayHandler.doubleValues());
     }
-      return null;
+    return new ErrorObject("Please provide what to do with the numbers!");
   }
 }
