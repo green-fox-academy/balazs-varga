@@ -41,7 +41,7 @@ public class RestbackendApplicationTests {
   @Test
   public void isDoubling10() throws Exception {
     mockMvc
-            .perform((get("/doubling/?input=5")))
+            .perform((get("/doubling").param("input", "5")))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.received").value(5))
             .andExpect(jsonPath("$.result").value(10));
@@ -51,7 +51,7 @@ public class RestbackendApplicationTests {
   @Test
   public void isDoublingError() throws Exception {
     mockMvc
-            .perform((get("/doubling/?input=")))
+            .perform((get("/doubling").param("input", "")))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error").value("Please provide an input!"));
 
@@ -60,7 +60,7 @@ public class RestbackendApplicationTests {
   @Test
   public void isGreeterPetikeStudentTest() throws Exception {
     mockMvc
-            .perform((get("/greeter/?name=Petike&title=student")))
+            .perform((get("/greeter").param("name", "Petike").param("title", "student")))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.welcome_message").value("Oh, hi there Petike, my dear student!"));
   }
@@ -68,7 +68,7 @@ public class RestbackendApplicationTests {
   @Test
   public void isGreeterNameErrorTest() throws Exception {
     mockMvc
-            .perform((get("/greeter?title=student")))
+            .perform((get("/greeter").param("title", "student")))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error").value("Please provide a name!"));
   }
@@ -76,7 +76,7 @@ public class RestbackendApplicationTests {
   @Test
   public void isGreeterTitleErrorTest() throws Exception {
     mockMvc
-            .perform((get("/greeter?name=Petike")))
+            .perform((get("/greeter").param("name", "Petike")))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error").value("Please provide a title!"));
   }
