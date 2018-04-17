@@ -43,7 +43,6 @@ public class GuardianControllerTest {
     mockMvc
             .perform((get("/groot").param("message", "Hello")))
             .andExpect(status().isOk());
-
   }
 
   @Test
