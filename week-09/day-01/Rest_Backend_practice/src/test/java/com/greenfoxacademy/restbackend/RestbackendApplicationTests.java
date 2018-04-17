@@ -29,4 +29,13 @@ public class RestbackendApplicationTests {
             .andExpect(jsonPath("$.result").value(10));
 
   }
+
+  @Test
+  public void isDoublingError() throws Exception {
+    mockMvc
+            .perform((get("/doubling/?input=")))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.error").value("Please provide an input!"));
+
+  }
 }
