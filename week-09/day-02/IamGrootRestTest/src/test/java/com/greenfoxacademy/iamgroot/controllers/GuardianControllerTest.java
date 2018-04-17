@@ -54,4 +54,12 @@ public class GuardianControllerTest {
             .andExpect(jsonPath("$.received").value("Hello"))
             .andExpect(jsonPath("$.translated").value("I am Groot!"));
   }
+
+  @Test
+  public void isGrootErrorTest() throws Exception {
+    mockMvc
+            .perform((get("/groot")))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.error").value("I am Groot!"));
+  }
 }
