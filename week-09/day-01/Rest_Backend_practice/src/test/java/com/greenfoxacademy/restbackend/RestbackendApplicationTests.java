@@ -14,6 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.nio.charset.Charset;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -94,5 +95,15 @@ public class RestbackendApplicationTests {
     mockMvc
             .perform((get("/appenda")))
             .andExpect(status().is4xxClientError());
+  }
+
+  @Test
+  public void isDoUntilSum15() throws Exception {
+    mockMvc
+            .perform(post("/dountil/{what}", "sum")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{\"until\": 5}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.result").value("15"));
   }
 }
