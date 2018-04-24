@@ -9,13 +9,13 @@ public class Todo {
   @Id
   private long id;
   private String title;
-  private boolean urgent;
-  private boolean done;
+  private String isUrgent;
+  private String isDone;
 
-  public Todo(String title) {
+  public Todo(String title, String isUrgent, String isDone) {
     this.title = title;
-    this.urgent = false;
-    this.done = false;
+    this.isUrgent = isUrgent;
+    this.isDone = isDone;
   }
 
   public Todo() {
@@ -37,19 +37,19 @@ public class Todo {
     this.title = title;
   }
 
-  public boolean isUrgent() {
-    return urgent;
+  public String getIsUrgent() {
+    return isUrgent;
   }
 
-  public void setUrgent(boolean urgent) {
-    this.urgent = urgent;
+  public void setIsUrgent(String isUrgent) {
+    this.isUrgent = isUrgent;
   }
 
-  public boolean isDone() {
-    return done;
+  public String getIsDone() {
+    return isDone;
   }
 
-  public void setDone(boolean done) {
-    this.done = done;
+  public void setIsDone(String isDone) {
+    this.isDone = isDone;
   }
 }
