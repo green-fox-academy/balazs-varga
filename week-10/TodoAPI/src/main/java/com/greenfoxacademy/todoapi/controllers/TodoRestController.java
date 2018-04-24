@@ -6,6 +6,7 @@ import com.greenfoxacademy.todoapi.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,15 @@ public class TodoRestController {
     }
     else {
       return new ResponseEntity(new JsonResponse("Error"), HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  @GetMapping(value = {"/api/list"})
+  public ResponseEntity listTodos() {
+    if (todoRepository.findAll().size() != 0) {
+      return new ResponseEntity(new JsonResponse("Ok", todoRepository.findAll()), HttpStatus.OK);
+    } else {
+      return new ResponseEntity(new JsonResponse("The list is empty"), HttpStatus.BAD_REQUEST);
     }
   }
 }
