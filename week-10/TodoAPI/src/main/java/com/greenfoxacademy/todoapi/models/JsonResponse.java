@@ -1,4 +1,4 @@
-package com.greenfoxacademy.todoapi.modells;
+package com.greenfoxacademy.todoapi.models;
 
 import java.util.List;
 

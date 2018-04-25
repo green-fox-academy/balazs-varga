@@ -1,4 +1,4 @@
-package com.greenfoxacademy.todoapi.modells;
+package com.greenfoxacademy.todoapi.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,14 +7,19 @@ import javax.persistence.Id;
 
 @Entity
 public class ApplicationUser {
+
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private long userId;
   private String username;
   private String password;
 
-  public long getId() {
-    return id;
+  public ApplicationUser(String username, String password) {
+    this.username = username;
+    this.password = password;
+  }
+
+  public ApplicationUser() {
   }
 
   public String getUsername() {
@@ -31,5 +36,13 @@ public class ApplicationUser {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
   }
 }

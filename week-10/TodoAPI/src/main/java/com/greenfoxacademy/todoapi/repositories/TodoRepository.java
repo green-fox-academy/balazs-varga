@@ -1,6 +1,6 @@
 package com.greenfoxacademy.todoapi.repositories;
 
-import com.greenfoxacademy.todoapi.modells.Todo;
+import com.greenfoxacademy.todoapi.models.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
