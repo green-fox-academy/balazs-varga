@@ -23,7 +23,17 @@ public class ApplicationUserRestController {
       return new ResponseEntity(new JsonResponse("User is registered"), HttpStatus.OK);
     }
     else {
-      return new ResponseEntity(new JsonResponse("Error"), HttpStatus.BAD_REQUEST);
+      return new ResponseEntity(new JsonResponse("Error"), HttpStatus.UNAUTHORIZED);
+    }
+  }
+
+  @PostMapping(value = {"/login"})
+  public ResponseEntity login(@RequestBody(required = true) ApplicationUser applicationUser) {
+    if (applicationUser != null) {
+      return new ResponseEntity(new JsonResponse("Successfully logged in"), HttpStatus.OK);
+    }
+    else {
+      return new ResponseEntity(new JsonResponse("Error"), HttpStatus.UNAUTHORIZED);
     }
   }
 }

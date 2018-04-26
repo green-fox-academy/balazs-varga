@@ -9,4 +9,5 @@ import java.util.List;
 @Component
 public interface TodoRepository extends CrudRepository<Todo, Long> {
   List<Todo> findAll();
+  Todo save(Todo todo);
 }
