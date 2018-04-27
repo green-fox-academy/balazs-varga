@@ -94,4 +94,20 @@ public class TodoRepositoryTest {
     //then
     assertThat(todo).isEqualTo(thirdTodo);
   }
+
+  @Test
+  public void saveTest() throws Exception {
+    //given
+    todoRepository.save(firstTodo);
+    todoRepository.save(secondTodo);
+    todoRepository.save(thirdTodo);
+
+    //when
+    List<Todo> todoList = todoRepository.findAll();
+
+    //then
+    assertThat(todoList.get(0)).isEqualTo(firstTodo);
+    assertThat(todoList.get(1)).isEqualTo(secondTodo);
+    assertThat(todoList.get(2)).isEqualTo(thirdTodo);
+  }
 }
