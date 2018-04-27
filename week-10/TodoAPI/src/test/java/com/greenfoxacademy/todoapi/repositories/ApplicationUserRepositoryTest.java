@@ -1,6 +1,7 @@
 package com.greenfoxacademy.todoapi.repositories;
 
 import com.greenfoxacademy.todoapi.models.ApplicationUser;
+import com.greenfoxacademy.todoapi.models.Todo;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -76,5 +77,21 @@ public class ApplicationUserRepositoryTest {
 
     //then
     assertThat(applicationUser).isEqualTo(thirdUser);
+  }
+
+  @Test
+  public void saveTest() throws Exception {
+    //given
+    applicationUserRepository.save(firstUser);
+    applicationUserRepository.save(secondUser);
+    applicationUserRepository.save(thirdUser);
+
+    //when
+    List<ApplicationUser> applicationUserList = applicationUserRepository.findAll();
+
+    //then
+    assertThat(applicationUserList.get(0)).isEqualTo(firstUser);
+    assertThat(applicationUserList.get(1)).isEqualTo(secondUser);
+    assertThat(applicationUserList.get(2)).isEqualTo(thirdUser);
   }
 }
