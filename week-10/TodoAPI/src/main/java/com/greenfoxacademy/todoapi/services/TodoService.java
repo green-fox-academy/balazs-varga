@@ -20,4 +20,12 @@ public class TodoService {
   public Todo save(Todo todo) {
     return todoRepository.save(todo);
   }
+
+  public Todo findById(long id) {
+    return todoRepository.findById(id);
+  }
+
+  public Todo findByTitle(String title) {
+    return todoRepository.findByTitle(title);
+  }
 }

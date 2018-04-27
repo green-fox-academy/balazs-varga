@@ -10,4 +10,6 @@ import java.util.List;
 public interface TodoRepository extends CrudRepository<Todo, Long> {
   List<Todo> findAll();
   Todo save(Todo todo);
+  Todo findById(long id);
+  Todo findByTitle(String title);
 }
