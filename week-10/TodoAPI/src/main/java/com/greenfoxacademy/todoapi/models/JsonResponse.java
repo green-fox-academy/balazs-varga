@@ -4,24 +4,24 @@ import java.util.List;
 
 public class JsonResponse {
 
-  private String result;
+  private String status;
   private List<Todo> data;
 
   public JsonResponse(String result, List<Todo> data) {
-    this.result = result;
+    this.status = result;
     this.data = data;
   }
 
   public JsonResponse(String result) {
-    this.result = result;
+    this.status = result;
   }
 
-  public String getResult() {
-    return result;
+  public String getStatus() {
+    return status;
   }
 
-  public void setResult(String result) {
-    this.result = result;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public List<Todo> getData() {
