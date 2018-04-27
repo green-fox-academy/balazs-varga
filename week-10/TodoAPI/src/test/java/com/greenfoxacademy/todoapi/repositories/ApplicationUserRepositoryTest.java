@@ -1,7 +1,6 @@
 package com.greenfoxacademy.todoapi.repositories;
 
 import com.greenfoxacademy.todoapi.models.ApplicationUser;
-import com.greenfoxacademy.todoapi.models.Todo;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

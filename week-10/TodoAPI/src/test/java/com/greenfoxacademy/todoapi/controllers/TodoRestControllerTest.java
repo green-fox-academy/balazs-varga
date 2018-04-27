@@ -52,7 +52,7 @@ public class TodoRestControllerTest {
   }
 
   @Test
-  public void getAllTodo() throws Exception {
+  public void getAllTodoJsonTest() throws Exception {
     Todo firstTodo = new Todo("Read Clean Code", true, false);
     Todo secondTodo = new Todo("Feed the dog", false, false);
 
