@@ -77,4 +77,19 @@ public class TodoRepositoryTest {
     //then
     assertThat(todo).isEqualTo(secondTodo);
   }
+
+  @Test
+  public void findByTitleTest() throws Exception {
+    //given
+    entityManager.persist(firstTodo);
+    entityManager.persist(secondTodo);
+    entityManager.persist(thirdTodo);
+    entityManager.flush();
+
+    //when
+    Todo todo = todoRepository.findByTitle(thirdTodo.getTitle());
+
+    //then
+    assertThat(todo).isEqualTo(thirdTodo);
+  }
 }
