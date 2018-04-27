@@ -61,4 +61,19 @@ public class ApplicationUserRepositoryTest {
     assertThat(userList.get(1)).isEqualTo(secondUser);
     assertThat(userList.get(2)).isEqualTo(thirdUser);
   }
+
+  @Test
+  public void findByUsernameTest() throws Exception {
+    //given
+    entityManager.persist(firstUser);
+    entityManager.persist(secondUser);
+    entityManager.persist(thirdUser);
+    entityManager.flush();
+
+    //when
+    ApplicationUser applicationUser = applicationUserRepository.findByUsername(thirdUser.getUsername());
+
+    //then
+    assertThat(applicationUser).isEqualTo(thirdUser);
+  }
 }
