@@ -46,7 +46,7 @@ public class TodoRepositoryTest {
   }
 
   @Test
-  public void findAll() throws Exception {
+  public void findAllTest() throws Exception {
     //given
     entityManager.persist(firstTodo);
     entityManager.persist(secondTodo);
@@ -61,5 +61,20 @@ public class TodoRepositoryTest {
     assertThat(todoList.get(0)).isEqualTo(firstTodo);
     assertThat(todoList.get(1)).isEqualTo(secondTodo);
     assertThat(todoList.get(2)).isEqualTo(thirdTodo);
+  }
+
+  @Test
+  public void findByIdTest() throws Exception {
+    //given
+    entityManager.persist(firstTodo);
+    entityManager.persist(secondTodo);
+    entityManager.persist(thirdTodo);
+    entityManager.flush();
+
+    //when
+    Todo todo = todoRepository.findById(secondTodo.getId());
+
+    //then
+    assertThat(todo).isEqualTo(secondTodo);
   }
 }
